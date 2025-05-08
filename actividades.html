@@ -5,16 +5,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Actividades - Planetario de Madrid</title>
-    <!-- Bootstrap CSS -->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
-    <!-- Bootstrap Icons -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-    <!-- Estilos personalizados -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
 </head>
 
 <body>
-    <!-- Enlace para saltar a contenido principal (Accesibilidad) -->
+    <!-- Skip Link para accesibilidad -->
     <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
 
     <!-- Cabecera y Navegación -->
@@ -41,7 +40,8 @@
                             <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
                             <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
-                            <a class="nav-link active" href="actividades.html" aria-current="page">Actividades</a>
+                            <li class="nav-item"><a class="nav-link active" href="actividades.html"
+                                    aria-current="page">Actividades</a></li>
                             <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
                             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
                         </ul>
@@ -56,432 +56,282 @@
         </div>
     </header>
 
-    <!-- Banner de página -->
-    <section
-        class="page-banner position-relative d-flex align-items-center justify-content-center text-center text-white">
-        <div class="banner-image position-absolute"></div>
-        <div class="container py-5 position-relative z-index-1">
-            <h1 class="display-4 fw-bold mb-3">Actividades y Eventos</h1>
-            <nav aria-label="breadcrumb">
-                <ol class="breadcrumb justify-content-center">
-                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
-                    <li class="breadcrumb-item active text-white-50" aria-current="page">Actividades</li>
-                </ol>
-            </nav>
+    <!-- Banner -->
+    <section class="page-banner d-flex align-items-center justify-content-center text-center">
+        <div class="banner-image"></div>
+        <div class="container z-index-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3 fade-in">Actividades y Eventos</h1>
+                    <p class="lead opacity-75 fade-in">Vive experiencias únicas y descubre el cosmos de mil formas
+                        diferentes</p>
+                </div>
+            </div>
         </div>
+        <!-- Planetas decorativos -->
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
     </section>
 
+    <!-- Submenú de navegación interna -->
+    <div class="bg-dark-transparent py-3 sticky-top" style="top: 76px; z-index: 10;">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <ul class="nav nav-pills nav-fill flex-column flex-sm-row">
+                        <li class="nav-item">
+                            <a class="nav-link active" href="#proyecciones">Proyecciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#observaciones">Observaciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#talleres">Talleres</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="#eventos">Eventos Especiales</a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+
     <!-- Contenido principal -->
-    <main id="main-content">
-        <!-- Filtros de actividades -->
-        <section class="py-4 bg-brand">
+    <main id="main-content" class="pb-5">
+        <!-- Introducción -->
+        <section class="py-5">
             <div class="container">
                 <div class="row justify-content-center">
                     <div class="col-lg-10">
-                        <div class="d-flex flex-wrap justify-content-center gap-3">
-                            <button type="button" class="btn btn-outline-light active filter-btn"
-                                data-filter="all">Todas</button>
-                            <button type="button" class="btn btn-outline-light filter-btn"
-                                data-filter="talleres">Talleres</button>
-                            <button type="button" class="btn btn-outline-light filter-btn"
-                                data-filter="observaciones">Observaciones</button>
-                            <button type="button" class="btn btn-outline-light filter-btn"
-                                data-filter="conferencias">Conferencias</button>
-                            <button type="button" class="btn btn-outline-light filter-btn"
-                                data-filter="especiales">Eventos Especiales</button>
+                        <div class="text-center mb-5">
+                            <h2 class="display-5 fw-bold mb-4">Descubre todas nuestras actividades</h2>
+                            <p class="lead">El Planetario de Madrid ofrece mucho más que exposiciones. Disfruta de
+                                proyecciones inmersivas en nuestra cúpula, participa en talleres prácticos, observa el
+                                cielo nocturno con nuestros telescopios y asiste a eventos especiales durante todo el
+                                año.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Eventos destacados -->
-        <section class="py-5">
+        <!-- Filtros -->
+        <section class="py-3 bg-dark-transparent">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 mb-3 text-white">Eventos Destacados</h2>
-                    <p class="section-subtitle text-white-50 mx-auto">No te pierdas nuestros eventos especiales de este
-                        mes</p>
-                </div>
-
-                <div class="row g-4">
-                    <div class="col-lg-6">
-                        <div class="card featured-event-card h-100">
-                            <div class="row g-0 h-100">
-                                <div class="col-md-6">
-                                    <img src="img/eclipse-lunar.jpg" class="img-fluid rounded-start h-100 object-cover"
-                                        alt="Eclipse Lunar">
-                                </div>
-                                <div class="col-md-6 d-flex flex-column">
-                                    <div class="card-body flex-grow-1">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <span class="badge bg-primary p-2">15 Mayo · 19:00h</span>
-                                            <span class="badge bg-danger">¡Plazas limitadas!</span>
-                                        </div>
-                                        <h3 class="card-title">Observación del Eclipse Lunar</h3>
-                                        <p class="card-text">Únete a nosotros para observar el próximo eclipse lunar
-                                            total. Disfrutarás de una charla previa sobre los eclipses lunares y después
-                                            podrás observar este impresionante fenómeno a través de nuestros
-                                            telescopios.</p>
-                                        <div class="mb-3">
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i> Terraza del
-                                                Planetario</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Para todos los
-                                                públicos</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="actividad-eclipse.html" class="btn btn-primary w-100">Reservar
-                                            plaza</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="row justify-content-center align-items-center g-3">
+                    <div class="col-md-2">
+                        <h3 class="h5 mb-0">Filtrar por:</h3>
                     </div>
-
-                    <div class="col-lg-6">
-                        <div class="card featured-event-card h-100">
-                            <div class="row g-0 h-100">
-                                <div class="col-md-6">
-                                    <img src="img/taller-cohetes.jpg" class="img-fluid rounded-start h-100 object-cover"
-                                        alt="Taller de Cohetes">
-                                </div>
-                                <div class="col-md-6 d-flex flex-column">
-                                    <div class="card-body flex-grow-1">
-                                        <div class="d-flex justify-content-between align-items-start mb-2">
-                                            <span class="badge bg-primary p-2">22 Mayo · 11:00h</span>
-                                            <span class="badge bg-success">Para niños</span>
-                                        </div>
-                                        <h3 class="card-title">Taller Infantil: Construye tu Cohete</h3>
-                                        <p class="card-text">Taller práctico donde los niños aprenderán sobre propulsión
-                                            y física espacial mientras construyen y lanzan su propio cohete de agua. Una
-                                            actividad divertida y educativa.</p>
-                                        <div class="mb-3">
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i> Sala de
-                                                Talleres</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Niños de 8 a 12
-                                                años</span>
-                                        </div>
-                                    </div>
-                                    <div class="card-footer">
-                                        <a href="taller-cohetes.html" class="btn btn-primary w-100">Inscribir niños</a>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-3">
+                        <select class="form-select bg-dark text-white" id="filtroTipo">
+                            <option value="todos">Todos los tipos</option>
+                            <option value="proyeccion">Proyecciones</option>
+                            <option value="observacion">Observaciones</option>
+                            <option value="taller">Talleres</option>
+                            <option value="evento">Eventos</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select bg-dark text-white" id="filtroEdad">
+                            <option value="todos">Todas las edades</option>
+                            <option value="infantil">Infantil (3-6)</option>
+                            <option value="primaria">Primaria (7-12)</option>
+                            <option value="juvenil">Juvenil (13-17)</option>
+                            <option value="adulto">Adultos (18+)</option>
+                            <option value="familiar">Familiar</option>
+                        </select>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-select bg-dark text-white" id="filtroFecha">
+                            <option value="todos">Cualquier fecha</option>
+                            <option value="hoy">Hoy</option>
+                            <option value="semana">Esta semana</option>
+                            <option value="finde">Fin de semana</option>
+                            <option value="mes">Este mes</option>
+                        </select>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Calendario de actividades -->
-        <section class="py-5 bg-stars">
+        <!-- Proyecciones -->
+        <section id="proyecciones" class="py-5">
             <div class="container">
-                <div class="text-center mb-5">
-                    <h2 class="display-5 mb-3 text-white">Calendario de Actividades</h2>
-                    <p class="section-subtitle text-white-50 mx-auto">Explora todas nuestras actividades programadas</p>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Proyecciones en la Cúpula</h2>
+                        <p class="lead">Experiencias inmersivas bajo nuestra cúpula de 15 metros</p>
+                    </div>
                 </div>
 
-                <div class="row mb-5">
-                    <div class="col-lg-3 mb-4 mb-lg-0">
-                        <div class="card month-card active">
-                            <div class="card-body text-center py-3">
-                                <h3 class="h5 mb-0">Mayo 2025</h3>
+                <div class="row g-4 actividades-grid">
+                    <!-- Proyección 1 -->
+                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="proyeccion" data-edad="familiar">
+                        <div class="dome-show-card h-100">
+                            <img src="img/proyeccion-cosmos.jpg" class="card-img-top"
+                                alt="Proyección Cosmos: Un viaje por el universo">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-info">Familiar</span>
+                                </div>
+                                <h3 class="card-title h4">Cosmos: Un viaje por el universo</h3>
+                                <p class="card-text">Un fascinante recorrido por el universo conocido, desde nuestro
+                                    sistema solar hasta los confines más lejanos del cosmos. Descubre nebulosas,
+                                    galaxias y fenómenos cósmicos sorprendentes.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 45 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Mar-Dom: 12:00h,
+                                        17:00h</li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Todos los públicos
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">7€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
                             </div>
-                        </div>
-                        <div class="list-group month-selector rounded-0">
-                            <a href="#"
-                                class="list-group-item list-group-item-action bg-dark-transparent text-white">Junio
-                                2025</a>
-                            <a href="#"
-                                class="list-group-item list-group-item-action bg-dark-transparent text-white">Julio
-                                2025</a>
-                            <a href="#"
-                                class="list-group-item list-group-item-action bg-dark-transparent text-white">Agosto
-                                2025</a>
                         </div>
                     </div>
 
-                    <div class="col-lg-9">
-                        <div class="activities-list">
-                            <!-- Actividad: Talleres -->
-                            <div class="activity-item filter-item talleres p-4 rounded mb-4">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2 text-center mb-3 mb-md-0">
-                                        <div class="activity-date">
-                                            <div class="date-circle mx-auto">
-                                                <span class="day">08</span>
-                                                <span class="month">MAY</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 mb-3 mb-md-0">
-                                        <h3 class="activity-title h4">Taller: Los colores del Cosmos</h3>
-                                        <p class="activity-text mb-2">Aprende sobre espectroscopía y cómo los astrónomos
-                                            analizan la luz para conocer la composición de estrellas y galaxias.</p>
-                                        <div class="activity-details">
-                                            <span class="badge bg-secondary me-2">16:00 - 18:00</span>
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i>
-                                                Laboratorio</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> +10 años</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <a href="taller-colores.html" class="btn btn-outline-light">Detalles</a>
-                                    </div>
+                    <!-- Proyección 2 -->
+                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="proyeccion" data-edad="adulto">
+                        <div class="dome-show-card h-100">
+                            <img src="img/proyeccion-agujeros-negros.jpg" class="card-img-top"
+                                alt="Proyección Agujeros Negros">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-danger">Adultos</span>
                                 </div>
-                            </div>
-
-                            <!-- Actividad: Conferencias -->
-                            <div class="activity-item filter-item conferencias p-4 rounded mb-4">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2 text-center mb-3 mb-md-0">
-                                        <div class="activity-date">
-                                            <div class="date-circle mx-auto">
-                                                <span class="day">10</span>
-                                                <span class="month">MAY</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 mb-3 mb-md-0">
-                                        <h3 class="activity-title h4">Conferencia: Exoplanetas habitables</h3>
-                                        <p class="activity-text mb-2">La Dra. Elena Martínez, astrobióloga, nos hablará
-                                            sobre los últimos descubrimientos de planetas potencialmente habitables
-                                            fuera de nuestro Sistema Solar.</p>
-                                        <div class="activity-details">
-                                            <span class="badge bg-secondary me-2">19:00 - 20:30</span>
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i> Sala de
-                                                Conferencias</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Adultos</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <a href="conferencia-exoplanetas.html"
-                                            class="btn btn-outline-light">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Actividad: Observaciones -->
-                            <div class="activity-item filter-item observaciones p-4 rounded mb-4">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2 text-center mb-3 mb-md-0">
-                                        <div class="activity-date">
-                                            <div class="date-circle mx-auto">
-                                                <span class="day">15</span>
-                                                <span class="month">MAY</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 mb-3 mb-md-0">
-                                        <h3 class="activity-title h4">Observación del Eclipse Lunar</h3>
-                                        <p class="activity-text mb-2">Únete a nosotros para observar el próximo eclipse
-                                            lunar total a través de nuestros telescopios. Incluye charla previa sobre
-                                            fenómenos lunares.</p>
-                                        <div class="activity-details">
-                                            <span class="badge bg-secondary me-2">19:00 - 22:00</span>
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i> Terraza del
-                                                Planetario</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Todos los
-                                                públicos</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <a href="actividad-eclipse.html" class="btn btn-outline-light">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Actividad: Talleres -->
-                            <div class="activity-item filter-item talleres p-4 rounded mb-4">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2 text-center mb-3 mb-md-0">
-                                        <div class="activity-date">
-                                            <div class="date-circle mx-auto">
-                                                <span class="day">22</span>
-                                                <span class="month">MAY</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 mb-3 mb-md-0">
-                                        <h3 class="activity-title h4">Taller Infantil: Construye tu Cohete</h3>
-                                        <p class="activity-text mb-2">Taller práctico donde los niños aprenderán sobre
-                                            propulsión y física espacial mientras construyen y lanzan su propio cohete
-                                            de agua.</p>
-                                        <div class="activity-details">
-                                            <span class="badge bg-secondary me-2">11:00 - 13:00</span>
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i> Sala de
-                                                Talleres</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Niños 8-12
-                                                años</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <a href="taller-cohetes.html" class="btn btn-outline-light">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Actividad: Eventos Especiales -->
-                            <div class="activity-item filter-item especiales p-4 rounded mb-4">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2 text-center mb-3 mb-md-0">
-                                        <div class="activity-date">
-                                            <div class="date-circle mx-auto">
-                                                <span class="day">28</span>
-                                                <span class="month">MAY</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 mb-3 mb-md-0">
-                                        <h3 class="activity-title h4">Noche de Astronomía y Música</h3>
-                                        <p class="activity-text mb-2">Experiencia única que combina observación
-                                            astronómica con un concierto en vivo de música clásica inspirada en el
-                                            cosmos.</p>
-                                        <div class="activity-details">
-                                            <span class="badge bg-secondary me-2">21:00 - 23:30</span>
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i>
-                                                Auditorio</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Adultos</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <a href="noche-astronomia.html" class="btn btn-outline-light">Detalles</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <!-- Actividad: Conferencias -->
-                            <div class="activity-item filter-item conferencias p-4 rounded">
-                                <div class="row align-items-center">
-                                    <div class="col-md-2 text-center mb-3 mb-md-0">
-                                        <div class="activity-date">
-                                            <div class="date-circle mx-auto">
-                                                <span class="day">30</span>
-                                                <span class="month">MAY</span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-8 mb-3 mb-md-0">
-                                        <h3 class="activity-title h4">Mesa redonda: El futuro de la exploración espacial
-                                        </h3>
-                                        <p class="activity-text mb-2">Expertos de la ESA y la NASA debatirán sobre las
-                                            próximas misiones espaciales y el futuro de la exploración humana de Marte.
-                                        </p>
-                                        <div class="activity-details">
-                                            <span class="badge bg-secondary me-2">18:00 - 20:00</span>
-                                            <span class="text-white-50 me-3"><i class="bi bi-geo-alt"></i> Sala de
-                                                Conferencias</span>
-                                            <span class="text-white-50"><i class="bi bi-people"></i> Adultos</span>
-                                        </div>
-                                    </div>
-                                    <div class="col-md-2 text-end">
-                                        <a href="mesa-redonda.html" class="btn btn-outline-light">Detalles</a>
-                                    </div>
+                                <h3 class="card-title h4">Agujeros Negros: Al límite del espacio-tiempo</h3>
+                                <p class="card-text">Adéntrate en uno de los fenómenos más misteriosos del universo: los
+                                    agujeros negros. Descubre su formación, características y los últimos hallazgos
+                                    científicos sobre estos objetos cósmicos.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 50 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Viernes y Sábados:
+                                        19:00h</li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Adultos y jóvenes +12
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">7€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
                                 </div>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Proyección 3 -->
+                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="proyeccion" data-edad="infantil">
+                        <div class="dome-show-card h-100">
+                            <img src="img/proyeccion-exploradores.jpg" class="card-img-top"
+                                alt="Proyección Pequeños Exploradores del Espacio">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-success">Infantil</span>
+                                </div>
+                                <h3 class="card-title h4">Pequeños Exploradores del Espacio</h3>
+                                <p class="card-text">Una aventura espacial diseñada especialmente para los más pequeños.
+                                    Junto a Luna, una simpática astronauta, los niños aprenderán sobre los planetas, las
+                                    estrellas y otros cuerpos celestes.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 30 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Sábados y
+                                        Domingos: 11:00h</li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Niños de 3 a 6 años
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">5€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ver todas las proyecciones -->
+                    <div class="col-12 text-center mt-4">
+                        <a href="proyecciones.html" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-film me-2"></i> Ver todas las proyecciones
+                        </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Actividades para grupos -->
-        <section class="py-5">
+        <!-- Observaciones -->
+        <section id="observaciones" class="py-5 bg-stars">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <h2 class="display-5 mb-4 text-white">Actividades para grupos</h2>
-                        <p class="text-white-50 mb-4">El Planetario de Madrid ofrece actividades especialmente diseñadas
-                            para grupos escolares, empresas, asociaciones y grupos familiares. Nuestras experiencias
-                            educativas son adaptables a diferentes edades y necesidades.</p>
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Observaciones Astronómicas</h2>
+                        <p class="lead">Contempla el cielo real a través de telescopios profesionales</p>
+                    </div>
+                </div>
 
-                        <div class="accordion" id="accordionGroups">
-                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
-                                <h3 class="accordion-header" id="headingSchools">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseSchools"
-                                        aria-expanded="false" aria-controls="collapseSchools">
-                                        Grupos escolares
-                                    </button>
-                                </h3>
-                                <div id="collapseSchools" class="accordion-collapse collapse"
-                                    aria-labelledby="headingSchools" data-bs-parent="#accordionGroups">
-                                    <div class="accordion-body">
-                                        <p class="mb-3">Ofrecemos visitas guiadas y talleres adaptados a los distintos
-                                            niveles educativos, desde infantil hasta bachillerato, relacionados con el
-                                            currículo escolar.</p>
-                                        <p class="mb-0">Incluyen material didáctico para profesores y alumnos,
-                                            actividades prácticas y descuentos especiales.</p>
-                                        <a href="grupos-escolares.html" class="btn btn-primary mt-3">Información para
-                                            escuelas</a>
-                                    </div>
+                <div class="row g-4 actividades-grid">
+                    <!-- Observación 1 -->
+                    <div class="col-md-6 actividad-item" data-tipo="observacion" data-edad="familiar">
+                        <div class="dome-show-card h-100">
+                            <img src="img/observacion-nocturna.jpg" class="card-img-top"
+                                alt="Observación Nocturna del Cielo">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Observación</span>
+                                    <span class="badge bg-info">Familiar</span>
                                 </div>
-                            </div>
-
-                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
-                                <h3 class="accordion-header" id="headingCorporate">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseCorporate"
-                                        aria-expanded="false" aria-controls="collapseCorporate">
-                                        Empresas
-                                    </button>
-                                </h3>
-                                <div id="collapseCorporate" class="accordion-collapse collapse"
-                                    aria-labelledby="headingCorporate" data-bs-parent="#accordionGroups">
-                                    <div class="accordion-body">
-                                        <p class="mb-3">Sorprende a tus empleados o clientes con una visita diferente al
-                                            Planetario. Organizamos eventos corporativos, team buildings y
-                                            presentaciones únicas bajo las estrellas.</p>
-                                        <p class="mb-0">Posibilidad de personalizar actividades y combinar con catering
-                                            o servicios adicionales.</p>
-                                        <a href="empresas.html" class="btn btn-primary mt-3">Información para
-                                            empresas</a>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item bg-dark-transparent text-white border-0">
-                                <h3 class="accordion-header" id="headingFamilies">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFamilies"
-                                        aria-expanded="false" aria-controls="collapseFamilies">
-                                        Familias y asociaciones
-                                    </button>
-                                </h3>
-                                <div id="collapseFamilies" class="accordion-collapse collapse"
-                                    aria-labelledby="headingFamilies" data-bs-parent="#accordionGroups">
-                                    <div class="accordion-body">
-                                        <p class="mb-3">Celebra un cumpleaños inolvidable en el Planetario o organiza
-                                            una visita especial para tu asociación o grupo familiar. Actividades
-                                            adaptadas a todas las edades.</p>
-                                        <p class="mb-0">Posibilidad de reservar espacios privados y personalizar la
-                                            experiencia.</p>
-                                        <a href="grupos-familias.html" class="btn btn-primary mt-3">Más información</a>
-                                    </div>
+                                <h3 class="card-title h4">Observación Nocturna del Cielo</h3>
+                                <p class="card-text">Observa el cielo nocturno a través de nuestros telescopios
+                                    profesionales. Nuestros astrónomos te guiarán en la identificación de
+                                    constelaciones, planetas y otros objetos celestes visibles esa noche.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Viernes y Sábados:
+                                        21:30h (según clima)</li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Todos los públicos
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">10€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
-                        <div class="row g-4">
-                            <div class="col-md-6">
-                                <div class="rounded overflow-hidden shadow-lg">
-                                    <img src="img/grupos-escolares.jpg" alt="Grupos escolares en el Planetario"
-                                        class="img-fluid">
+                    <!-- Observación 2 -->
+                    <div class="col-md-6 actividad-item" data-tipo="observacion" data-edad="adulto">
+                        <div class="dome-show-card h-100">
+                            <img src="img/observacion-especial.jpg" class="card-img-top"
+                                alt="Observación Especial: Eclipse Lunar">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Observación</span>
+                                    <span class="badge bg-danger">Evento Especial</span>
                                 </div>
-                            </div>
-                            <div class="col-md-6">
-                                <div class="rounded overflow-hidden shadow-lg">
-                                    <img src="img/grupos-empresas.jpg" alt="Evento corporativo en el Planetario"
-                                        class="img-fluid">
-                                </div>
-                            </div>
-                            <div class="col-12">
-                                <div class="rounded overflow-hidden shadow-lg">
-                                    <img src="img/grupos-familias.jpg" alt="Familias en el Planetario"
-                                        class="img-fluid">
+                                <h3 class="card-title h4">Observación Especial: Eclipse Lunar</h3>
+                                <p class="card-text">Una sesión especial para observar el próximo eclipse lunar parcial.
+                                    Incluye una charla introductoria sobre el fenómeno, observación con telescopios
+                                    especializados y sesión fotográfica guiada.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 3 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> 22 de mayo, 21:00h
+                                    </li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Adultos y jóvenes +10
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">15€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
                                 </div>
                             </div>
                         </div>
@@ -490,97 +340,437 @@
             </div>
         </section>
 
-        <!-- Suscripción a newsletter -->
-        <section class="py-5 bg-cta-gradient text-center">
-            <div class="container py-4">
-                <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <h2 class="display-5 mb-4 text-white">No te pierdas ninguna actividad</h2>
-                        <p class="lead text-white-50 mb-4">Suscríbete a nuestra newsletter y recibe información sobre
-                            nuestras próximas actividades y eventos especiales.</p>
-                        <form class="d-flex">
-                            <input type="email" class="form-control me-2" placeholder="Tu email"
-                                aria-label="Email para newsletter">
-                            <button class="btn btn-primary" type="submit">OK</button>
-                        </form>
+        <!-- Talleres -->
+        <section id="talleres" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Talleres Prácticos</h2>
+                        <p class="lead">Aprende haciendo en nuestros talleres interactivos</p>
                     </div>
                 </div>
 
-            </div>
-            </footer>
+                <div class="row g-4 actividades-grid">
+                    <!-- Taller 1 -->
+                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="taller" data-edad="primaria">
+                        <div class="dome-show-card h-100">
+                            <img src="img/taller-cohete.jpg" class="card-img-top" alt="Taller Construye tu Cohete">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Taller</span>
+                                    <span class="badge bg-warning">Primaria</span>
+                                </div>
+                                <h3 class="card-title h4">Construye tu Cohete</h3>
+                                <p class="card-text">Taller práctico donde los participantes aprenderán sobre propulsión
+                                    y física espacial mientras construyen y lanzan su propio cohete de agua. Cada
+                                    participante se llevará su creación a casa.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 2 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Sábados: 16:00h
+                                    </li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Niños de 7 a 12 años
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">12€</span>
+                                    <a href="talleres.html" class="btn btn-primary">Inscribirse</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Scripts de Bootstrap -->
-            <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+                    <!-- Taller 2 -->
+                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="taller" data-edad="juvenil">
+                        <div class="dome-show-card h-100">
+                            <img src="img/taller-astrofotografia.jpg" class="card-img-top"
+                                alt="Taller de Astrofotografía">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Taller</span>
+                                    <span class="badge bg-danger">Jóvenes</span>
+                                </div>
+                                <h3 class="card-title h4">Astrofotografía Básica</h3>
+                                <p class="card-text">Aprende las técnicas básicas para fotografiar el cielo nocturno,
+                                    desde la Luna y los planetas hasta las estrellas y constelaciones. Incluye sesión
+                                    práctica en nuestra terraza astronómica.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 3 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Último viernes de
+                                        mes: 19:00h</li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Jóvenes de 13 a 17
+                                        años</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">15€</span>
+                                    <a href="talleres.html" class="btn btn-primary">Inscribirse</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Script principal del sitio -->
-            <script src="js/scripts.js"></script>
+                    <!-- Taller 3 -->
+                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="taller" data-edad="infantil">
+                        <div class="dome-show-card h-100">
+                            <img src="img/taller-constelaciones.jpg" class="card-img-top"
+                                alt="Taller Mi Primer Mapa Estelar">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Taller</span>
+                                    <span class="badge bg-success">Infantil</span>
+                                </div>
+                                <h3 class="card-title h4">Mi Primer Mapa Estelar</h3>
+                                <p class="card-text">Taller creativo donde los más pequeños aprenderán sobre las
+                                    constelaciones mientras crean su propio mapa estelar luminoso. Una forma divertida
+                                    de introducirse en el mundo de la astronomía.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Domingos: 12:00h
+                                    </li>
+                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Niños de 4 a 6 años
+                                    </li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">10€</span>
+                                    <a href="talleres.html" class="btn btn-primary">Inscribirse</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
 
-            <!-- Script específico para la página de actividades -->
-            <script src="js/actividades.js"></script>
-</body>
-
-</html>
-
-<!-- Footer -->
-<footer class="py-5">
-    <div class="container">
-        <div class="row g-4">
-            <div class="col-md-4 col-lg-3">
-                <h3 class="text-accent mb-4">Planetario de Madrid</h3>
-                <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón de
-                    Madrid.</p>
-                <div class="social-links d-flex gap-2 mt-3">
-                    <a href="#" class="social-link" aria-label="Facebook">F</a>
-                    <a href="#" class="social-link" aria-label="Twitter">T</a>
-                    <a href="#" class="social-link" aria-label="Instagram">I</a>
-                    <a href="#" class="social-link" aria-label="YouTube">Y</a>
+                    <!-- Ver todos los talleres -->
+                    <div class="col-12 text-center mt-4">
+                        <a href="talleres.html" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-hands me-2"></i> Ver todos los talleres
+                        </a>
+                    </div>
                 </div>
             </div>
+        </section>
 
-            <div class="col-md-4 col-lg-3">
-                <h3 class="text-accent mb-4">Enlaces rápidos</h3>
-                <ul class="list-unstyled footer-links">
-                    <li><a href="index.html">Inicio</a></li>
-                    <li><a href="exposiciones.html">Exposiciones</a></li>
-                    <li><a href="horarios.html">Horarios y Tarifas</a></li>
-                    <li><a href="actividades.html">Actividades</a></li>
-                    <li><a href="contacto.html">Contacto</a></li>
-                </ul>
+        <!-- Eventos Especiales -->
+        <section id="eventos" class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Eventos Especiales</h2>
+                        <p class="lead">Experiencias únicas para momentos señalados</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 actividades-grid">
+                    <!-- Evento 1 -->
+                    <div class="col-md-6 actividad-item" data-tipo="evento" data-edad="familiar">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">15 de mayo, 19:00h</h3>
+                                    <p class="mb-0 opacity-75">Viernes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Evento Especial</span>
+                                <span class="badge bg-info">Familiar</span>
+                            </div>
+                            <h4 class="h4 mb-2">Noche de las Estrellas</h4>
+                            <p class="mb-3">Jornada especial de puertas abiertas con motivo del Día Internacional de la
+                                Astronomía. Incluye observaciones, charlas divulgativas, talleres exprés y proyección
+                                especial en la cúpula.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-accent">Entrada libre hasta completar aforo</span>
+                                <a href="eventos.html" class="btn btn-primary">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evento 2 -->
+                    <div class="col-md-6 actividad-item" data-tipo="evento" data-edad="adulto">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">29 de mayo, 20:00h</h3>
+                                    <p class="mb-0 opacity-75">Viernes</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Evento Especial</span>
+                                <span class="badge bg-danger">Adultos</span>
+                            </div>
+                            <h4 class="h4 mb-2">Conferencia: "Exoplanetas y vida extraterrestre"</h4>
+                            <p class="mb-3">Conferencia a cargo de la Dra. Elena Martínez, astrobióloga del Centro de
+                                Astrobiología (CSIC-INTA), sobre los últimos descubrimientos de exoplanetas y las
+                                posibilidades de vida fuera de la Tierra.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 mb-0">5€</span>
+                                <a href="eventos.html" class="btn btn-primary">Reservar</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ver todos los eventos -->
+                    <div class="col-12 text-center mt-4">
+                        <a href="eventos.html" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-calendar-alt me-2"></i> Ver calendario completo
+                        </a>
+                    </div>
+                </div>
             </div>
+        </section>
 
-            <div class="col-md-4 col-lg-3">
-                <h3 class="text-accent mb-4">Información</h3>
-                <ul class="list-unstyled footer-links">
-                    <li><a href="como-llegar.html">Cómo llegar</a></li>
-                    <li><a href="planifica-visita.html">Planifica tu visita</a></li>
-                    <li><a href="accesibilidad.html">Accesibilidad</a></li>
-                    <li><a href="faq.html">Preguntas frecuentes</a></li>
-                    <li><a href="empleo.html">Trabaja con nosotros</a></li>
-                </ul>
+        <!-- Call to action -->
+        <section class="py-5 bg-cta-gradient">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2 class="h3 fw-bold mb-2">¿Quieres estar al día de todas nuestras actividades?</h2>
+                        <p class="mb-0">Suscríbete a nuestra newsletter y recibe información sobre eventos especiales,
+                            nuevas actividades y ofertas exclusivas.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="#suscripcion" class="btn btn-light btn-lg" data-bs-toggle="modal"
+                            data-bs-target="#modalSuscripcion">
+                            <i class="fas fa-envelope me-2"></i> Suscribirme
+                        </a>
+                    </div>
+                </div>
             </div>
+        </section>
+    </main>
 
-            <div class="col-md-12 col-lg-3">
-                <h3 class="text-accent mb-4">Suscríbete a nuestra newsletter</h3>
-                <p class="text-white-50 mb-3">Recibe información sobre nuestras exposiciones y eventos.</p>
-                <form class="d-flex">
-                    <input type="email" class="form-control me-2" placeholder="Tu email"
-                        aria-label="Email para newsletter">
-                    <button class="btn btn-primary" type="submit">OK</button>
-                </form>
+    <!-- Modal de Suscripción -->
+    <div class="modal fade" id="modalSuscripcion" tabindex="-1" aria-labelledby="modalSuscripcionLabel"
+        aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content bg-dark-transparent text-white">
+                <div class="modal-header border-0">
+                    <h5 class="modal-title" id="modalSuscripcionLabel">Suscríbete a nuestra newsletter</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <form>
+                        <div class="mb-3">
+                            <label for="nombreSuscripcion" class="form-label">Nombre</label>
+                            <input type="text" class="form-control bg-dark text-white" id="nombreSuscripcion" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="emailSuscripcion" class="form-label">Email</label>
+                            <input type="email" class="form-control bg-dark text-white" id="emailSuscripcion" required>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" class="form-check-input" id="checkPolitica" required>
+                            <label class="form-check-label" for="checkPolitica">He leído y acepto la política de
+                                privacidad</label>
+                        </div>
+                        <div class="text-center">
+                            <button type="submit" class="btn btn-primary px-4">Suscribirme</button>
+                        </div>
+                    </form>
+                </div>
             </div>
-        </div>
-
-        <div class="text-center copyright mt-5 pt-4 text-white-50">
-            <p>&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
         </div>
     </div>
-</footer>
 
-<!-- Scripts de Bootstrap -->
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-img rounded-circle me-2"></div>
+                        <span class="fw-bold fs-5">Planetario de Madrid</span>
+                    </div>
+                    <p class="mb-3 opacity-75">Un viaje por el universo en el corazón de Madrid. Explora, aprende y
+                        déjate maravillar por los secretos del cosmos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Enlaces rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="proyecciones.html">Proyecciones</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="info.html">Información</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Visitas</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="grupos-escolares.html">Grupos escolares</a></li>
+                        <li><a href="visitas-guiadas.html">Visitas guiadas</a></li>
+                        <li><a href="cumpleanos.html">Cumpleaños estelares</a></li>
+                        <li><a href="eventos.html">Eventos privados</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3 fw-bold">Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-map-marker-alt mt-1 me-2 text-accent"></i>
+                            <span>Avda. del Planetario, 16<br>28045 Madrid</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-phone-alt mt-1 me-2 text-accent"></i>
+                            <span>91 467 34 62</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
+                            <span>info@planetmadrid.es</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 opacity-75">&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacidad.html" class="text-white opacity-75">Política de
+                                privacidad</a></li>
+                        <li class="list-inline-item ms-3"><a href="legal.html" class="text-white opacity-75">Aviso
+                                legal</a></li>
+                        <li class="list-inline-item ms-3"><a href="cookies.html"
+                                class="text-white opacity-75">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-<!-- Script personalizado para navegación y animaciones -->
-<script src="js/scripts.js"></script>
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navegación activa
+            const currentLocation = location.href;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Navegación suave para anclas
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    if (this.getAttribute('href').length > 1) { // Evita el comportamiento para enlaces vacíos (#)
+                        e.preventDefault();
+                        const targetId = this.getAttribute('href');
+                        const targetElement = document.querySelector(targetId);
+                        if (targetElement) {
+                            window.scrollTo({
+                                top: targetElement.offsetTop - 150,
+                                behavior: 'smooth'
+                            });
+                        }
+                    }
+                });
+            });
+
+            // Activar pestañas del submenú según sección visible
+            const sections = document.querySelectorAll('section[id]');
+            const navItems = document.querySelectorAll('.nav-pills .nav-link');
+
+            window.addEventListener('scroll', () => {
+                let current = '';
+
+                sections.forEach(section => {
+                    const sectionTop = section.offsetTop;
+                    const sectionHeight = section.clientHeight;
+                    if (pageYOffset >= (sectionTop - 200)) {
+                        current = section.getAttribute('id');
+                    }
+                });
+
+                navItems.forEach(navItem => {
+                    navItem.classList.remove('active');
+                    if (navItem.getAttribute('href').substring(1) === current) {
+                        navItem.classList.add('active');
+                    }
+                });
+            });
+
+            // Sistema de filtrado de actividades
+            const filtroTipo = document.getElementById('filtroTipo');
+            const filtroEdad = document.getElementById('filtroEdad');
+            const filtroFecha = document.getElementById('filtroFecha');
+            const actividadItems = document.querySelectorAll('.actividad-item');
+
+            function aplicarFiltros() {
+                const tipoSeleccionado = filtroTipo.value;
+                const edadSeleccionada = filtroEdad.value;
+                const fechaSeleccionada = filtroFecha.value;
+
+                actividadItems.forEach(item => {
+                    const tipoItem = item.dataset.tipo;
+                    const edadItem = item.dataset.edad;
+
+                    // Lógica para mostrar/ocultar según filtros
+                    const mostrarPorTipo = tipoSeleccionado === 'todos' || tipoItem === tipoSeleccionado;
+                    const mostrarPorEdad = edadSeleccionada === 'todos' || edadItem === edadSeleccionada;
+                    const mostrarPorFecha = true; // Para simplificar, asumimos que todos pasan el filtro de fecha
+
+                    if (mostrarPorTipo && mostrarPorEdad && mostrarPorFecha) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+
+                // Comprobar si hay resultados visibles
+                let hayResultados = false;
+                actividadItems.forEach(item => {
+                    if (item.style.display !== 'none') {
+                        hayResultados = true;
+                    }
+                });
+
+                // Mostrar mensaje si no hay resultados
+                const mensajeNoResultados = document.getElementById('mensajeNoResultados');
+                if (!hayResultados) {
+                    // Si no existe el mensaje, lo creamos
+                    if (!mensajeNoResultados) {
+                        const mensaje = document.createElement('div');
+                        mensaje.id = 'mensajeNoResultados';
+                        mensaje.className = 'col-12 text-center mt-4';
+                        mensaje.innerHTML = `
+                            <div class="alert alert-dark">
+                                <i class="fas fa-info-circle me-2"></i> No se encontraron actividades con los filtros seleccionados. Prueba con otras opciones.
+                            </div>
+                        `;
+                        document.querySelector('.actividades-grid').appendChild(mensaje);
+                    }
+                } else {
+                    // Si existe el mensaje y hay resultados, lo eliminamos
+                    if (mensajeNoResultados) {
+                        mensajeNoResultados.remove();
+                    }
+                }
+            }
+
+            // Event listeners para los filtros
+            filtroTipo.addEventListener('change', aplicarFiltros);
+            filtroEdad.addEventListener('change', aplicarFiltros);
+            filtroFecha.addEventListener('change', aplicarFiltros);
+        });
+    </script>
 </body>
 
 </html>
