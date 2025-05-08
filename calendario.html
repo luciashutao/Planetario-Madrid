@@ -10,120 +10,8 @@
         rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="stylesheet" href="css/styles.css">
-    <!-- CSS adicional para el calendario -->
-    <style>
-        .calendar-header {
-            background-color: rgba(11, 61, 145, 0.9);
-            border-radius: 10px 10px 0 0;
-        }
-
-        .calendar-day {
-            min-height: 120px;
-            background-color: rgba(255, 255, 255, 0.05);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-            transition: transform 0.2s, background-color 0.2s;
-        }
-
-        .calendar-day:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-            transform: translateY(-3px);
-        }
-
-        .calendar-day.today {
-            border: 2px solid var(--color-accent);
-            background-color: rgba(238, 155, 0, 0.1);
-        }
-
-        .calendar-day .day-number {
-            font-size: 1.2rem;
-            font-weight: 600;
-            position: absolute;
-            top: 5px;
-            right: 10px;
-            opacity: 0.7;
-        }
-
-        .calendar-day.empty {
-            background-color: rgba(0, 0, 0, 0.1);
-        }
-
-        .event-dot {
-            display: inline-block;
-            width: 10px;
-            height: 10px;
-            border-radius: 50%;
-            margin-right: 5px;
-        }
-
-        .event-proyeccion {
-            background-color: #0d6efd;
-            /* primary */
-        }
-
-        .event-taller {
-            background-color: #198754;
-            /* success */
-        }
-
-        .event-observacion {
-            background-color: #0dcaf0;
-            /* info */
-        }
-
-        .event-especial {
-            background-color: #dc3545;
-            /* danger */
-        }
-
-        .legend-item {
-            display: flex;
-            align-items: center;
-            margin-right: 15px;
-        }
-
-        .event-item {
-            font-size: 0.85rem;
-            padding: 3px 5px;
-            border-radius: 4px;
-            margin-bottom: 3px;
-            white-space: nowrap;
-            overflow: hidden;
-            text-overflow: ellipsis;
-            cursor: pointer;
-            transition: background-color 0.2s;
-        }
-
-        .event-item:hover {
-            opacity: 0.9;
-        }
-
-        .filter-badge {
-            cursor: pointer;
-            transition: opacity 0.2s;
-        }
-
-        .filter-badge.active {
-            opacity: 1;
-        }
-
-        .filter-badge:not(.active) {
-            opacity: 0.5;
-        }
-
-        /* Modal personalizado */
-        .modal-content {
-            background-color: rgba(11, 61, 145, 0.95);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .modal-header {
-            border-bottom-color: rgba(255, 255, 255, 0.1);
-        }
-
-        .modal-footer {
-            border-top-color: rgba(255, 255, 255, 0.1);
-        }
-    </style>
+    <!-- Archivo CSS específico para el calendario -->
+    <link rel="stylesheet" href="css/calendario.css">
 </head>
 
 <body>
@@ -237,45 +125,30 @@
         <!-- Calendario -->
         <section class="py-5">
             <div class="container">
-                <!-- Días de la semana -->
-                <div class="row text-center mb-2">
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Lunes</h5>
+                <div class="calendar-container">
+                    <!-- Encabezado con días de la semana -->
+                    <div class="calendar-row">
+                        <div class="calendar-header text-center"><span>Lunes</span></div>
+                        <div class="calendar-header text-center"><span>Martes</span></div>
+                        <div class="calendar-header text-center"><span>Miércoles</span></div>
+                        <div class="calendar-header text-center"><span>Jueves</span></div>
+                        <div class="calendar-header text-center"><span>Viernes</span></div>
+                        <div class="calendar-header text-center"><span>Sábado</span></div>
+                        <div class="calendar-header text-center"><span>Domingo</span></div>
                     </div>
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Martes</h5>
-                    </div>
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Miércoles</h5>
-                    </div>
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Jueves</h5>
-                    </div>
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Viernes</h5>
-                    </div>
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Sábado</h5>
-                    </div>
-                    <div class="col calendar-header py-2">
-                        <h5 class="mb-0">Domingo</h5>
-                    </div>
-                </div>
 
-                <!-- Primera semana de Mayo -->
-                <div class="row g-0 mb-2">
-                    <!-- Celda vacía para el 29 de abril -->
-                    <div class="col calendar-day empty position-relative p-2">
-                        <div class="day-number text-muted">29</div>
-                    </div>
-                    <!-- Celda vacía para el 30 de abril -->
-                    <div class="col calendar-day empty position-relative p-2">
-                        <div class="day-number text-muted">30</div>
-                    </div>
-                    <!-- Día 1 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">1</div>
-                        <div class="mt-4">
+                    <!-- Primera semana (29 abril - 5 mayo) -->
+                    <div class="calendar-row">
+                        <!-- Celdas de días anteriores al mes actual -->
+                        <div class="calendar-day empty">
+                            <div class="day-number text-muted">29</div>
+                        </div>
+                        <div class="calendar-day empty">
+                            <div class="day-number text-muted">30</div>
+                        </div>
+                        <!-- Día 1 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">1</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -287,22 +160,18 @@
                                 <small>10:30 Peques</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 2 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">2</div>
-                        <div class="mt-4">
+                        <!-- Día 2 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">2</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 3 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">3</div>
-                        <div class="mt-4">
+                        <!-- Día 3 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">3</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -319,11 +188,9 @@
                                 <small>21:30 Observación</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 4 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">4</div>
-                        <div class="mt-4">
+                        <!-- Día 4 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">4</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -336,46 +203,37 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Segunda semana de Mayo (día 5-11) -->
-                <div class="row g-0 mb-2">
-                    <!-- Día 5 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">5</div>
-                        <div class="mt-4">
-                            <!-- Día sin actividades (Cerrado) -->
-                            <div class="text-muted text-center mt-3">
+                    <!-- Segunda semana (5-11 mayo) -->
+                    <div class="calendar-row">
+                        <!-- Día 5 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">5</div>
+                            <div class="text-muted text-center mt-4">
                                 <small>CERRADO</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 6 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">6</div>
-                        <div class="mt-4">
+                        <!-- Día 6 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">6</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 7 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">7</div>
-                        <div class="mt-4">
+                        <!-- Día 7 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">7</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 8 (HOY) -->
-                    <div class="col calendar-day today position-relative p-2">
-                        <div class="day-number">8</div>
-                        <div class="mt-4">
+                        <!-- Día 8 de Mayo (HOY) -->
+                        <div class="calendar-day today">
+                            <div class="day-number">8</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -387,22 +245,18 @@
                                 <small>Día Astronomía</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 9 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">9</div>
-                        <div class="mt-4">
+                        <!-- Día 9 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">9</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 10 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">10</div>
-                        <div class="mt-4">
+                        <!-- Día 10 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">10</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -419,11 +273,9 @@
                                 <small>21:30 Observación</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 11 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">11</div>
-                        <div class="mt-4">
+                        <!-- Día 11 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">11</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -436,46 +288,37 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Tercera semana de Mayo (mostraremos solo esta parte) -->
-                <div class="row g-0 mb-2">
-                    <!-- Día 12 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">12</div>
-                        <div class="mt-4">
-                            <!-- Día sin actividades (Cerrado) -->
-                            <div class="text-muted text-center mt-3">
+                    <!-- Tercera semana (12-18 mayo) -->
+                    <div class="calendar-row">
+                        <!-- Día 12 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">12</div>
+                            <div class="text-muted text-center mt-4">
                                 <small>CERRADO</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 13 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">13</div>
-                        <div class="mt-4">
+                        <!-- Día 13 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">13</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 14 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">14</div>
-                        <div class="mt-4">
+                        <!-- Día 14 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">14</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 15 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">15</div>
-                        <div class="mt-4">
+                        <!-- Día 15 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">15</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -487,22 +330,18 @@
                                 <small>19:00 Noche Estrellas</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 16 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">16</div>
-                        <div class="mt-4">
+                        <!-- Día 16 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">16</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
                                 <small>12:00 Cosmos</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 17 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">17</div>
-                        <div class="mt-4">
+                        <!-- Día 17 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">17</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -519,11 +358,9 @@
                                 <small>21:30 Observación</small>
                             </div>
                         </div>
-                    </div>
-                    <!-- Día 18 -->
-                    <div class="col calendar-day position-relative p-2">
-                        <div class="day-number">18</div>
-                        <div class="mt-4">
+                        <!-- Día 18 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">18</div>
                             <div class="event-item bg-primary text-white" data-event-type="proyeccion"
                                 data-bs-toggle="modal" data-bs-target="#eventModal"
                                 data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
@@ -536,9 +373,168 @@
                             </div>
                         </div>
                     </div>
-                </div>
 
-                <!-- Nota: El resto de semanas seguiría el mismo patrón -->
+                    <!-- Cuarta semana (19-25 mayo) -->
+                    <div class="calendar-row">
+                        <!-- Día 19 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">19</div>
+                            <div class="text-muted text-center mt-4">
+                                <small>CERRADO</small>
+                            </div>
+                        </div>
+                        <!-- Día 20 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">20</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                        <!-- Día 21 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">21</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                        <!-- Día 22 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">22</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-info text-white" data-event-type="observacion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Observación Eclipse Lunar" data-event-time="21:00">
+                                <small>21:00 Eclipse Lunar</small>
+                            </div>
+                        </div>
+                        <!-- Día 23 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">23</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                        <!-- Día 24 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">24</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Construye tu Cohete" data-event-time="16:00">
+                                <small>16:00 Cohete</small>
+                            </div>
+                            <div class="event-item bg-info text-white" data-event-type="observacion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Observación Nocturna" data-event-time="21:30">
+                                <small>21:30 Observación</small>
+                            </div>
+                        </div>
+                        <!-- Día 25 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">25</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Mi Primer Mapa Estelar" data-event-time="12:00">
+                                <small>12:00 Mapa Estelar</small>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quinta semana (26-31 mayo) -->
+                    <div class="calendar-row">
+                        <!-- Día 26 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">26</div>
+                            <div class="text-muted text-center mt-4">
+                                <small>CERRADO</small>
+                            </div>
+                        </div>
+                        <!-- Día 27 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">27</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                        <!-- Día 28 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">28</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                        <!-- Día 29 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">29</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-danger text-white" data-event-type="especial"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Conferencia: Exoplanetas y vida extraterrestre"
+                                data-event-time="20:00">
+                                <small>20:00 Conferencia</small>
+                            </div>
+                        </div>
+                        <!-- Día 30 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">30</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                        <!-- Día 31 de Mayo -->
+                        <div class="calendar-day">
+                            <div class="day-number">31</div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Construye tu Cohete" data-event-time="16:00">
+                                <small>16:00 Cohete</small>
+                            </div>
+                            <div class="event-item bg-info text-white" data-event-type="observacion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Observación Nocturna" data-event-time="21:30">
+                                <small>21:30 Observación</small>
+                            </div>
+                        </div>
+                        <!-- Celda vacía para junio -->
+                        <div class="calendar-day empty">
+                            <div class="day-number text-muted">1</div>
+                        </div>
+                    </div>
+                </div>
 
                 <!-- Leyenda -->
                 <div class="mt-4 d-flex flex-wrap">
@@ -884,7 +880,7 @@
                         'especial': 'Evento Especial'
                     };
 
-                    // Descripción según el tipo de evento (estas descripciones serían dinámicas en un entorno real)
+                    // Descripción según el tipo de evento
                     let description = '';
                     switch (type) {
                         case 'proyeccion':
@@ -910,7 +906,7 @@
                 });
             }
 
-            // Control de meses (para futura implementación)
+            // Control de meses
             const prevMonthBtn = document.getElementById('prevMonth');
             const nextMonthBtn = document.getElementById('nextMonth');
             const monthSelector = document.getElementById('monthSelector');
