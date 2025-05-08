@@ -1,0 +1,442 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Exposiciones - Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Enlace para saltar a contenido principal (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <a class="nav-link active" href="exposiciones.html" aria-current="page">Exposiciones</a>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner de página -->
+    <section
+        class="page-banner position-relative d-flex align-items-center justify-content-center text-center text-white">
+        <div class="banner-image position-absolute"></div>
+        <div class="container py-5 position-relative z-index-1">
+            <h1 class="display-4 fw-bold mb-3">Nuestras Exposiciones</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item active text-white-50" aria-current="page">Exposiciones</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content">
+        <!-- Exposiciones permanentes -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Exposiciones Permanentes</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Descubre nuestras exposiciones disponibles
+                        todo el
+                        año</p>
+                </div>
+
+                <div class="row mb-5" id="sistema-solar">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="rounded overflow-hidden shadow-lg">
+                            <img src="img/sistema-solar-full.jpg" alt="Exposición del Sistema Solar" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="h2 text-white mb-3">El Sistema Solar</h3>
+                        <p class="text-white-50 mb-3">Embárcate en un fascinante viaje por nuestro vecindario
+                            cósmico.
+                            Esta exposición permanente ofrece una visión detallada de los ocho planetas, sus lunas,
+                            los
+                            planetas enanos, asteroides, cometas y otros objetos que conforman nuestro Sistema
+                            Solar.
+                        </p>
+                        <p class="text-white-50 mb-3">A través de modelos a escala, paneles informativos
+                            interactivos y
+                            proyecciones envolventes, podrás conocer las características únicas de cada planeta,
+                            desde
+                            los anillos de Saturno hasta las tormentas de Júpiter o los misterios de los planetas
+                            enanos
+                            como Plutón y Ceres.</p>
+                        <div class="exposition-details mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="icon-circle bg-primary text-white me-2">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <span class="text-white">Sala Principal, Planta 1</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-circle bg-primary text-white me-2">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <span class="text-white">Duración recomendada: 45 minutos</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Información de visitas guiadas</a>
+                    </div>
+                </div>
+
+                <hr class="my-5 border-secondary">
+
+                <div class="row mb-5 flex-lg-row-reverse" id="estrellas">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="rounded overflow-hidden shadow-lg">
+                            <img src="img/viaje-estrellas.jpg" alt="Exposición Viaje a las Estrellas" class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="h2 text-white mb-3">Viaje a las Estrellas</h3>
+                        <p class="text-white-50 mb-3">¿Alguna vez has mirado al cielo nocturno y te has preguntado
+                            qué
+                            son esos puntos brillantes? Esta exposición te lleva más allá de nuestro Sistema Solar
+                            para
+                            descubrir el fascinante mundo de las estrellas, constelaciones, nebulosas y galaxias.
+                        </p>
+                        <p class="text-white-50 mb-3">Aprenderás a reconocer las principales constelaciones visibles
+                            desde el hemisferio norte, conocerás el ciclo de vida de las estrellas desde su
+                            nacimiento
+                            en coloridas nebulosas hasta su espectacular muerte como supernovas o su transformación
+                            en
+                            exóticos objetos como agujeros negros o estrellas de neutrones.</p>
+                        <div class="exposition-details mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="icon-circle bg-primary text-white me-2">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <span class="text-white">Sala Estelar, Planta 2</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-circle bg-primary text-white me-2">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <span class="text-white">Duración recomendada: 60 minutos</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Información de visitas guiadas</a>
+                    </div>
+                </div>
+
+                <hr class="my-5 border-secondary">
+
+                <div class="row" id="exploracion">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <div class="rounded overflow-hidden shadow-lg">
+                            <img src="img/exploracion-espacial.jpg" alt="Exposición Exploración Espacial"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <h3 class="h2 text-white mb-3">Exploración Espacial</h3>
+                        <p class="text-white-50 mb-3">Desde el lanzamiento del Sputnik en 1957 hasta las misiones
+                            más
+                            recientes a Marte y más allá, esta exposición recorre la apasionante historia de la
+                            exploración espacial humana y robótica, destacando los hitos más importantes en nuestra
+                            conquista del espacio.</p>
+                        <p class="text-white-50 mb-3">Podrás ver réplicas de famosas naves espaciales como el Apolo,
+                            el
+                            Voyager o el Mars Rover, conocer la vida a bordo de la Estación Espacial Internacional y
+                            descubrir las futuras misiones que nos llevarán de regreso a la Luna y eventualmente a
+                            Marte.</p>
+                        <div class="exposition-details mb-4">
+                            <div class="d-flex align-items-center mb-2">
+                                <div class="icon-circle bg-primary text-white me-2">
+                                    <i class="bi bi-geo-alt"></i>
+                                </div>
+                                <span class="text-white">Sala de Misiones, Planta 1</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <div class="icon-circle bg-primary text-white me-2">
+                                    <i class="bi bi-clock"></i>
+                                </div>
+                                <span class="text-white">Duración recomendada: 50 minutos</span>
+                            </div>
+                        </div>
+                        <a href="#" class="btn btn-primary">Información de visitas guiadas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exposiciones temporales -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Exposiciones Temporales</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Explora nuestras exposiciones especiales por
+                        tiempo limitado</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="card exhibition-card h-100">
+                            <img src="img/exoplanetas.jpg" class="card-img-top"
+                                alt="Exposición Mundos Distantes: Exoplanetas">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="card-title">Mundos Distantes: Exoplanetas</h3>
+                                    <span class="badge bg-primary">Nuevo</span>
+                                </div>
+                                <p class="card-text">Descubre los planetas que orbitan estrellas más allá de nuestro
+                                    Sol. Esta exposición presenta los últimos descubrimientos sobre mundos
+                                    alienígenas,
+                                    desde gigantes gaseosos calientes hasta posibles "Tierras 2.0".</p>
+                                <div class="exposition-details my-3">
+                                    <p class="text-white-50 mb-1"><strong>Fechas:</strong> 1 mayo - 31 julio 2025
+                                    </p>
+                                    <p class="text-white-50 mb-0"><strong>Ubicación:</strong> Sala Temporal, Planta
+                                        2
+                                    </p>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="exposicion-exoplanetas.html" class="btn btn-primary">Más
+                                        información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="card exhibition-card h-100">
+                            <img src="img/agujeros-negros.jpg" class="card-img-top"
+                                alt="Exposición Agujeros Negros: Guardianes del Tiempo">
+                            <div class="card-body d-flex flex-column">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h3 class="card-title">Agujeros Negros: Guardianes del Tiempo</h3>
+                                    <span class="badge bg-danger">Último mes</span>
+                                </div>
+                                <p class="card-text">Adéntrate en el misterioso mundo de los objetos más extremos
+                                    del
+                                    universo. Esta exposición revela los secretos de los agujeros negros, desde su
+                                    formación hasta las recientes imágenes capturadas por el Event Horizon
+                                    Telescope.
+                                </p>
+                                <div class="exposition-details my-3">
+                                    <p class="text-white-50 mb-1"><strong>Fechas:</strong> 10 marzo - 15 mayo 2025
+                                    </p>
+                                    <p class="text-white-50 mb-0"><strong>Ubicación:</strong> Sala Cosmos, Planta 3
+                                    </p>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="exposicion-agujeros-negros.html" class="btn btn-primary">Más
+                                        información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <h3 class="h4 text-white mb-4">Próximas exposiciones</h3>
+                    <div class="row justify-content-center">
+                        <div class="col-md-8">
+                            <div class="upcoming-exhibition p-4 rounded">
+                                <h4 class="h5 text-white">Mujeres en el Espacio</h4>
+                                <p class="text-white-50 mb-2">Un recorrido por las contribuciones de mujeres
+                                    destacadas
+                                    en la astronomía y la exploración espacial, desde Hipatia de Alejandría hasta
+                                    las
+                                    astronautas contemporáneas.</p>
+                                <p class="text-white-50 mb-0"><strong>Inauguración:</strong> 15 junio 2025</p>
+                            </div>
+
+                            <div class="upcoming-exhibition p-4 rounded mt-3">
+                                <h4 class="h5 text-white">Telescopios: Ventanas al Universo</h4>
+                                <p class="text-white-50 mb-2">Historia y evolución de los instrumentos que nos han
+                                    permitido observar el cosmos, desde el telescopio de Galileo hasta el James
+                                    Webb.
+                                </p>
+                                <p class="text-white-50 mb-0"><strong>Inauguración:</strong> 10 septiembre 2025</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyecciones en la cúpula -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Proyecciones en la Cúpula</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Disfruta de espectaculares viajes cósmicos en
+                        nuestra sala de proyección inmersiva</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="card dome-show-card h-100">
+                            <img src="img/show-cosmos.jpg" class="card-img-top"
+                                alt="Proyección Cosmos: Un Viaje Personal">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Cosmos: Un Viaje Personal</h3>
+                                <p class="card-text">Inspirado en la icónica serie de Carl Sagan, este espectáculo
+                                    te
+                                    lleva a través del tiempo y el espacio para explorar los misterios del universo.
+                                </p>
+                                <div class="show-details my-3">
+                                    <p class="text-white-50 mb-1"><strong>Duración:</strong> 45 minutos</p>
+                                    <p class="text-white-50 mb-0"><strong>Idiomas:</strong> Español e Inglés</p>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="proyecciones.html#cosmos" class="btn btn-primary">Horarios</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card dome-show-card h-100">
+                            <img src="img/show-planetas.jpg" class="card-img-top" alt="Proyección Otros Mundos">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Otros Mundos</h3>
+                                <p class="card-text">Un viaje inmersivo a través de los planetas de nuestro Sistema
+                                    Solar y los fascinantes exoplanetas descubiertos en nuestra galaxia.</p>
+                                <div class="show-details my-3">
+                                    <p class="text-white-50 mb-1"><strong>Duración:</strong> 40 minutos</p>
+                                    <p class="text-white-50 mb-0"><strong>Idiomas:</strong> Español, Inglés y
+                                        Francés
+                                    </p>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="proyecciones.html#otros-mundos" class="btn btn-primary">Horarios</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="card dome-show-card h-100">
+                            <img src="img/show-estrellas.jpg" class="card-img-top" alt="Proyección El Cielo de Madrid">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">El Cielo de Madrid</h3>
+                                <p class="card-text">Aprende a identificar estrellas, planetas y constelaciones
+                                    visibles
+                                    desde Madrid en cada estación del año con esta proyección guiada en vivo.</p>
+                                <div class="show-details my-3">
+                                    <p class="text-white-50 mb-1"><strong>Duración:</strong> 35 minutos</p>
+                                    <p class="text-white-50 mb-0"><strong>Idiomas:</strong> Español</p>
+                                </div>
+                                <div class="mt-auto">
+                                    <a href="proyecciones.html#cielo-madrid" class="btn btn-primary">Horarios</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="proyecciones.html" class="btn btn-outline-light btn-lg">Ver toda la programación</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Planetario de Madrid</h3>
+                    <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón
+                        de
+                        Madrid.</p>
+                    <div class="social-links d-flex gap-2 mt-3">
+                        <a href="#" class="social-link" aria-label="Facebook">F</a>
+                        <a href="#" class="social-link" aria-label="Twitter">T</a>
+                        <a href="#" class="social-link" aria-label="Instagram">I</a>
+                        <a href="#" class="social-link" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Enlaces rápidos</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Información</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="como-llegar.html">Cómo llegar</a></li>
+                        <li><a href="planifica-visita.html">Planifica tu visita</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                        <li><a href="faq.html">Preguntas frecuentes</a></li>
+                        <li><a href="empleo.html">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="text-accent mb-4">Suscríbete a nuestra newsletter</h3>
+                    <p class="text-white-50 mb-3">Recibe información sobre nuestras exposiciones y eventos.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Tu email"
+                            aria-label="Email para newsletter">
+                        <button class="btn btn-primary" type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center copyright mt-5 pt-4 text-white-50">
+                <p>&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script personalizado para navegación y animaciones -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

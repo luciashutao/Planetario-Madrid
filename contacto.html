@@ -1,0 +1,552 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contacto - Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Enlace para saltar a contenido principal (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                            <a class="nav-link active" href="contacto.html" aria-current="page">Contacto</a>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner de página -->
+    <section
+        class="page-banner position-relative d-flex align-items-center justify-content-center text-center text-white">
+        <div class="banner-image position-absolute"></div>
+        <div class="container py-5 position-relative z-index-1">
+            <h1 class="display-4 fw-bold mb-3">Contacto</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item active text-white-50" aria-current="page">Contacto</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content">
+        <!-- Información de contacto y formulario -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row g-5">
+                    <!-- Columna de información de contacto -->
+                    <div class="col-lg-5">
+                        <h2 class="display-6 mb-4 text-white">Información de contacto</h2>
+
+                        <div class="contact-info">
+                            <div class="contact-item d-flex mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-geo-alt-fill"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h3 class="h5 text-white mb-2">Dirección</h3>
+                                    <p class="text-white-50 mb-0">
+                                        Avenida del Planetario, 16<br>
+                                        Parque Tierno Galván<br>
+                                        28045 Madrid, España
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item d-flex mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-telephone-fill"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h3 class="h5 text-white mb-2">Teléfono</h3>
+                                    <p class="text-white-50 mb-0">
+                                        <a href="tel:+34914673461" class="text-white-50">+34 91 467 34 61</a><br>
+                                        <small>Horario de atención: 10:00 - 18:00 (L-V)</small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item d-flex mb-4">
+                                <div class="contact-icon">
+                                    <i class="bi bi-envelope-fill"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h3 class="h5 text-white mb-2">Email</h3>
+                                    <p class="text-white-50 mb-0">
+                                        <a href="mailto:info@planetmad.es"
+                                            class="text-white-50">info@planetmad.es</a><br>
+                                        <small>Te responderemos en 24-48 horas</small>
+                                    </p>
+                                </div>
+                            </div>
+
+                            <div class="contact-item d-flex">
+                                <div class="contact-icon">
+                                    <i class="bi bi-clock-fill"></i>
+                                </div>
+                                <div class="ms-3">
+                                    <h3 class="h5 text-white mb-2">Horario</h3>
+                                    <p class="text-white-50 mb-0">
+                                        Martes a Viernes: 09:30 - 20:00h<br>
+                                        Sábados y Domingos: 10:00 - 21:00h<br>
+                                        Lunes: Cerrado
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="social-contact mt-5">
+                            <h3 class="h5 text-white mb-3">Síguenos en redes sociales</h3>
+                            <div class="social-links d-flex gap-3">
+                                <a href="#" class="social-link-large" aria-label="Facebook">
+                                    <i class="bi bi-facebook"></i>
+                                </a>
+                                <a href="#" class="social-link-large" aria-label="Twitter">
+                                    <i class="bi bi-twitter-x"></i>
+                                </a>
+                                <a href="#" class="social-link-large" aria-label="Instagram">
+                                    <i class="bi bi-instagram"></i>
+                                </a>
+                                <a href="#" class="social-link-large" aria-label="YouTube">
+                                    <i class="bi bi-youtube"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Columna de formulario de contacto -->
+                    <div class="col-lg-7">
+                        <div class="contact-form-container p-4 p-lg-5 rounded">
+                            <h2 class="display-6 mb-4 text-white">Envíanos un mensaje</h2>
+
+                            <form class="contact-form needs-validation" novalidate>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="name" class="form-label text-white">Nombre</label>
+                                        <input type="text" class="form-control" id="name" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, introduce tu nombre.
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="email" class="form-label text-white">Email</label>
+                                        <input type="email" class="form-control" id="email" required>
+                                        <div class="invalid-feedback">
+                                            Por favor, introduce un email válido.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="phone" class="form-label text-white">Teléfono (opcional)</label>
+                                        <input type="tel" class="form-control" id="phone">
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="subject" class="form-label text-white">Asunto</label>
+                                        <select class="form-select" id="subject" required>
+                                            <option value="" selected disabled>Selecciona una opción</option>
+                                            <option value="info">Información general</option>
+                                            <option value="booking">Reserva de grupo</option>
+                                            <option value="feedback">Comentarios y sugerencias</option>
+                                            <option value="complaint">Reclamación</option>
+                                            <option value="other">Otros</option>
+                                        </select>
+                                        <div class="invalid-feedback">
+                                            Por favor, selecciona un asunto.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="message" class="form-label text-white">Mensaje</label>
+                                        <textarea class="form-control" id="message" rows="5" required></textarea>
+                                        <div class="invalid-feedback">
+                                            Por favor, escribe tu mensaje.
+                                        </div>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="policy-agreement"
+                                                required>
+                                            <label class="form-check-label text-white-50" for="policy-agreement">
+                                                He leído y acepto la <a href="privacidad.html"
+                                                    class="text-white">política de privacidad</a>
+                                            </label>
+                                            <div class="invalid-feedback">
+                                                Debes aceptar la política de privacidad.
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 mt-4">
+                                        <button type="submit" class="btn btn-primary btn-lg w-100">Enviar
+                                            mensaje</button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mapa y cómo llegar -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Cómo llegar</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">El Planetario de Madrid está ubicado en el Parque
+                        Tierno Galván, en una zona de fácil acceso.</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-lg-6">
+                        <div class="map-container rounded overflow-hidden shadow-lg">
+                            <!-- En un sitio real, aquí iría un iframe con Google Maps -->
+                            <img src="img/mapa-planetario.jpg" alt="Mapa ubicación del Planetario de Madrid"
+                                class="img-fluid w-100">
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6">
+                        <div class="transport-options">
+                            <div class="transport-item mb-4">
+                                <h3 class="h4 text-white mb-3">
+                                    <i class="bi bi-train-front me-2"></i> Metro
+                                </h3>
+                                <p class="text-white-50 mb-0">
+                                    <strong>Línea 6 (Circular):</strong> Estación Méndez Álvaro<br>
+                                    <strong>Línea 3 (Amarilla):</strong> Estación Delicias
+                                </p>
+                            </div>
+
+                            <div class="transport-item mb-4">
+                                <h3 class="h4 text-white mb-3">
+                                    <i class="bi bi-bus-front me-2"></i> Autobús
+                                </h3>
+                                <p class="text-white-50 mb-0">
+                                    <strong>Líneas:</strong> 8, 19, 45, 47, 59, 85, 86<br>
+                                    Paradas cercanas: Planetario, Méndez Álvaro o Parque Tierno Galván
+                                </p>
+                            </div>
+
+                            <div class="transport-item mb-4">
+                                <h3 class="h4 text-white mb-3">
+                                    <i class="bi bi-car-front me-2"></i> En coche
+                                </h3>
+                                <p class="text-white-50 mb-0">
+                                    GPS: 40°23'43.0"N 3°41'14.0"W<br>
+                                    Parking público disponible en la entrada principal del Parque Tierno Galván.<br>
+                                    Acceso desde la M-30 (salida Méndez Álvaro).
+                                </p>
+                            </div>
+
+                            <div class="transport-item">
+                                <h3 class="h4 text-white mb-3">
+                                    <i class="bi bi-bicycle me-2"></i> Bicicleta
+                                </h3>
+                                <p class="text-white-50 mb-0">
+                                    Estación BiciMAD en la entrada del Parque Tierno Galván.<br>
+                                    Aparcamiento para bicicletas disponible junto a la entrada principal del Planetario.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FAQ -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Preguntas frecuentes</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Aquí encontrarás respuestas a las preguntas más
+                        comunes.</p>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="accordion" id="accordionFAQ">
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h3 class="accordion-header" id="headingOne">
+                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
+                                        aria-expanded="false" aria-controls="collapseOne">
+                                        ¿Es necesario reservar las entradas con antelación?
+                                    </button>
+                                </h3>
+                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
+                                    data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">Aunque no es imprescindible, recomendamos reservar las entradas
+                                            online para garantizar tu plaza, especialmente los fines de semana, festivos
+                                            y durante las vacaciones escolares. Las entradas online tienen un 5% de
+                                            descuento respecto a la compra en taquilla.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h3 class="accordion-header" id="headingTwo">
+                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                        aria-expanded="false" aria-controls="collapseTwo">
+                                        ¿Hay visitas guiadas?
+                                    </button>
+                                </h3>
+                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
+                                    data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">Sí, ofrecemos visitas guiadas para grupos de 10 o más personas.
+                                            Estas visitas deben reservarse con al menos una semana de antelación.
+                                            También tenemos visitas guiadas abiertas al público los sábados y domingos a
+                                            las 12:00h, sin coste adicional pero con plazas limitadas.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h3 class="accordion-header" id="headingThree">
+                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                        aria-expanded="false" aria-controls="collapseThree">
+                                        ¿Hay cafetería o zona de picnic?
+                                    </button>
+                                </h3>
+                                <div id="collapseThree" class="accordion-collapse collapse"
+                                    aria-labelledby="headingThree" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">Disponemos de una cafetería en la primera planta con vistas al
+                                            parque, abierta en el mismo horario que el Planetario. En el exterior hay
+                                            zonas de picnic dentro del Parque Tierno Galván donde puedes disfrutar de tu
+                                            propia comida.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h3 class="accordion-header" id="headingFour">
+                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                        aria-expanded="false" aria-controls="collapseFour">
+                                        ¿Es accesible para personas con movilidad reducida?
+                                    </button>
+                                </h3>
+                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
+                                    data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">Sí, el Planetario de Madrid está completamente adaptado para
+                                            personas con movilidad reducida. Contamos con rampas de acceso, ascensores,
+                                            aseos adaptados y plazas reservadas en la sala de proyecciones. También
+                                            disponemos de dispositivos de audiodescripción y bucle magnético para
+                                            personas con discapacidad visual o auditiva.</p>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0">
+                                <h3 class="accordion-header" id="headingFive">
+                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                        aria-expanded="false" aria-controls="collapseFive">
+                                        ¿Se pueden hacer fotos dentro del Planetario?
+                                    </button>
+                                </h3>
+                                <div id="collapseFive" class="accordion-collapse collapse" aria-labelledby="headingFive"
+                                    data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        <p class="mb-0">Se permite hacer fotografías sin flash en las áreas de
+                                            exposición. Durante las proyecciones en la cúpula no está permitido el uso
+                                            de cámaras ni teléfonos móviles. Para uso profesional o comercial es
+                                            necesario solicitar permiso con antelación contactando con nuestro
+                                            departamento de comunicación.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="text-center mt-4">
+                            <a href="faq.html" class="btn btn-outline-light">Ver todas las preguntas frecuentes</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Newsletter -->
+        <section class="py-5 bg-cta-gradient text-center">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 mb-4 text-white">Mantente informado</h2>
+                        <p class="lead text-white-50 mb-4">Suscríbete a nuestra newsletter y recibe información sobre
+                            nuevas exposiciones, actividades y eventos especiales.</p>
+                        <form class="row g-3 justify-content-center">
+                            <div class="col-md-8">
+                                <input type="email" class="form-control form-control-lg" placeholder="Tu email"
+                                    aria-label="Email para newsletter">
+                            </div>
+                            <div class="col-md-auto">
+                                <button type="submit" class="btn btn-primary btn-lg w-100">Suscribirme</button>
+                            </div>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Planetario de Madrid</h3>
+                    <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón de
+                        Madrid.</p>
+                    <div class="social-links d-flex gap-2 mt-3">
+                        <a href="#" class="social-link" aria-label="Facebook">F</a>
+                        <a href="#" class="social-link" aria-label="Twitter">T</a>
+                        <a href="#" class="social-link" aria-label="Instagram">I</a>
+                        <a href="#" class="social-link" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Enlaces rápidos</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Información</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="como-llegar.html">Cómo llegar</a></li>
+                        <li><a href="planifica-visita.html">Planifica tu visita</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                        <li><a href="faq.html">Preguntas frecuentes</a></li>
+                        <li><a href="empleo.html">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="text-accent mb-4">Suscríbete a nuestra newsletter</h3>
+                    <p class="text-white-50 mb-3">Recibe información sobre nuestras exposiciones y eventos.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Tu email"
+                            aria-label="Email para newsletter">
+                        <button class="btn btn-primary" type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center copyright mt-5 pt-4 text-white-50">
+                <p>&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script principal del sitio -->
+    <script src="js/scripts.js"></script>
+
+    <!-- Script para validación del formulario -->
+    <script>
+        // Script de validación de formulario
+        (function () {
+            'use strict';
+
+            // Fetch all forms we want to apply custom validation styles to
+            var forms = document.querySelectorAll('.needs-validation');
+
+            // Loop over them and prevent submission
+            Array.prototype.slice.call(forms).forEach(function (form) {
+                form.addEventListener('submit', function (event) {
+                    if (!form.checkValidity()) {
+                        event.preventDefault();
+                        event.stopPropagation();
+                    } else {
+                        event.preventDefault();
+                        // Simulación de envío (en un sitio real enviaría los datos al servidor)
+                        showFormSuccess();
+                    }
+
+                    form.classList.add('was-validated');
+                }, false);
+            });
+
+            function showFormSuccess() {
+                const form = document.querySelector('.contact-form');
+                const successMessage = document.createElement('div');
+                successMessage.className = 'alert alert-success mt-4';
+                successMessage.innerHTML = `
+                    <h4 class="alert-heading">¡Mensaje enviado correctamente!</h4>
+                    <p>Gracias por ponerte en contacto con nosotros. Hemos recibido tu mensaje y te responderemos a la mayor brevedad posible.</p>
+                `;
+
+                // Limpiar formulario
+                form.reset();
+                form.classList.remove('was-validated');
+
+                // Mostrar mensaje de éxito
+                form.parentNode.appendChild(successMessage);
+
+                // Desplazarse hasta el mensaje
+                successMessage.scrollIntoView({ behavior: 'smooth' });
+
+                // Eliminar mensaje después de 5 segundos
+                setTimeout(() => {
+                    successMessage.remove();
+                }, 5000);
+            }
+        })();
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,796 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitas Guiadas - Planetario de Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Skip Link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Encabezado y navegación -->
+    <header class="sticky-top">
+        <nav class="navbar navbar-expand-lg navbar-dark py-3">
+            <div class="container">
+                <a class="navbar-brand d-flex align-items-center" href="index.html">
+                    <div class="logo-img rounded-circle me-2"></div>
+                    <span class="fw-bold">Planetario de Madrid</span>
+                </a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+                <div class="collapse navbar-collapse" id="navbarMain">
+                    <ul class="navbar-nav ms-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link" href="index.html">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="exposiciones.html">Exposiciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="proyecciones.html">Proyecciones</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="actividades.html">Actividades</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link active" href="visitas.html">Visitas</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="info.html">Información</a>
+                        </li>
+                    </ul>
+                    <a href="entradas.html" class="btn btn-tickets ms-lg-3">
+                        <i class="fas fa-ticket-alt me-1"></i> Comprar Entradas
+                    </a>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- Banner -->
+    <section class="page-banner d-flex align-items-center justify-content-center text-center">
+        <div class="banner-image"></div>
+        <div class="container z-index-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="visitas.html" class="text-white">Visitas</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Visitas Guiadas</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-4 fw-bold mb-3 fade-in">Visitas Guiadas</h1>
+                    <p class="lead opacity-75 fade-in">Descubre el universo de la mano de nuestros expertos astrónomos
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Planetas decorativos -->
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" class="pb-5">
+        <!-- Introducción -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5">
+                            <h2 class="display-5 fw-bold mb-4">Una experiencia astronómica única</h2>
+                            <p class="lead">Nuestras visitas guiadas ofrecen una experiencia inmersiva y educativa,
+                                donde expertos te acompañarán en un viaje cósmico a través de nuestras instalaciones,
+                                exposiciones y proyecciones, revelando los secretos del universo de manera amena y
+                                didáctica.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Visitas en Grupo</h3>
+                            <p>Perfectas para familias, amigos o asociaciones que desean disfrutar de una experiencia
+                                compartida.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-graduation-cap"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Guías Especializados</h3>
+                            <p>Nuestros guías son astrónomos y divulgadores científicos con amplia experiencia
+                                educativa.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-language"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Idiomas Disponibles</h3>
+                            <p>Ofrecemos visitas guiadas en español, inglés, francés y lengua de signos española (LSE).
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipos de visitas guiadas -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Nuestras visitas guiadas</h2>
+                        <p class="lead">Adaptadas a diferentes intereses y necesidades.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/visita-general.jpg" class="card-img-top" alt="Visita guiada general">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Visita General</h3>
+                                <p class="card-text mb-3">Un recorrido completo por nuestras instalaciones, incluyendo
+                                    la sala de exposiciones, el observatorio y la proyección en la cúpula. Ideal para
+                                    conocer el planetario por primera vez.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Grupos de 10-25
+                                        personas</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> 12€ por persona</li>
+                                </ul>
+                                <a href="#reserva" class="btn btn-primary">Reservar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/visita-tematica.jpg" class="card-img-top" alt="Visita guiada temática">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Visita Temática</h3>
+                                <p class="card-text mb-3">Centrada en temas específicos como exploración espacial,
+                                    planetas, estrellas o fenómenos astronómicos. Incluye material didáctico
+                                    especializado y proyección temática.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 2 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Grupos de 10-20
+                                        personas</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> 15€ por persona</li>
+                                </ul>
+                                <a href="#reserva" class="btn btn-primary">Reservar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 mt-2">
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/visita-nocturna.jpg" class="card-img-top"
+                                alt="Visita nocturna con observación">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Visita Nocturna con Observación</h3>
+                                <p class="card-text mb-3">Una experiencia única que combina la visita al planetario con
+                                    una sesión de observación astronómica real desde nuestra terraza, utilizando
+                                    telescopios profesionales.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 2.5 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Grupos de 10-15
+                                        personas</li>
+                                    <li class="mb-2"><i class="fas fa-calendar-alt text-accent me-2"></i> Solo noches
+                                        despejadas</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> 20€ por persona</li>
+                                </ul>
+                                <a href="#reserva" class="btn btn-primary">Reservar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/visita-accesible.jpg" class="card-img-top" alt="Visita inclusiva y accesible">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Visita Inclusiva y Accesible</h3>
+                                <p class="card-text mb-3">Diseñada para garantizar la accesibilidad a todos los
+                                    públicos, con recursos adaptados para personas con discapacidad visual, auditiva o
+                                    intelectual.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 2 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Grupos reducidos de
+                                        5-10 personas</li>
+                                    <li class="mb-2"><i class="fas fa-universal-access text-accent me-2"></i> Materiales
+                                        adaptados</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> 10€ por persona</li>
+                                </ul>
+                                <a href="accesibilidad.html" class="btn btn-primary">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Visitas especiales -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Visitas especiales</h2>
+                        <p class="lead">Experiencias exclusivas para ocasiones memorables.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4 align-items-stretch">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/visita-premium.jpg" class="card-img-top" alt="Visita premium">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Premium</span>
+                                <h3 class="card-title h5">Visita Privada VIP</h3>
+                                <p class="card-text">Una experiencia exclusiva para grupos reducidos fuera del horario
+                                    habitual. Incluye acceso a áreas técnicas normalmente cerradas al público, y un
+                                    pequeño obsequio astronómico.</p>
+                                <p class="text-accent fw-bold mt-3">Consultar disponibilidad y precios</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/visita-aniversario.jpg" class="card-img-top" alt="Visita aniversario">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Celebración</span>
+                                <h3 class="card-title h5">Aniversarios y Celebraciones</h3>
+                                <p class="card-text">Sorprende a tu pareja o seres queridos con una visita especial en
+                                    una fecha señalada. Posibilidad de personalizar la experiencia con mensajes o
+                                    momentos especiales.</p>
+                                <p class="text-accent fw-bold mt-3">Desde 25€ por persona</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/visita-tecnica.jpg" class="card-img-top" alt="Visita técnica">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Especializada</span>
+                                <h3 class="card-title h5">Visita Técnica y Científica</h3>
+                                <p class="card-text">Dirigida a profesionales y aficionados avanzados a la astronomía.
+                                    Profundiza en aspectos técnicos de nuestros equipos y en los últimos avances
+                                    científicos.</p>
+                                <p class="text-accent fw-bold mt-3">Desde 18€ por persona</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendario de visitas especiales programadas -->
+        <section class="py-5 bg-dark-transparent">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Próximas visitas temáticas</h2>
+                        <p class="lead">Calendario de visitas guiadas especiales con temáticas específicas.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="event-card rounded-3 p-4 h-100">
+                            <div class="d-flex align-items-center">
+                                <div class="ms-2">
+                                    <p class="mb-0 fw-bold">Carlos M.</p>
+                                    <p class="mb-0 small opacity-75">Visita Privada VIP</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de reserva -->
+        <section id="reserva" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Reserva tu visita guiada</h2>
+                        <p class="lead">Proceso sencillo para garantizar tu experiencia astronómica.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="info-card p-4 rounded-3 mb-4">
+                            <h3 class="h4 mb-3">Información importante para reservas</h3>
+                            <ul class="list-unstyled mb-0">
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-info-circle text-accent me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Reserva anticipada:</strong> Recomendamos reservar con al menos una
+                                        semana de antelación, especialmente para visitas nocturnas o temáticas.
+                                    </div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-users text-accent me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Tamaño de grupos:</strong> Las visitas están diseñadas para grupos de
+                                        10-25 personas, dependiendo del tipo. Para grupos más grandes, consúltanos.
+                                    </div>
+                                </li>
+                                <li class="mb-3 d-flex">
+                                    <i class="fas fa-hand-holding-usd text-accent me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Formas de pago:</strong> Puedes pagar online en el momento de la reserva
+                                        o en efectivo/tarjeta el día de la visita (sujeto a disponibilidad).
+                                    </div>
+                                </li>
+                                <li class="d-flex">
+                                    <i class="fas fa-calendar-times text-accent me-3 mt-1"></i>
+                                    <div>
+                                        <strong>Política de cancelación:</strong> Cancelaciones con 48h de antelación
+                                        reciben reembolso completo. Menos de 48h, se cargará el 50% del importe.
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+
+                        <div class="info-card p-4 rounded-3">
+                            <h3 class="h4 mb-3">Formulario de reserva</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="nombreCompleto" class="form-label">Nombre completo</label>
+                                        <input type="text" class="form-control bg-dark text-white border-0"
+                                            id="nombreCompleto" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="emailContacto" class="form-label">Email de contacto</label>
+                                        <input type="email" class="form-control bg-dark text-white border-0"
+                                            id="emailContacto" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="telefonoContacto" class="form-label">Teléfono de contacto</label>
+                                        <input type="tel" class="form-control bg-dark text-white border-0"
+                                            id="telefonoContacto" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="tipoVisita" class="form-label">Tipo de visita</label>
+                                        <select class="form-select bg-dark text-white border-0" id="tipoVisita"
+                                            required>
+                                            <option value="" selected disabled>Seleccionar...</option>
+                                            <option value="general">Visita General</option>
+                                            <option value="tematica">Visita Temática</option>
+                                            <option value="nocturna">Visita Nocturna con Observación</option>
+                                            <option value="inclusiva">Visita Inclusiva y Accesible</option>
+                                            <option value="vip">Visita Privada VIP</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="numParticipantes" class="form-label">Número de participantes</label>
+                                        <input type="number" class="form-control bg-dark text-white border-0"
+                                            id="numParticipantes" min="1" max="25" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fechaPreferida" class="form-label">Fecha preferida</label>
+                                        <input type="date" class="form-control bg-dark text-white border-0"
+                                            id="fechaPreferida" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="horaPreferida" class="form-label">Hora preferida</label>
+                                        <select class="form-select bg-dark text-white border-0" id="horaPreferida"
+                                            required>
+                                            <option value="" selected disabled>Seleccionar...</option>
+                                            <option value="manana">Mañana (10:00 - 14:00)</option>
+                                            <option value="tarde">Tarde (16:00 - 20:00)</option>
+                                            <option value="noche">Noche (21:00 - 23:00) Solo visitas nocturnas</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="idioma" class="form-label">Idioma de la visita</label>
+                                        <select class="form-select bg-dark text-white border-0" id="idioma" required>
+                                            <option value="espanol" selected>Español</option>
+                                            <option value="ingles">Inglés</option>
+                                            <option value="frances">Francés</option>
+                                            <option value="lse">Lengua de signos española</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="comentarios" class="form-label">Comentarios o necesidades
+                                            especiales</label>
+                                        <textarea class="form-control bg-dark text-white border-0" id="comentarios"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="aceptoPolitica"
+                                                required>
+                                            <label class="form-check-label" for="aceptoPolitica">
+                                                Acepto la política de privacidad y el tratamiento de datos
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary px-4 py-2">
+                                            <i class="fas fa-paper-plane me-2"></i> Enviar solicitud de reserva
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas frecuentes -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Preguntas frecuentes</h2>
+                        <p class="lead">Resolvemos tus dudas sobre las visitas guiadas.</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="accordion" id="accordionFAQ">
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        ¿Qué diferencia hay entre la entrada general y una visita guiada?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        La entrada general permite acceder a las exposiciones y a las proyecciones
+                                        programadas por tu cuenta. Las visitas guiadas incluyen el acompañamiento de un
+                                        experto que proporciona explicaciones detalladas y adaptadas al grupo,
+                                        respondiendo preguntas y ofreciendo una experiencia más rica y personalizada.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        ¿Las visitas nocturnas funcionan si está nublado?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        En caso de cielo nublado, adaptamos las visitas nocturnas para incluir una
+                                        proyección especial en la cúpula que simula el cielo que no puede verse esa
+                                        noche, junto con actividades alternativas como talleres prácticos de
+                                        reconocimiento estelar o uso de aplicaciones astronómicas. Si las condiciones
+                                        son muy adversas, ofrecemos la posibilidad de cambiar la fecha o recibir un
+                                        reembolso.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        ¿Se pueden hacer fotos durante la visita?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Se permite hacer fotos sin flash en las áreas de exposición. Durante las
+                                        proyecciones en la cúpula no está permitida la fotografía para no interferir con
+                                        la experiencia inmersiva. En las observaciones nocturnas, nuestros guías os
+                                        indicarán cómo capturar imágenes astronómicas con vuestros dispositivos móviles.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        ¿Hay visitas guiadas todos los días?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Las visitas guiadas generales están disponibles de martes a domingo. Las visitas
+                                        temáticas y nocturnas tienen un calendario específico que puede consultarse en
+                                        nuestra web o en recepción. Para visitas especiales o privadas, es necesario
+                                        consultar disponibilidad y reservar con antelación.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="py-5 bg-cta-gradient">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2 class="h3 fw-bold mb-2">¿Buscas una experiencia para un grupo o evento especial?</h2>
+                        <p class="mb-0">Ofrecemos visitas personalizadas para empresas, celebraciones y grupos con
+                            necesidades específicas.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="eventos-privados.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-star me-2"></i> Eventos privados
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-img rounded-circle me-2"></div>
+                        <span class="fw-bold fs-5">Planetario de Madrid</span>
+                    </div>
+                    <p class="mb-3 opacity-75">Un viaje por el universo en el corazón de Madrid. Explora, aprende y
+                        déjate maravillar por los secretos del cosmos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Enlaces rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="proyecciones.html">Proyecciones</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="info.html">Información</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Visitas</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="grupos-escolares.html">Grupos escolares</a></li>
+                        <li><a href="visitas-guiadas.html">Visitas guiadas</a></li>
+                        <li><a href="cumpleanos.html">Cumpleaños estelares</a></li>
+                        <li><a href="eventos.html">Eventos privados</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3 fw-bold">Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-map-marker-alt mt-1 me-2 text-accent"></i>
+                            <span>Avda. del Planetario, 16<br>28045 Madrid</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-phone-alt mt-1 me-2 text-accent"></i>
+                            <span>91 467 34 62</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
+                            <span>info@planetmadrid.es</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 opacity-75">&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacidad.html" class="text-white opacity-75">Política de
+                                privacidad</a></li>
+                        <li class="list-inline-item ms-3"><a href="legal.html" class="text-white opacity-75">Aviso
+                                legal</a></li>
+                        <li class="list-inline-item ms-3"><a href="cookies.html"
+                                class="text-white opacity-75">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Añadir class active al enlace de navegación actual
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentLocation = location.href;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Animación de scroll suave para anclas
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>-center mb-3">
+<div class="icon-circle bg-accent me-3">
+    <i class="fas fa-calendar-day"></i>
+</div>
+<div>
+    <h3 class="h5 mb-0">15 de mayo, 19:00h</h3>
+    <p class="mb-0 opacity-75">Viernes</p>
+</div>
+</div>
+<h4 class="h5 mb-2">Mujeres en la Astronomía</h4>
+<p class="mb-3">Un recorrido por las contribuciones fundamentales de científicas que cambiaron nuestra visión del
+    cosmos.</p>
+<div class="d-flex justify-content-between align-items-center">
+    <span class="badge bg-primary">Temática</span>
+    <span class="text-accent">15€/persona</span>
+</div>
+</div>
+</div>
+<div class="col-md-6 col-lg-4">
+    <div class="event-card rounded-3 p-4 h-100">
+        <div class="d-flex align-items-center mb-3">
+            <div class="icon-circle bg-accent me-3">
+                <i class="fas fa-calendar-day"></i>
+            </div>
+            <div>
+                <h3 class="h5 mb-0">22 de mayo, 21:30h</h3>
+                <p class="mb-0 opacity-75">Viernes</p>
+            </div>
+        </div>
+        <h4 class="h5 mb-2">Eclipse Lunar</h4>
+        <p class="mb-3">Visita especial coincidiendo con el eclipse lunar parcial, con observación desde nuestra terraza
+            astronómica.</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary">Nocturna</span>
+            <span class="text-accent">20€/persona</span>
+        </div>
+    </div>
+</div>
+<div class="col-md-6 col-lg-4">
+    <div class="event-card rounded-3 p-4 h-100">
+        <div class="d-flex align-items-center mb-3">
+            <div class="icon-circle bg-accent me-3">
+                <i class="fas fa-calendar-day"></i>
+            </div>
+            <div>
+                <h3 class="h5 mb-0">29 de mayo, 18:00h</h3>
+                <p class="mb-0 opacity-75">Viernes</p>
+            </div>
+        </div>
+        <h4 class="h5 mb-2">Exploración Marciana</h4>
+        <p class="mb-3">Centrada en las misiones a Marte, los rovers y el futuro de la exploración del planeta rojo.</p>
+        <div class="d-flex justify-content-between align-items-center">
+            <span class="badge bg-primary">Temática</span>
+            <span class="text-accent">15€/persona</span>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="text-center mt-5">
+    <a href="calendario-eventos.html" class="btn btn-outline-light px-4 py-2">
+        <i class="fas fa-calendar-alt me-2"></i> Ver calendario completo
+    </a>
+</div>
+</div>
+</section>
+
+<!-- Testimonios -->
+<section class="py-5">
+    <div class="container">
+        <div class="row justify-content-center mb-5">
+            <div class="col-lg-8 text-center">
+                <h2 class="display-5 fw-bold mb-3">Experiencias estelares</h2>
+                <p class="lead">Lo que opinan nuestros visitantes sobre las visitas guiadas.</p>
+            </div>
+        </div>
+
+        <div class="row g-4">
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card p-4 rounded-3 h-100">
+                    <div class="d-flex mb-3">
+                        <div class="me-2">
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                        </div>
+                    </div>
+                    <p class="mb-3">"La visita nocturna fue una experiencia increíble. Ver el cielo a través de los
+                        telescopios mientras el astrónomo nos explicaba cada detalle fue mágico. Mi hija de 10 años no
+                        dejó de hacer preguntas y todas fueron respondidas de manera sencilla y didáctica."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-2">
+                            <p class="mb-0 fw-bold">Laura G.</p>
+                            <p class="mb-0 small opacity-75">Visita Nocturna con Observación</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card p-4 rounded-3 h-100">
+                    <div class="d-flex mb-3">
+                        <div class="me-2">
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                        </div>
+                    </div>
+                    <p class="mb-3">"Vine con mi hermano, que tiene discapacidad visual, y quedamos encantados con la
+                        visita inclusiva. Los materiales táctiles y las explicaciones adaptadas permitieron que ambos
+                        disfrutáramos por igual. El personal fue extraordinariamente atento."</p>
+                    <div class="d-flex align-items-center">
+                        <div class="ms-2">
+                            <p class="mb-0 fw-bold">Miguel A.</p>
+                            <p class="mb-0 small opacity-75">Visita Inclusiva y Accesible</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 col-lg-4">
+                <div class="info-card p-4 rounded-3 h-100">
+                    <div class="d-flex mb-3">
+                        <div class="me-2">
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="fas fa-star text-accent"></i>
+                            <i class="far fa-star text-accent"></i>
+                        </div>
+                    </div>
+                    <p class="mb-3">"Sorprendí a mi pareja por nuestro aniversario con una visita privada VIP y fue un
+                        acierto total. Nos mostraron zonas que el público general no ve, y la proyección personalizada
+                        con nuestras constelaciones de nacimiento fue un detalle precioso."</p>
+                    <div class="d-flex align-items

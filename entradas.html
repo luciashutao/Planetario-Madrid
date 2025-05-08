@@ -1,0 +1,433 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Compra de Entradas - Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Enlace para saltar a contenido principal (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner de página -->
+    <section
+        class="page-banner position-relative d-flex align-items-center justify-content-center text-center text-white">
+        <div class="banner-image position-absolute"></div>
+        <div class="container py-5 position-relative z-index-1">
+            <h1 class="display-4 fw-bold mb-3">Compra tus Entradas</h1>
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb justify-content-center">
+                    <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                    <li class="breadcrumb-item"><a href="horarios.html" class="text-white">Horarios y Tarifas</a></li>
+                    <li class="breadcrumb-item active text-white-50" aria-current="page">Compra de Entradas</li>
+                </ol>
+            </nav>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content">
+        <!-- Proceso de compra de entradas -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8">
+                        <!-- Pasos del proceso de compra -->
+                        <div class="purchase-steps mb-5">
+                            <div class="row text-center">
+                                <div class="col-4">
+                                    <div class="step-circle active mx-auto">1</div>
+                                    <p class="step-text text-white mt-2">Selección</p>
+                                </div>
+                                <div class="col-4">
+                                    <div class="step-circle mx-auto">2</div>
+                                    <p class="step-text text-white-50 mt-2">Datos</p>
+                                </div>
+                                <div class="col-4">
+                                    <div class="step-circle mx-auto">3</div>
+                                    <p class="step-text text-white-50 mt-2">Pago</p>
+                                </div>
+                            </div>
+                            <div class="progress mt-3">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 33%"
+                                    aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
+                            </div>
+                        </div>
+
+                        <!-- Selección de fecha -->
+                        <div class="card bg-dark-transparent border-0 shadow-lg mb-4">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h2 class="h5 mb-0"><i class="bi bi-calendar-date me-2"></i> Selecciona una fecha</h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row">
+                                    <div class="col-md-6 mb-3 mb-md-0">
+                                        <label for="visit-date" class="form-label text-white">Fecha de visita</label>
+                                        <input type="date" class="form-control" id="visit-date" min="2025-05-08">
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="time-slot" class="form-label text-white">Horario</label>
+                                        <select class="form-select" id="time-slot">
+                                            <option value="" selected disabled>Selecciona un horario</option>
+                                            <option value="10:00">10:00 - Exposiciones + Proyección "Cosmos"</option>
+                                            <option value="11:00">11:00 - Exposiciones + Proyección "Otros Mundos"
+                                            </option>
+                                            <option value="12:00">12:00 - Exposiciones + Proyección "El Cielo de Madrid"
+                                            </option>
+                                            <option value="13:00">13:00 - Solo exposiciones</option>
+                                            <option value="16:00">16:00 - Exposiciones + Proyección "Cosmos"</option>
+                                            <option value="17:00">17:00 - Exposiciones + Proyección "Otros Mundos"
+                                            </option>
+                                            <option value="18:00">18:00 - Exposiciones + Proyección "El Cielo de Madrid"
+                                            </option>
+                                            <option value="19:00">19:00 - Solo exposiciones</option>
+                                        </select>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Selección de entradas -->
+                        <div class="card bg-dark-transparent border-0 shadow-lg mb-4">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h2 class="h5 mb-0"><i class="bi bi-ticket-perforated me-2"></i> Selecciona tus entradas
+                                </h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="ticket-selector">
+                                    <div class="ticket-type d-flex justify-content-between align-items-center mb-4">
+                                        <div>
+                                            <h3 class="h6 text-white mb-1">Entrada General</h3>
+                                            <p class="text-white-50 mb-0 small">Adultos (13+ años)</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-white me-3">8€</span>
+                                            <div class="quantity-selector d-flex align-items-center">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn minus"
+                                                    data-ticket-type="adult">-</button>
+                                                <input type="number"
+                                                    class="form-control form-control-sm mx-2 text-center ticket-quantity"
+                                                    min="0" max="10" value="0" data-ticket-type="adult" data-price="8">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn plus"
+                                                    data-ticket-type="adult">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-type d-flex justify-content-between align-items-center mb-4">
+                                        <div>
+                                            <h3 class="h6 text-white mb-1">Entrada Reducida</h3>
+                                            <p class="text-white-50 mb-0 small">Estudiantes, jubilados, desempleados
+                                                (acreditación)</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-white me-3">6€</span>
+                                            <div class="quantity-selector d-flex align-items-center">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn minus"
+                                                    data-ticket-type="reduced">-</button>
+                                                <input type="number"
+                                                    class="form-control form-control-sm mx-2 text-center ticket-quantity"
+                                                    min="0" max="10" value="0" data-ticket-type="reduced"
+                                                    data-price="6">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn plus"
+                                                    data-ticket-type="reduced">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-type d-flex justify-content-between align-items-center mb-4">
+                                        <div>
+                                            <h3 class="h6 text-white mb-1">Entrada Infantil</h3>
+                                            <p class="text-white-50 mb-0 small">Niños (5-12 años)</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-white me-3">5€</span>
+                                            <div class="quantity-selector d-flex align-items-center">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn minus"
+                                                    data-ticket-type="child">-</button>
+                                                <input type="number"
+                                                    class="form-control form-control-sm mx-2 text-center ticket-quantity"
+                                                    min="0" max="10" value="0" data-ticket-type="child" data-price="5">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn plus"
+                                                    data-ticket-type="child">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="ticket-type d-flex justify-content-between align-items-center">
+                                        <div>
+                                            <h3 class="h6 text-white mb-1">Niños menores de 5 años</h3>
+                                            <p class="text-white-50 mb-0 small">Entrada gratuita</p>
+                                        </div>
+                                        <div class="d-flex align-items-center">
+                                            <span class="text-white me-3">0€</span>
+                                            <div class="quantity-selector d-flex align-items-center">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn minus"
+                                                    data-ticket-type="infant">-</button>
+                                                <input type="number"
+                                                    class="form-control form-control-sm mx-2 text-center ticket-quantity"
+                                                    min="0" max="3" value="0" data-ticket-type="infant" data-price="0">
+                                                <button class="btn btn-outline-light btn-sm quantity-btn plus"
+                                                    data-ticket-type="infant">+</button>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Promociones y descuentos -->
+                        <div class="card bg-dark-transparent border-0 shadow-lg mb-4">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h2 class="h5 mb-0"><i class="bi bi-tags me-2"></i> Promociones y descuentos</h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="mb-3">
+                                    <label for="promo-code" class="form-label text-white">Código promocional</label>
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" id="promo-code"
+                                            placeholder="Introduce tu código">
+                                        <button class="btn btn-outline-light" type="button"
+                                            id="apply-promo">Aplicar</button>
+                                    </div>
+                                </div>
+
+                                <div class="form-check mb-2">
+                                    <input class="form-check-input" type="checkbox" value="" id="discount-family">
+                                    <label class="form-check-label text-white" for="discount-family">
+                                        Familia numerosa (10% descuento - se verificará en la entrada)
+                                    </label>
+                                </div>
+
+                                <div class="form-check">
+                                    <input class="form-check-input" type="checkbox" value="" id="discount-disability">
+                                    <label class="form-check-label text-white" for="discount-disability">
+                                        Discapacidad (50% descuento - se verificará en la entrada)
+                                    </label>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botón continuar -->
+                        <div class="d-grid">
+                            <button type="button" class="btn btn-primary btn-lg py-3" id="continue-btn" disabled>
+                                Continuar al siguiente paso
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Resumen de compra -->
+                    <div class="col-lg-4 mt-5 mt-lg-0">
+                        <div class="card bg-dark-transparent border-0 shadow-lg sticky-lg-top" style="top: 100px;">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h2 class="h5 mb-0"><i class="bi bi-cart-check me-2"></i> Resumen de compra</h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="purchase-summary">
+                                    <div id="selected-date-time" class="mb-4">
+                                        <p class="text-white-50 mb-1">Fecha y hora:</p>
+                                        <p class="text-white mb-0">Selecciona una fecha y hora</p>
+                                    </div>
+
+                                    <div id="ticket-summary" class="mb-4">
+                                        <p class="text-white-50 mb-2">Entradas:</p>
+                                        <div id="ticket-list">
+                                            <p class="text-white text-center">No has seleccionado entradas</p>
+                                        </div>
+                                    </div>
+
+                                    <hr class="border-secondary my-4">
+
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-white">Subtotal:</span>
+                                        <span class="text-white" id="subtotal">0€</span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-2" id="discount-container"
+                                        style="display: none !important;">
+                                        <span class="text-white">Descuento:</span>
+                                        <span class="text-white" id="discount-amount">0€</span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between mb-2">
+                                        <span class="text-white">IVA (10%):</span>
+                                        <span class="text-white" id="tax-amount">0€</span>
+                                    </div>
+
+                                    <div class="d-flex justify-content-between align-items-center mt-3">
+                                        <span class="text-white h5">Total:</span>
+                                        <span class="text-white h5" id="total-amount">0€</span>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-info mt-4 mb-0">
+                                    <div class="d-flex">
+                                        <i class="bi bi-info-circle-fill me-2 fs-5"></i>
+                                        <div>
+                                            <p class="mb-0 small">Las entradas online tienen un 5% de descuento respecto
+                                                a taquilla. Recuerda traer tu identificación si has seleccionado
+                                                entradas con descuento.</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información adicional -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="info-card p-4 rounded h-100">
+                            <div class="mb-3 text-center">
+                                <i class="bi bi-credit-card fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h4 text-white text-center mb-3">Pago seguro</h3>
+                            <p class="text-white-50 text-center mb-0">Todas nuestras transacciones son procesadas de
+                                forma segura a través de pasarelas de pago certificadas.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card p-4 rounded h-100">
+                            <div class="mb-3 text-center">
+                                <i class="bi bi-file-earmark-text fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h4 text-white text-center mb-3">E-tickets</h3>
+                            <p class="text-white-50 text-center mb-0">Recibirás tus entradas por email. Puedes
+                                mostrarlas en tu móvil o imprimirlas para acceder al Planetario.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-md-4">
+                        <div class="info-card p-4 rounded h-100">
+                            <div class="mb-3 text-center">
+                                <i class="bi bi-arrow-counterclockwise fs-1 text-primary"></i>
+                            </div>
+                            <h3 class="h4 text-white text-center mb-3">Cambios y cancelaciones</h3>
+                            <p class="text-white-50 text-center mb-0">Puedes cambiar la fecha o cancelar tus entradas
+                                hasta 24 horas antes de tu visita. Consulta nuestra política.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Planetario de Madrid</h3>
+                    <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón de
+                        Madrid.</p>
+                    <div class="social-links d-flex gap-2 mt-3">
+                        <a href="#" class="social-link" aria-label="Facebook">F</a>
+                        <a href="#" class="social-link" aria-label="Twitter">T</a>
+                        <a href="#" class="social-link" aria-label="Instagram">I</a>
+                        <a href="#" class="social-link" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Enlaces rápidos</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Información</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="como-llegar.html">Cómo llegar</a></li>
+                        <li><a href="planifica-visita.html">Planifica tu visita</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                        <li><a href="faq.html">Preguntas frecuentes</a></li>
+                        <li><a href="empleo.html">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="text-accent mb-4">Suscríbete a nuestra newsletter</h3>
+                    <p class="text-white-50 mb-3">Recibe información sobre nuestras exposiciones y eventos.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Tu email"
+                            aria-label="Email para newsletter">
+                        <button class="btn btn-primary" type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center copyright mt-5 pt-4 text-white-50">
+                <p>&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script principal del sitio -->
+    <script src="js/scripts.js"></script>
+
+    <!-- Script específico para la página de entradas -->
+    <script src="js/entradas.js"></script>
+</body>
+
+</html>

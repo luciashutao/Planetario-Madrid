@@ -1,0 +1,800 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Sistema Solar - Exposición | Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Enlace para saltar a contenido principal (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="exposiciones.html">Exposiciones</a>
+                            </li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner de exposición con título superpuesto -->
+    <section class="exhibition-banner position-relative">
+        <div class="exhibition-banner-image position-absolute">
+            <!-- Esta imagen debería ser panorámica y representativa de la exposición -->
+            <img src="img/sistema-solar-banner.jpg" alt="Vista panorámica de la exposición El Sistema Solar"
+                class="w-100 h-100 object-cover">
+        </div>
+        <div class="container position-relative z-index-1 py-5">
+            <div class="row">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="exposiciones.html" class="text-white">Exposiciones</a>
+                            </li>
+                            <li class="breadcrumb-item active text-white-50" aria-current="page">El Sistema Solar</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-3 fw-bold text-white mb-2">El Sistema Solar</h1>
+                    <p class="lead text-white mb-0">Un viaje fascinante por nuestro vecindario cósmico</p>
+                </div>
+                <div class="col-lg-4">
+                    <div class="exhibition-info-card mt-4 mt-lg-0 p-4 rounded">
+                        <div class="d-flex align-items-center mb-3">
+                            <div class="exhibition-type-badge me-2">
+                                <span class="badge bg-primary">Exposición permanente</span>
+                            </div>
+                            <div class="exhibition-age-badge">
+                                <span class="badge bg-info">Para todos los públicos</span>
+                            </div>
+                        </div>
+                        <div class="exhibition-meta mb-3">
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-geo-alt-fill text-accent me-2"></i>
+                                <span class="text-white">Sala Principal, Planta 1</span>
+                            </div>
+                            <div class="d-flex align-items-center mb-2">
+                                <i class="bi bi-clock-fill text-accent me-2"></i>
+                                <span class="text-white">Duración recomendada: 45 minutos</span>
+                            </div>
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-translate text-accent me-2"></i>
+                                <span class="text-white">Textos en español e inglés</span>
+                            </div>
+                        </div>
+                        <a href="entradas.html" class="btn btn-primary w-100">Comprar entradas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content">
+        <!-- Descripción de la exposición -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row">
+                    <!-- Columna principal con el contenido -->
+                    <div class="col-lg-8">
+                        <div class="mb-5">
+                            <h2 class="h1 text-white mb-4">Descubre nuestro Sistema Solar</h2>
+                            <p class="text-white-50 mb-4">Embárcate en un fascinante viaje por nuestro vecindario
+                                cósmico. Esta exposición permanente ofrece una visión detallada de los ocho planetas,
+                                sus lunas, los planetas enanos, asteroides, cometas y otros objetos que conforman
+                                nuestro Sistema Solar.</p>
+                            <p class="text-white-50 mb-4">A través de modelos a escala, paneles informativos
+                                interactivos y proyecciones envolventes, podrás conocer las características únicas de
+                                cada planeta, desde los anillos de Saturno hasta las tormentas de Júpiter o los
+                                misterios de los planetas enanos como Plutón y Ceres.</p>
+                            <p class="text-white-50">La exposición se complementa con una muestra sobre la exploración
+                                espacial y las misiones que han expandido nuestro conocimiento del Sistema Solar, desde
+                                las sondas Voyager hasta las más recientes misiones a Marte.</p>
+                        </div>
+
+                        <!-- Galerías de imágenes -->
+                        <div class="exhibition-gallery mb-5">
+                            <h3 class="h2 text-white mb-4">Galería</h3>
+                            <div class="row g-3">
+                                <div class="col-6 col-md-4">
+                                    <a href="#" class="gallery-item">
+                                        <img src="img/exposicion-sistema-solar-1.jpg" alt="Modelo a escala de Júpiter"
+                                            class="img-fluid rounded">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <a href="#" class="gallery-item">
+                                        <img src="img/exposicion-sistema-solar-2.jpg" alt="Maqueta del Sistema Solar"
+                                            class="img-fluid rounded">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <a href="#" class="gallery-item">
+                                        <img src="img/exposicion-sistema-solar-3.jpg"
+                                            alt="Panel interactivo sobre planetas rocosos" class="img-fluid rounded">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <a href="#" class="gallery-item">
+                                        <img src="img/exposicion-sistema-solar-4.jpg" alt="Zona de asteroides y cometas"
+                                            class="img-fluid rounded">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <a href="#" class="gallery-item">
+                                        <img src="img/exposicion-sistema-solar-5.jpg"
+                                            alt="Modelo de nave espacial Voyager" class="img-fluid rounded">
+                                    </a>
+                                </div>
+                                <div class="col-6 col-md-4">
+                                    <a href="#" class="gallery-item">
+                                        <img src="img/exposicion-sistema-solar-6.jpg"
+                                            alt="Visitantes experimentando la exposición" class="img-fluid rounded">
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Características principales -->
+                        <div class="exhibition-features mb-5">
+                            <h3 class="h2 text-white mb-4">Características de la exposición</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="feature-card p-4 rounded h-100">
+                                        <div class="feature-icon mb-3">
+                                            <i class="bi bi-rulers text-accent fs-1"></i>
+                                        </div>
+                                        <h4 class="h5 text-white mb-3">Modelos a escala</h4>
+                                        <p class="text-white-50 mb-0">Representación fidedigna de todos los planetas y
+                                            principales cuerpos celestes del Sistema Solar, manteniendo sus proporciones
+                                            reales.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-card p-4 rounded h-100">
+                                        <div class="feature-icon mb-3">
+                                            <i class="bi bi-hand-index-thumb text-accent fs-1"></i>
+                                        </div>
+                                        <h4 class="h5 text-white mb-3">Paneles interactivos</h4>
+                                        <p class="text-white-50 mb-0">Pantallas táctiles donde podrás explorar las
+                                            características de cada planeta, con datos actualizados de las últimas
+                                            investigaciones.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-card p-4 rounded h-100">
+                                        <div class="feature-icon mb-3">
+                                            <i class="bi bi-controller text-accent fs-1"></i>
+                                        </div>
+                                        <h4 class="h5 text-white mb-3">Simulador de gravedad</h4>
+                                        <p class="text-white-50 mb-0">Experimenta cómo sería tu peso en diferentes
+                                            planetas y descubre cómo las distintas fuerzas gravitatorias afectan a los
+                                            objetos.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="feature-card p-4 rounded h-100">
+                                        <div class="feature-icon mb-3">
+                                            <i class="bi bi-camera-video text-accent fs-1"></i>
+                                        </div>
+                                        <h4 class="h5 text-white mb-3">Proyecciones envolventes</h4>
+                                        <p class="text-white-50 mb-0">Imágenes panorámicas de las superficies
+                                            planetarias captadas por las distintas misiones espaciales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Temáticas o secciones -->
+                        <div class="exhibition-sections mb-5">
+                            <h3 class="h2 text-white mb-4">Secciones de la exposición</h3>
+
+                            <div class="accordion" id="exhibitionSections">
+                                <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                    <h3 class="accordion-header" id="headingOne">
+                                        <button class="accordion-button bg-dark-transparent text-white" type="button"
+                                            data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true"
+                                            aria-controls="collapseOne">
+                                            El Sol: Nuestra estrella
+                                        </button>
+                                    </h3>
+                                    <div id="collapseOne" class="accordion-collapse collapse show"
+                                        aria-labelledby="headingOne" data-bs-parent="#exhibitionSections">
+                                        <div class="accordion-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <img src="img/seccion-sol.jpg" alt="El Sol: Nuestra estrella"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="text-white-50 mb-0">Descubre el funcionamiento de nuestra
+                                                        estrella, que proporciona la energía necesaria para la vida en
+                                                        la Tierra. Podrás ver modelos que muestran su estructura
+                                                        interna, aprender sobre las manchas solares, las erupciones y el
+                                                        ciclo solar de 11 años. Esta sección incluye también impactantes
+                                                        imágenes tomadas por sondas como la Solar Orbiter y la Parker
+                                                        Solar Probe.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                    <h3 class="accordion-header" id="headingTwo">
+                                        <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
+                                            aria-expanded="false" aria-controls="collapseTwo">
+                                            Planetas rocosos: Mercurio, Venus, Tierra y Marte
+                                        </button>
+                                    </h3>
+                                    <div id="collapseTwo" class="accordion-collapse collapse"
+                                        aria-labelledby="headingTwo" data-bs-parent="#exhibitionSections">
+                                        <div class="accordion-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <img src="img/seccion-planetas-rocosos.jpg" alt="Planetas rocosos"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="text-white-50 mb-0">Explora los cuatro planetas más
+                                                        cercanos al Sol, conocidos como planetas terrestres por su
+                                                        superficie sólida y rocosa. Compara sus tamaños, densidades y
+                                                        composiciones. Descubre cómo la distancia al Sol ha determinado
+                                                        sus características, desde el abrasador Mercurio hasta el gélido
+                                                        Marte. Especial atención merece nuestro planeta, la Tierra,
+                                                        único con agua líquida en su superficie y atmósfera rica en
+                                                        oxígeno.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                    <h3 class="accordion-header" id="headingThree">
+                                        <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
+                                            aria-expanded="false" aria-controls="collapseThree">
+                                            Planetas gaseosos: Júpiter, Saturno, Urano y Neptuno
+                                        </button>
+                                    </h3>
+                                    <div id="collapseThree" class="accordion-collapse collapse"
+                                        aria-labelledby="headingThree" data-bs-parent="#exhibitionSections">
+                                        <div class="accordion-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <img src="img/seccion-planetas-gaseosos.jpg" alt="Planetas gaseosos"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="text-white-50 mb-0">Maravíllate con los gigantes del
+                                                        Sistema Solar. Esta sección muestra los inmensos planetas
+                                                        gaseosos, sus estructuras de capas y sus asombrosos sistemas de
+                                                        anillos y lunas. Conoce la Gran Mancha Roja de Júpiter, los
+                                                        anillos de Saturno, y los peculiares sistemas atmosféricos de
+                                                        Urano y Neptuno. Incluye modelos tridimensionales y simulaciones
+                                                        de su dinámica atmosférica.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                    <h3 class="accordion-header" id="headingFour">
+                                        <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
+                                            aria-expanded="false" aria-controls="collapseFour">
+                                            Más allá de Neptuno: Planetas enanos y Cinturón de Kuiper
+                                        </button>
+                                    </h3>
+                                    <div id="collapseFour" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFour" data-bs-parent="#exhibitionSections">
+                                        <div class="accordion-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <img src="img/seccion-planetas-enanos.jpg"
+                                                        alt="Planetas enanos y Cinturón de Kuiper"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="text-white-50 mb-0">Adéntrate en los confines del Sistema
+                                                        Solar y descubre los misteriosos planetas enanos como Plutón,
+                                                        Eris, Haumea y Makemake. Aprende sobre el Cinturón de Kuiper, un
+                                                        vasto anillo de cuerpos helados más allá de la órbita de
+                                                        Neptuno. Esta sección incluye los últimos descubrimientos
+                                                        gracias a la misión New Horizons, que revolucionó nuestro
+                                                        conocimiento de Plutón en 2015.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="accordion-item bg-dark-transparent text-white border-0">
+                                    <h3 class="accordion-header" id="headingFive">
+                                        <button class="accordion-button collapsed bg-dark-transparent text-white"
+                                            type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive"
+                                            aria-expanded="false" aria-controls="collapseFive">
+                                            La exploración espacial: Nuestras ventanas al Sistema Solar
+                                        </button>
+                                    </h3>
+                                    <div id="collapseFive" class="accordion-collapse collapse"
+                                        aria-labelledby="headingFive" data-bs-parent="#exhibitionSections">
+                                        <div class="accordion-body">
+                                            <div class="row align-items-center">
+                                                <div class="col-md-4 mb-3 mb-md-0">
+                                                    <img src="img/seccion-exploracion.jpg" alt="Exploración espacial"
+                                                        class="img-fluid rounded">
+                                                </div>
+                                                <div class="col-md-8">
+                                                    <p class="text-white-50 mb-0">Recorre la historia de cómo la
+                                                        humanidad ha explorado el Sistema Solar, desde los primeros
+                                                        telescopios hasta las modernas sondas espaciales. Conoce las
+                                                        misiones que han cambiado nuestra comprensión de los planetas:
+                                                        Voyager, Cassini, Juno, Mars Rovers y muchas más. Incluye
+                                                        modelos a escala de las naves espaciales y una línea temporal
+                                                        interactiva que muestra los hitos más importantes de la
+                                                        exploración planetaria.</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Actividades relacionadas -->
+                        <div class="related-activities mb-5">
+                            <h3 class="h2 text-white mb-4">Actividades relacionadas</h3>
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="activity-card p-4 rounded h-100">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="activity-icon me-3">
+                                                <i class="bi bi-stars"></i>
+                                            </div>
+                                            <h4 class="h5 text-white mb-0">Taller: Crea tu Sistema Solar</h4>
+                                        </div>
+                                        <p class="text-white-50 mb-3">Taller práctico donde los participantes
+                                            construirán un modelo a escala del Sistema Solar, aprendiendo sobre
+                                            proporciones, distancias y características planetarias.</p>
+                                        <div class="activity-meta mb-3">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <i class="bi bi-calendar3 text-accent me-2"></i>
+                                                <span class="text-white-50">Todos los sábados a las 12:00h</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-people text-accent me-2"></i>
+                                                <span class="text-white-50">Niños de 8 a 12 años</span>
+                                            </div>
+                                        </div>
+                                        <a href="actividades.html#taller-sistema-solar"
+                                            class="btn btn-outline-light btn-sm">Más información</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="activity-card p-4 rounded h-100">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="activity-icon me-3">
+                                                <i class="bi bi-projector"></i>
+                                            </div>
+                                            <h4 class="h5 text-white mb-0">Proyección: Viaje por el Sistema Solar</h4>
+                                        </div>
+                                        <p class="text-white-50 mb-3">Una espectacular proyección en la cúpula del
+                                            Planetario que te llevará en un viaje virtual por todos los planetas y
+                                            principales cuerpos del Sistema Solar.</p>
+                                        <div class="activity-meta mb-3">
+                                            <div class="d-flex align-items-center mb-1">
+                                                <i class="bi bi-calendar3 text-accent me-2"></i>
+                                                <span class="text-white-50">Diariamente a las 11:00h y 17:00h</span>
+                                            </div>
+                                            <div class="d-flex align-items-center">
+                                                <i class="bi bi-people text-accent me-2"></i>
+                                                <span class="text-white-50">Todos los públicos</span>
+                                            </div>
+                                        </div>
+                                        <a href="proyecciones.html#viaje-sistema-solar"
+                                            class="btn btn-outline-light btn-sm">Más información</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Material didáctico -->
+                        <div class="educational-resources">
+                            <h3 class="h2 text-white mb-4">Material didáctico</h3>
+
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="resource-card p-4 rounded h-100">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="resource-icon me-3">
+                                                <i class="bi bi-file-earmark-pdf text-accent fs-1"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="h5 text-white mb-1">Guía didáctica para docentes</h4>
+                                                <span class="badge bg-info">PDF - 2.3 MB</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-white-50 mb-3">Material con actividades, información
+                                            complementaria y propuestas para trabajar antes y después de la visita al
+                                            Planetario.</p>
+                                        <a href="recursos/guia-sistema-solar-docentes.pdf"
+                                            class="btn btn-outline-light btn-sm">Descargar</a>
+                                    </div>
+                                </div>
+
+                                <div class="col-md-6">
+                                    <div class="resource-card p-4 rounded h-100">
+                                        <div class="d-flex align-items-center mb-3">
+                                            <div class="resource-icon me-3">
+                                                <i class="bi bi-file-earmark-text text-accent fs-1"></i>
+                                            </div>
+                                            <div>
+                                                <h4 class="h5 text-white mb-1">Cuaderno de actividades</h4>
+                                                <span class="badge bg-info">PDF - 1.8 MB</span>
+                                            </div>
+                                        </div>
+                                        <p class="text-white-50 mb-3">Cuaderno para estudiantes con juegos, experimentos
+                                            y actividades sobre el Sistema Solar.</p>
+                                        <a href="recursos/cuaderno-sistema-solar.pdf"
+                                            class="btn btn-outline-light btn-sm">Descargar</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Barra lateral con información complementaria -->
+                    <div class="col-lg-4 mt-5 mt-lg-0">
+                        <!-- Datos curiosos -->
+                        <div class="sidebar-widget p-4 rounded mb-4">
+                            <h4 class="h4 text-white mb-3">Datos curiosos</h4>
+                            <div class="fact-item mb-3 pb-3 border-bottom border-secondary">
+                                <p class="text-white mb-0"><i class="bi bi-lightbulb text-accent me-2"></i> Si el Sol
+                                    fuera del tamaño de una pelota de baloncesto, Júpiter sería como una canica y la
+                                    Tierra apenas como la cabeza de un alfiler.</p>
+                            </div>
+                            <div class="fact-item mb-3 pb-3 border-bottom border-secondary">
+                                <p class="text-white mb-0"><i class="bi bi-lightbulb text-accent me-2"></i> Cada día, la
+                                    Tierra recibe suficiente energía del Sol como para satisfacer las necesidades
+                                    energéticas globales de 27 años.</p>
+                            </div>
+                            <div class="fact-item">
+                                <p class="text-white mb-0"><i class="bi bi-lightbulb text-accent me-2"></i> Si pudieras
+                                    conducir un coche al espacio, tardarías unos 178 años en llegar al Sol a 100 km/h.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Opiniones de visitantes -->
+                        <div class="sidebar-widget p-4 rounded mb-4">
+                            <h4 class="h4 text-white mb-3">Opiniones de visitantes</h4>
+                            <div class="review-item mb-3 pb-3 border-bottom border-secondary">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="review-stars text-warning me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                    <span class="text-white-50">María G.</span>
+                                </div>
+                                <p class="text-white-50 mb-0">"Los modelos a escala son impresionantes y mi hijo de 7
+                                    años quedó fascinado con el simulador de gravedad. ¡Volveremos seguro!"</p>
+                            </div>
+                            <div class="review-item">
+                                <div class="d-flex align-items-center mb-2">
+                                    <div class="review-stars text-warning me-2">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                    <span class="text-white-50">Carlos V.</span>
+                                </div>
+                                <p class="text-white-50 mb-0">"Excelente exposición. Las proyecciones son fascinantes y
+                                    el nivel de detalle de los paneles informativos es perfecto para cualquier nivel de
+                                    conocimiento astronómico."</p>
+                            </div>
+                        </div>
+
+                        <!-- Próximas visitas guiadas -->
+                        <div class="sidebar-widget p-4 rounded mb-4">
+                            <h4 class="h4 text-white mb-3">Próximas visitas guiadas</h4>
+                            <div class="guided-tour-item mb-3 pb-3 border-bottom border-secondary">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="h6 text-white mb-0">Visita general</h5>
+                                    <span class="badge bg-primary">Español</span>
+                                </div>
+                                <p class="text-white-50 mb-2 small">Recorrido completo por todas las secciones de la
+                                    exposición con explicaciones detalladas.</p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar3 text-accent me-2"></i>
+                                    <span class="text-white-50 small">Sábado, 10 de mayo - 11:00h</span>
+                                </div>
+                                <a href="visitas-guiadas.html#general"
+                                    class="btn btn-outline-light btn-sm w-100">Reservar plaza</a>
+                            </div>
+                            <div class="guided-tour-item">
+                                <div class="d-flex justify-content-between align-items-start mb-2">
+                                    <h5 class="h6 text-white mb-0">Visita con astrofísico</h5>
+                                    <span class="badge bg-info">Bilingüe</span>
+                                </div>
+                                <p class="text-white-50 mb-2 small">Visita especial conducida por un astrofísico del
+                                    equipo del Planetario, con información avanzada.</p>
+                                <div class="d-flex align-items-center mb-2">
+                                    <i class="bi bi-calendar3 text-accent me-2"></i>
+                                    <span class="text-white-50 small">Domingo, 11 de mayo - 17:00h</span>
+                                </div>
+                                <a href="visitas-guiadas.html#astrofisico"
+                                    class="btn btn-outline-light btn-sm w-100">Reservar plaza</a>
+                            </div>
+                        </div>
+
+                        <!-- Exposiciones relacionadas -->
+                        <div class="sidebar-widget p-4 rounded">
+                            <h4 class="h4 text-white mb-3">Exposiciones relacionadas</h4>
+                            <div class="related-exhibition-item d-flex mb-3 pb-3 border-bottom border-secondary">
+                                <img src="img/expo-exploracion-thumb.jpg" alt="Exploración Espacial"
+                                    class="img-fluid rounded me-3"
+                                    style="width: 80px; height: 80px; object-fit: cover;">
+                                <div>
+                                    <h5 class="h6 text-white mb-1">Exploración Espacial</h5>
+                                    <p class="text-white-50 small mb-1">Historia de las misiones que han explorado el
+                                        Sistema Solar.</p>
+                                    <a href="exposicion-exploracion.html" class="small">Ver exposición</a>
+                                </div>
+                            </div>
+                            <div class="related-exhibition-item d-flex">
+                                <img src="img/expo-estrellas-thumb.jpg" alt="Viaje a las Estrellas"
+                                    class="img-fluid rounded me-3"
+                                    style="width: 80px; height: 80px; object-fit: cover;">
+                                <div>
+                                    <h5 class="h6 text-white mb-1">Viaje a las Estrellas</h5>
+                                    <p class="text-white-50 small mb-1">Descubre los secretos de las estrellas más allá
+                                        de nuestro Sistema Solar.</p>
+                                    <a href="exposicion-estrellas.html" class="small">Ver exposición</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Comentarios de visitantes -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">¿Qué opinan nuestros visitantes?</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Lee los comentarios de quienes ya han disfrutado
+                        de esta exposición</p>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card p-4 rounded h-100">
+                            <div class="testimonial-content mb-3">
+                                <p class="text-white mb-0">"Una experiencia increíblemente educativa y entretenida. Los
+                                    niños quedaron maravillados con el sistema solar a escala y aprendieron muchísimo.
+                                    El personal es muy amable y conocedor. Recomendable para toda la familia."</p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="testimonial-avatar me-3">
+                                    <div class="avatar-placeholder rounded-circle bg-primary text-white">
+                                        JR
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="h6 text-white mb-1">Juan Rodríguez</h5>
+                                    <div class="review-stars text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card p-4 rounded h-100">
+                            <div class="testimonial-content mb-3">
+                                <p class="text-white mb-0">"Como aficionado a la astronomía, me encantó el nivel de
+                                    detalle de esta exposición. Los modelos son muy precisos y las explicaciones son
+                                    claras pero completas. Los paneles interactivos están muy bien diseñados y aportan
+                                    mucha información adicional."</p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="testimonial-avatar me-3">
+                                    <div class="avatar-placeholder rounded-circle bg-primary text-white">
+                                        AM
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="h6 text-white mb-1">Alberto Martínez</h5>
+                                    <div class="review-stars text-warning">
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-fill"></i>
+                                        <i class="bi bi-star-half"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="testimonial-card p-4 rounded h-100">
+                            <div class="testimonial-content mb-3">
+                                <p class="text-white mb-0">"Visité la exposición con mi clase de secundaria y fue una
+                                    experiencia muy enriquecedora. Los estudiantes participaron activamente y el
+                                    material complementario que nos proporcionaron fue muy útil para trabajar después en
+                                    clase. Definitivamente lo recomiendo para grupos escolares."</p>
+                            </div>
+                            <div class="testimonial-author d-flex align-items-center">
+                                <div class="testimonial-avatar me-3">
+                                    <div class="avatar-placeholder rounded-circle bg-primary text-white">
+                                        LS
+                                    </div>
+                                </div>
+                                <div>
+                                    <h5 class="h6 text-white mb-1">Laura Sánchez</h5>
+                                    <p class="text-white-50 small mb-0">Profesora de Ciencias</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="#" class="btn btn-outline-light">Ver más opiniones</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- CTA Reserva -->
+        <section class="py-5 bg-cta-gradient text-center">
+            <div class="container py-4">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <h2 class="display-5 mb-4 text-white">¿Listo para explorar el Sistema Solar?</h2>
+                        <p class="lead text-white-50 mb-4">Reserva tu visita ahora y embárcate en un fascinante viaje
+                            por nuestro vecindario cósmico.</p>
+                        <a href="entradas.html" class="btn btn-primary btn-lg px-5 py-3">Comprar entradas</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Planetario de Madrid</h3>
+                    <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón de
+                        Madrid.</p>
+                    <div class="social-links d-flex gap-2 mt-3">
+                        <a href="#" class="social-link" aria-label="Facebook">F</a>
+                        <a href="#" class="social-link" aria-label="Twitter">T</a>
+                        <a href="#" class="social-link" aria-label="Instagram">I</a>
+                        <a href="#" class="social-link" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Enlaces rápidos</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Información</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="como-llegar.html">Cómo llegar</a></li>
+                        <li><a href="planifica-visita.html">Planifica tu visita</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                        <li><a href="faq.html">Preguntas frecuentes</a></li>
+                        <li><a href="empleo.html">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="text-accent mb-4">Suscríbete a nuestra newsletter</h3>
+                    <p class="text-white-50 mb-3">Recibe información sobre nuestras exposiciones y eventos.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Tu email"
+                            aria-label="Email para newsletter">
+                        <button class="btn btn-primary" type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center copyright mt-5 pt-4 text-white-50">
+                <p>&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script principal del sitio -->
+    <script src="js/scripts.js"></script>
+
+    <!-- Lightbox para galería de imágenes (se podría implementar) -->
+    <script>
+        // Inicializar lightbox para las imágenes de la galería
+        document.addEventListener('DOMContentLoaded', function () {
+            const galleryItems = document.querySelectorAll('.gallery-item');
+
+            galleryItems.forEach(item => {
+                item.addEventListener('click', function (e) {
+                    e.preventDefault();
+
+                    // Aquí iría la lógica para mostrar la imagen en un lightbox
+                    // En un sitio real se usaría una librería como Fancybox, LightGallery, etc.
+                    alert('En un sitio real, aquí se abriría un lightbox con la imagen ampliada.');
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>

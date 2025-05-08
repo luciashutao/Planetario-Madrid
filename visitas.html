@@ -1,0 +1,609 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Visitas - Planetario de Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Skip Link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <a class="nav-link active" href="visitas.html" aria-current="page">Visitas</a>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="page-banner d-flex align-items-center justify-content-center text-center">
+        <div class="banner-image"></div>
+        <div class="container z-index-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3 fade-in">Visitas al Planetario</h1>
+                    <p class="lead opacity-75 fade-in">Elige la experiencia ideal para explorar el universo a tu manera
+                    </p>
+                </div>
+            </div>
+        </div>
+        <!-- Planetas decorativos -->
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" class="pb-5">
+        <!-- Introducción -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5">
+                            <h2 class="display-5 fw-bold mb-4">Descubre todas nuestras opciones de visita</h2>
+                            <p class="lead">El Planetario de Madrid ofrece diversas modalidades de visita adaptadas a
+                                diferentes públicos, intereses y necesidades. Desde visitas libres hasta experiencias
+                                guiadas por expertos, pasando por programas educativos para centros escolares y
+                                actividades especiales.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Tipos de visitas -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Modalidades de visita</h2>
+                        <p class="lead">Elige la experiencia que mejor se adapte a ti</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/visita-general.jpg" class="card-img-top" alt="Visita libre">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Visita libre</h3>
+                                <p class="card-text mb-3">Celebraciones especiales, cumpleaños estelares, eventos
+                                    corporativos y otras experiencias exclusivas adaptadas a tus necesidades. Incluye
+                                    uso privado de espacios y servicios personalizados.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Experiencias
+                                        personalizadas</li>
+                                    <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Espacios
+                                        exclusivos</li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Capacidad: 10-150
+                                        personas</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> Presupuesto personalizado</li>
+                                </ul>
+                                <a href="eventos-privados.html" class="btn btn-primary">Solicitar info</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Características especiales -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Experiencias únicas</h2>
+                        <p class="lead">Actividades especiales que complementan tu visita</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-moon"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Observaciones Astronómicas</h3>
+                            <p>Observa el cielo nocturno a través de telescopios profesionales, guiado por nuestros
+                                expertos astrónomos.</p>
+                            <a href="observaciones.html" class="btn btn-outline-light btn-sm mt-3">Ver calendario</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-rocket"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Talleres Prácticos</h3>
+                            <p>Participa en talleres interactivos donde podrás construir tu propio reloj solar, cohete a
+                                escala o mapa estelar.</p>
+                            <a href="talleres.html" class="btn btn-outline-light btn-sm mt-3">Más información</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-birthday-cake"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Cumpleaños Estelares</h3>
+                            <p>Celebra tu cumpleaños o el de tus hijos con una fiesta temática espacial llena de
+                                sorpresas y actividades.</p>
+                            <a href="cumpleanos.html" class="btn btn-outline-light btn-sm mt-3">Reservar fecha</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Accesibilidad -->
+        <section class="py-5 bg-dark-transparent">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-6 mb-4 mb-lg-0">
+                        <h2 class="display-5 fw-bold mb-3">Un planetario para todos</h2>
+                        <p class="lead mb-4">Nos comprometemos a hacer que la astronomía sea accesible para todos los
+                            públicos, independientemente de sus capacidades.</p>
+                        <ul class="list-unstyled mb-4">
+                            <li class="mb-3 d-flex">
+                                <i class="fas fa-wheelchair text-accent me-3 mt-1"></i>
+                                <div>
+                                    <strong>Accesibilidad física:</strong> Todas nuestras instalaciones están adaptadas
+                                    para personas con movilidad reducida.
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="fas fa-deaf text-accent me-3 mt-1"></i>
+                                <div>
+                                    <strong>Visitas en LSE:</strong> Ofrecemos visitas guiadas en Lengua de Signos
+                                    Española previa reserva.
+                                </div>
+                            </li>
+                            <li class="mb-3 d-flex">
+                                <i class="fas fa-low-vision text-accent me-3 mt-1"></i>
+                                <div>
+                                    <strong>Materiales adaptados:</strong> Disponemos de recursos táctiles y audioguías
+                                    descriptivas para personas con discapacidad visual.
+                                </div>
+                            </li>
+                            <li class="d-flex">
+                                <i class="fas fa-brain text-accent me-3 mt-1"></i>
+                                <div>
+                                    <strong>Visitas adaptadas:</strong> Programas específicos para personas con
+                                    discapacidad intelectual o trastornos del espectro autista.
+                                </div>
+                            </li>
+                        </ul>
+                        <a href="accesibilidad.html" class="btn btn-primary">Más sobre accesibilidad</a>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="rounded overflow-hidden">
+                            <img src="img/visita-accesible-wide.jpg" alt="Visita accesible en el Planetario"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Planificación de visita -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Planifica tu visita</h2>
+                        <p class="lead">Consejos para aprovechar al máximo tu experiencia en el Planetario</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="visit-tips p-4 rounded-3 h-100">
+                            <div class="icon-circle bg-accent mb-3">
+                                <i class="fas fa-calendar-alt"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Cuándo venir</h3>
+                            <p>Para evitar aglomeraciones, recomendamos visitarnos entre semana o los fines de semana a
+                                primera hora. Reserva con antelación, especialmente para proyecciones.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="visit-tips p-4 rounded-3 h-100">
+                            <div class="icon-circle bg-accent mb-3">
+                                <i class="fas fa-map-marked-alt"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Cómo llegar</h3>
+                            <p>Ubicados en el Parque Tierno Galván. Acceso en metro (línea 6, estación Méndez Álvaro),
+                                autobuses (líneas 8, 102, 148) y cercanías (estación Méndez Álvaro).</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="visit-tips p-4 rounded-3 h-100">
+                            <div class="icon-circle bg-accent mb-3">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Duración</h3>
+                            <p>Una visita completa incluyendo exposiciones y una proyección dura aproximadamente 2
+                                horas. Las visitas guiadas y actividades especiales tienen duraciones específicas.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="visit-tips p-4 rounded-3 h-100">
+                            <div class="icon-circle bg-accent mb-3">
+                                <i class="fas fa-utensils"></i>
+                            </div>
+                            <h3 class="h5 mb-3">Servicios</h3>
+                            <p>Disponemos de cafetería, tienda de recuerdos, consigna, zona de descanso y áreas de
+                                picnic en el exterior para grupos escolares previa reserva.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="planifica-visita.html" class="btn btn-primary px-4 py-2">
+                        <i class="fas fa-info-circle me-2"></i> Información completa
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Horarios especiales -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="horario-especial p-4 rounded-3">
+                            <h3 class="h4 mb-3 text-center">Horarios especiales - Mayo 2025</h3>
+                            <div class="row g-4">
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-dark-transparent rounded-3 h-100">
+                                        <h4 class="h5 mb-3"><i class="fas fa-star text-accent me-2"></i> Noches
+                                            astronómicas</h4>
+                                        <p class="mb-2">Viernes y sábados de mayo</p>
+                                        <p class="mb-0">Horario extendido hasta las 23:00h con observaciones especiales
+                                            del cielo nocturno.</p>
+                                    </div>
+                                </div>
+                                <div class="col-md-6">
+                                    <div class="p-3 bg-dark-transparent rounded-3 h-100">
+                                        <h4 class="h5 mb-3"><i class="fas fa-moon text-accent me-2"></i> Eclipse lunar
+                                        </h4>
+                                        <p class="mb-2">22 de mayo</p>
+                                        <p class="mb-0">Apertura especial nocturna para observar el eclipse lunar
+                                            parcial con telescopios profesionales.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Testimonios -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Lo que dicen nuestros visitantes</h2>
+                        <p class="lead">Experiencias compartidas por quienes ya nos han visitado</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-4">
+                        <div class="info-card p-4 rounded-3 h-100">
+                            <div class="d-flex mb-3">
+                                <div class="me-2">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                            <p class="mb-3">"Una experiencia maravillosa para toda la familia. Mi hijo de 8 años quedó
+                                fascinado con la proyección 'Viaje a las estrellas' y no ha dejado de hablar sobre
+                                planetas y galaxias desde entonces."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ms-2">
+                                    <p class="mb-0 fw-bold">Ana G.</p>
+                                    <p class="mb-0 small opacity-75">Visita familiar</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-card p-4 rounded-3 h-100">
+                            <div class="d-flex mb-3">
+                                <div class="me-2">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                </div>
+                            </div>
+                            <p class="mb-3">"La visita nocturna con observación fue impresionante. Ver Saturno y sus
+                                anillos por primera vez a través del telescopio es una experiencia que no olvidaré. El
+                                personal es muy profesional y apasionado."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ms-2">
+                                    <p class="mb-0 fw-bold">Roberto M.</p>
+                                    <p class="mb-0 small opacity-75">Visita nocturna</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="info-card p-4 rounded-3 h-100">
+                            <div class="d-flex mb-3">
+                                <div class="me-2">
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="fas fa-star text-accent"></i>
+                                    <i class="far fa-star text-accent"></i>
+                                </div>
+                            </div>
+                            <p class="mb-3">"Vinimos con nuestra clase de ciencias y todos los estudiantes quedaron
+                                encantados. Los talleres son muy didácticos y los monitores saben cómo mantener el
+                                interés. Volveremos el próximo curso."</p>
+                            <div class="d-flex align-items-center">
+                                <div class="ms-2">
+                                    <p class="mb-0 fw-bold">Marta L.</p>
+                                    <p class="mb-0 small opacity-75">Profesora de secundaria</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximas exposiciones -->
+        <section class="py-5 bg-dark-transparent">
+            <div class="container">
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="upcoming-exhibition p-4 rounded-3">
+                            <div class="row align-items-center">
+                                <div class="col-md-8 mb-4 mb-md-0">
+                                    <span class="badge bg-primary mb-2">Próximamente</span>
+                                    <h3 class="h4 mb-3">Nueva exposición: "Marte, el planeta rojo"</h3>
+                                    <p class="mb-3">Descubre los secretos de nuestro vecino planetario en esta
+                                        exposición interactiva con maquetas a escala, simuladores de terreno marciano y
+                                        las últimas imágenes de los rovers.</p>
+                                    <p class="mb-0"><strong>Inauguración:</strong> 1 de junio de 2025</p>
+                                </div>
+                                <div class="col-md-4 text-md-end">
+                                    <a href="exposiciones-proximas.html" class="btn btn-primary">Más información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="py-5 bg-cta-gradient">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2 class="h3 fw-bold mb-2">¿Listo para explorar el universo?</h2>
+                        <p class="mb-0">Reserva ya tu visita al Planetario de Madrid y vive una experiencia astronómica
+                            inolvidable.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="entradas.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-ticket-alt me-2"></i> Comprar entradas
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-img rounded-circle me-2"></div>
+                        <span class="fw-bold fs-5">Planetario de Madrid</span>
+                    </div>
+                    <p class="mb-3 opacity-75">Un viaje por el universo en el corazón de Madrid. Explora, aprende y
+                        déjate maravillar por los secretos del cosmos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Enlaces rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="proyecciones.html">Proyecciones</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="info.html">Información</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Visitas</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="grupos-escolares.html">Grupos escolares</a></li>
+                        <li><a href="visitas-guiadas.html">Visitas guiadas</a></li>
+                        <li><a href="cumpleanos.html">Cumpleaños estelares</a></li>
+                        <li><a href="eventos.html">Eventos privados</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3 fw-bold">Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-map-marker-alt mt-1 me-2 text-accent"></i>
+                            <span>Avda. del Planetario, 16<br>28045 Madrid</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-phone-alt mt-1 me-2 text-accent"></i>
+                            <span>91 467 34 62</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
+                            <span>info@planetmadrid.es</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 opacity-75">&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacidad.html" class="text-white opacity-75">Política de
+                                privacidad</a></li>
+                        <li class="list-inline-item ms-3"><a href="legal.html" class="text-white opacity-75">Aviso
+                                legal</a></li>
+                        <li class="list-inline-item ms-3"><a href="cookies.html"
+                                class="text-white opacity-75">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Añadir class active al enlace de navegación actual
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentLocation = location.href;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Animación de scroll suave para anclas
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>">Explora a tu ritmo nuestras exposiciones permanentes y temporales. Incluye la posibilidad de asistir a una
+proyección en nuestra cúpula según el horario programado.</p>
+<ul class="list-unstyled mb-4">
+    <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Acceso a todas las exposiciones</li>
+    <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Una proyección en la cúpula</li>
+    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración recomendada: 2 horas</li>
+    <li><i class="fas fa-euro-sign text-accent me-2"></i> Adultos: 7€ | Niños/Jubilados: 5€</li>
+</ul>
+<a href="entradas.html" class="btn btn-primary">Comprar entradas</a>
+</div>
+</div>
+</div>
+<div class="col-md-6">
+    <div class="exhibition-card h-100">
+        <img src="img/visita-guiada.jpg" class="card-img-top" alt="Visitas guiadas">
+        <div class="card-body">
+            <h3 class="card-title h4">Visitas guiadas</h3>
+            <p class="card-text mb-3">Acompañado por un experto en astronomía, descubrirás los secretos del cosmos con
+                explicaciones detalladas y adaptadas. Incluye proyección en la cúpula y material complementario.</p>
+            <ul class="list-unstyled mb-4">
+                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Guiado por especialistas</li>
+                <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Varios tipos y temáticas</li>
+                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90-120 minutos</li>
+                <li><i class="fas fa-euro-sign text-accent me-2"></i> Desde 12€ por persona</li>
+            </ul>
+            <a href="visitas-guiadas.html" class="btn btn-primary">Ver opciones</a>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row g-4 mt-4">
+    <div class="col-md-6">
+        <div class="exhibition-card h-100">
+            <img src="img/escolares.jpg" class="card-img-top" alt="Grupos escolares">
+            <div class="card-body">
+                <h3 class="card-title h4">Grupos escolares</h3>
+                <p class="card-text mb-3">Programas educativos diseñados específicamente para centros escolares, con
+                    contenidos adaptados por niveles y alineados con el currículum académico.</p>
+                <ul class="list-unstyled mb-4">
+                    <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Adaptado a diferentes niveles
+                    </li>
+                    <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Material didáctico
+                        complementario</li>
+                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90-120 minutos</li>
+                    <li><i class="fas fa-euro-sign text-accent me-2"></i> Desde 5€ por alumno</li>
+                </ul>
+                <a href="grupos-escolares.html" class="btn btn-primary">Programa escolar</a>
+            </div>
+        </div>
+    </div>
+    <div class="col-md-6">
+        <div class="exhibition-card h-100">
+            <img src="img/eventos-privados.jpg" class="card-img-top" alt="Eventos privados">
+            <div class="card-body">
+                <h3 class="card-title h4">Eventos privados</h3>
+                <p class="card-text mb-3

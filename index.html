@@ -1,0 +1,274 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Planetario de Madrid - Explora el Universo</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Enlace para saltar a contenido principal (Accesibilidad) -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero position-relative d-flex align-items-center justify-content-center text-center text-white"
+        id="home">
+        <div class="hero-image position-absolute"></div>
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+        <div class="container py-5 position-relative z-index-1 fade-in">
+            <div class="row justify-content-center">
+                <div class="col-md-10 col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3">Descubre los secretos del universo</h1>
+                    <p class="lead mb-4">El Planetario de Madrid te invita a un viaje fascinante por el cosmos.
+                        Exposiciones, proyecciones y actividades para toda la familia.</p>
+                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                        <a href="exposiciones.html" class="btn btn-primary btn-lg">Ver Exposiciones</a>
+                        <a href="horarios.html" class="btn btn-outline-light btn-lg">Horarios y Tarifas</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content">
+        <!-- Sección destacada -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center g-5">
+                    <div class="col-lg-6">
+                        <h2 class="display-5 mb-4 text-white">Bienvenidos al Planetario de Madrid</h2>
+                        <p class="text-white-50 mb-4">El Planetario de Madrid es un centro de divulgación científica
+                            dedicado a la astronomía y ciencias del espacio. Desde su inauguración en 1986, se ha
+                            consolidado como uno de los centros astronómicos más importantes de España.</p>
+                        <p class="text-white-50 mb-4">Contamos con exposiciones permanentes sobre el Sistema Solar, las
+                            estrellas y galaxias, así como exposiciones temporales sobre temas de actualidad
+                            astronómica. Nuestro proyector digital de última generación permite mostrar el cielo
+                            nocturno y realizar espectaculares viajes por el Universo.</p>
+                        <div class="d-grid gap-2 d-md-flex">
+                            <a href="nosotros.html" class="btn btn-primary">Conoce nuestra historia</a>
+                        </div>
+                    </div>
+                    <div class="col-lg-6">
+                        <div class="rounded overflow-hidden shadow-lg">
+                            <img src="img/planetario-edificio.jpg" alt="Edificio del Planetario de Madrid"
+                                class="img-fluid">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Exposiciones destacadas -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Exposiciones Destacadas</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Descubre las maravillas del espacio a través de
+                        nuestras exposiciones</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card exhibition-card h-100">
+                            <img src="img/sistema-solar.jpg" class="card-img-top" alt="Exposición del Sistema Solar">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">El Sistema Solar</h3>
+                                <p class="card-text">Un recorrido por los planetas, lunas y otros cuerpos celestes que
+                                    conforman nuestro sistema planetario.</p>
+                                <div class="mt-auto">
+                                    <a href="exposiciones.html#sistema-solar" class="btn btn-primary">Más
+                                        información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card exhibition-card h-100">
+                            <img src="img/estrellas.jpg" class="card-img-top" alt="Exposición Viaje a las Estrellas">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Viaje a las Estrellas</h3>
+                                <p class="card-text">Descubre las constelaciones, nebulosas y galaxias que pueblan
+                                    nuestro universo en esta fascinante exposición.</p>
+                                <div class="mt-auto">
+                                    <a href="exposiciones.html#estrellas" class="btn btn-primary">Más información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-4">
+                        <div class="card exhibition-card h-100">
+                            <img src="img/exploracion.jpg" class="card-img-top" alt="Exposición Exploración Espacial">
+                            <div class="card-body d-flex flex-column">
+                                <h3 class="card-title">Exploración Espacial</h3>
+                                <p class="card-text">Conoce la historia y los logros de la exploración espacial humana,
+                                    desde los primeros satélites hasta las misiones actuales.</p>
+                                <div class="mt-auto">
+                                    <a href="exposiciones.html#exploracion" class="btn btn-primary">Más información</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="exposiciones.html" class="btn btn-outline-light btn-lg">Ver todas las exposiciones</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos eventos -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 mb-3 text-white">Próximos Eventos</h2>
+                    <p class="section-subtitle text-white-50 mx-auto">No te pierdas nuestras actividades especiales</p>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="event-card p-4 rounded h-100">
+                            <div class="event-date mb-3">
+                                <span class="badge bg-primary p-2">15 Mayo</span>
+                                <span class="ms-2 text-white">19:00h</span>
+                            </div>
+                            <h3 class="event-title text-white">Observación del Eclipse Lunar</h3>
+                            <p class="event-text text-white-50">Únete a nosotros para observar el próximo eclipse lunar
+                                total a través de nuestros telescopios. Incluye charla previa sobre fenómenos lunares.
+                            </p>
+                            <a href="actividades.html#eclipse-lunar" class="btn btn-outline-light mt-3">Reservar
+                                plaza</a>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="event-card p-4 rounded h-100">
+                            <div class="event-date mb-3">
+                                <span class="badge bg-primary p-2">22 Mayo</span>
+                                <span class="ms-2 text-white">11:00h</span>
+                            </div>
+                            <h3 class="event-title text-white">Taller Infantil: Construye tu Cohete</h3>
+                            <p class="event-text text-white-50">Taller práctico donde los niños aprenderán sobre
+                                propulsión y física espacial mientras construyen y lanzan su propio cohete de agua.</p>
+                            <a href="actividades.html#taller-cohete" class="btn btn-outline-light mt-3">Inscribir
+                                niños</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-5">
+                    <a href="actividades.html" class="btn btn-primary btn-lg">Ver calendario completo</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Planetario de Madrid</h3>
+                    <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón de
+                        Madrid.</p>
+                    <div class="social-links d-flex gap-2 mt-3">
+                        <a href="#" class="social-link" aria-label="Facebook">F</a>
+                        <a href="#" class="social-link" aria-label="Twitter">T</a>
+                        <a href="#" class="social-link" aria-label="Instagram">I</a>
+                        <a href="#" class="social-link" aria-label="YouTube">Y</a>
+                    </div>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Enlaces rápidos</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="horarios.html">Horarios y Tarifas</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="contacto.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-4 col-lg-3">
+                    <h3 class="text-accent mb-4">Información</h3>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="como-llegar.html">Cómo llegar</a></li>
+                        <li><a href="planifica-visita.html">Planifica tu visita</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                        <li><a href="faq.html">Preguntas frecuentes</a></li>
+                        <li><a href="empleo.html">Trabaja con nosotros</a></li>
+                    </ul>
+                </div>
+
+                <div class="col-md-12 col-lg-3">
+                    <h3 class="text-accent mb-4">Suscríbete a nuestra newsletter</h3>
+                    <p class="text-white-50 mb-3">Recibe información sobre nuestras exposiciones y eventos.</p>
+                    <form class="d-flex">
+                        <input type="email" class="form-control me-2" placeholder="Tu email"
+                            aria-label="Email para newsletter">
+                        <button class="btn btn-primary" type="submit">OK</button>
+                    </form>
+                </div>
+            </div>
+
+            <div class="text-center copyright mt-5 pt-4 text-white-50">
+                <p>&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <!-- Script personalizado para navegación y animaciones -->
+    <script src="js/scripts.js"></script>
+</body>
+
+</html>

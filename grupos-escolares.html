@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grupos Escolares - Planetario de Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+</head>
+
+<body>
+    <!-- Skip Link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="page-banner d-flex align-items-center justify-content-center text-center">
+        <div class="banner-image"></div>
+        <div class="container z-index-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb justify-content-center">
+                            <li class="breadcrumb-item"><a href="index.html" class="text-white">Inicio</a></li>
+                            <li class="breadcrumb-item"><a href="visitas.html" class="text-white">Visitas</a></li>
+                            <li class="breadcrumb-item active text-white" aria-current="page">Grupos Escolares</li>
+                        </ol>
+                    </nav>
+                    <h1 class="display-4 fw-bold mb-3 fade-in">Grupos Escolares</h1>
+                    <p class="lead opacity-75 fade-in">Experiencias educativas inmersivas para descubrir el universo</p>
+                </div>
+            </div>
+        </div>
+        <!-- Planetas decorativos -->
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" class="pb-5">
+        <!-- Introducción -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="text-center mb-5">
+                            <h2 class="display-5 fw-bold mb-4">Un viaje educativo por el cosmos</h2>
+                            <p class="lead">El Planetario de Madrid ofrece un programa educativo diseñado
+                                específicamente para centros escolares, proporcionando una experiencia inmersiva y
+                                didáctica sobre astronomía y ciencias del espacio.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="row g-4 justify-content-center">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-user-graduate"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Adaptado por Niveles</h3>
+                            <p>Contenidos educativos adaptados a cada etapa: Infantil, Primaria, ESO, Bachillerato y FP.
+                            </p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-chalkboard-teacher"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Curriculum Alineado</h3>
+                            <p>Contenidos diseñados siguiendo el curriculum oficial para complementar el aprendizaje en
+                                el aula.</p>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="activity-item p-4 text-center h-100">
+                            <div class="activity-icon mx-auto mb-3">
+                                <i class="fas fa-hands-helping"></i>
+                            </div>
+                            <h3 class="h4 mb-3">Material Didáctico</h3>
+                            <p>Recursos pre y post visita para educadores, con actividades para trabajar en clase.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Opciones para escolares -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Opciones de visita escolar</h2>
+                        <p class="lead">Elige la modalidad que mejor se adapte a las necesidades de tu grupo.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/escolar-proyeccion.jpg" class="card-img-top"
+                                alt="Proyección escolar en el planetario">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Proyección + Visita</h3>
+                                <p class="card-text mb-3">Incluye una proyección adaptada al nivel educativo en nuestra
+                                    cúpula y acceso a las exposiciones permanentes con materiales didácticos
+                                    específicos.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Grupos de hasta 30
+                                        alumnos</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> 5€ por alumno (profesores
+                                        gratis)</li>
+                                </ul>
+                                <a href="#reserva" class="btn btn-primary">Reservar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6">
+                        <div class="exhibition-card h-100">
+                            <img src="img/escolar-taller.jpg" class="card-img-top"
+                                alt="Taller astronómico para escolares">
+                            <div class="card-body">
+                                <h3 class="card-title h4">Proyección + Taller</h3>
+                                <p class="card-text mb-3">Además de la proyección, incluye un taller práctico donde los
+                                    estudiantes realizarán experimentos y actividades relacionadas con el espacio.</p>
+                                <ul class="list-unstyled mb-4">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 2 horas
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Grupos de hasta 25
+                                        alumnos</li>
+                                    <li><i class="fas fa-euro-sign text-accent me-2"></i> 7€ por alumno (profesores
+                                        gratis)</li>
+                                </ul>
+                                <a href="#reserva" class="btn btn-primary">Reservar ahora</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proyecciones disponibles -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Proyecciones educativas</h2>
+                        <p class="lead">Adaptadas por niveles y alineadas con el currículo escolar.</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/infantil-show.jpg" class="card-img-top"
+                                alt="Proyección para educación infantil">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Infantil (3-5 años)</span>
+                                <h3 class="card-title h5">Descubriendo el cielo</h3>
+                                <p class="card-text">Un primer contacto con los astros a través de un viaje lleno de
+                                    magia y color. Con personajes animados que introducen la astronomía de forma
+                                    divertida.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/primaria-show.jpg" class="card-img-top"
+                                alt="Proyección para educación primaria">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">Primaria (6-11 años)</span>
+                                <h3 class="card-title h5">Exploradores del Sistema Solar</h3>
+                                <p class="card-text">Un recorrido por los planetas y cuerpos celestes cercanos,
+                                    descubriendo las características que hacen único a cada uno.</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/secundaria-show.jpg" class="card-img-top"
+                                alt="Proyección para ESO y Bachillerato">
+                            <div class="card-body">
+                                <span class="badge bg-primary mb-2">ESO y Bachillerato (12-18 años)</span>
+                                <h3 class="card-title h5">El Universo en perspectiva</h3>
+                                <p class="card-text">Una mirada científica al cosmos, explorando los últimos
+                                    descubrimientos sobre exoplanetas, agujeros negros y la estructura del universo.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Talleres disponibles -->
+        <section class="py-5 bg-dark-transparent">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Talleres interactivos</h2>
+                        <p class="lead">Experiencias prácticas para aprender haciendo y explorando.</p>
+                    </div>
+                </div>
+
+                <div class="accordion" id="accordionTalleres">
+                    <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-dark-transparent text-white" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#taller1">
+                                <i class="fas fa-rocket me-2 text-accent"></i> Construye tu sistema solar (Primaria)
+                            </button>
+                        </h2>
+                        <div id="taller1" class="accordion-collapse collapse show" data-bs-parent="#accordionTalleres">
+                            <div class="accordion-body">
+                                <p>Los alumnos construirán una maqueta a escala del sistema solar, aprendiendo sobre las
+                                    proporciones, distancias y características de cada planeta.</p>
+                                <p class="mb-0"><strong>Habilidades:</strong> Trabajo en equipo, manualidades,
+                                    comprensión de escalas y dimensiones.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-dark-transparent text-white collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#taller2">
+                                <i class="fas fa-meteor me-2 text-accent"></i> Cráteres y meteoritos (Primaria/ESO)
+                            </button>
+                        </h2>
+                        <div id="taller2" class="accordion-collapse collapse" data-bs-parent="#accordionTalleres">
+                            <div class="accordion-body">
+                                <p>Experimentos para entender cómo se forman los cráteres en los cuerpos celestes y el
+                                    papel de los impactos en la evolución planetaria.</p>
+                                <p class="mb-0"><strong>Habilidades:</strong> Método científico, observación,
+                                    formulación de hipótesis.</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                        <h2 class="accordion-header">
+                            <button class="accordion-button bg-dark-transparent text-white collapsed" type="button"
+                                data-bs-toggle="collapse" data-bs-target="#taller3">
+                                <i class="fas fa-satellite me-2 text-accent"></i> Espectroscopía: La luz de las
+                                estrellas (ESO/Bachillerato)
+                            </button>
+                        </h2>
+                        <div id="taller3" class="accordion-collapse collapse" data-bs-parent="#accordionTalleres">
+                            <div class="accordion-body">
+                                <p>Taller avanzado donde los estudiantes construirán un espectroscopio sencillo y
+                                    aprenderán a interpretar la información que nos llega a través de la luz de las
+                                    estrellas.</p>
+                                <p class="mb-0"><strong>Habilidades:</strong> Física de la luz, interpretación de datos,
+                                    construcción de instrumentos.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Proceso de reserva -->
+        <section id="reserva" class="py-5">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Cómo reservar</h2>
+                        <p class="lead">Proceso sencillo para organizar la visita de tu centro escolar.</p>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="col-lg-8 mx-auto">
+                        <div class="info-card p-4 rounded-3 mb-4">
+                            <h3 class="h4 mb-3">Pasos para la reserva</h3>
+                            <ol class="list-group list-group-numbered mb-0">
+                                <li class="list-group-item bg-transparent text-white border-0 ps-0">
+                                    <strong>Contacto inicial:</strong> Rellena el formulario de solicitud o llama al 91
+                                    467 34 62 (L-V, 10:00-14:00).
+                                </li>
+                                <li class="list-group-item bg-transparent text-white border-0 ps-0">
+                                    <strong>Confirmación:</strong> Nuestro equipo educativo se pondrá en contacto para
+                                    confirmar disponibilidad y concretar detalles.
+                                </li>
+                                <li class="list-group-item bg-transparent text-white border-0 ps-0">
+                                    <strong>Pago:</strong> Transferencia bancaria (15 días antes) o en efectivo el día
+                                    de la visita.
+                                </li>
+                                <li class="list-group-item bg-transparent text-white border-0 ps-0">
+                                    <strong>Visita:</strong> Llegada 15 minutos antes del horario programado. El
+                                    responsable del grupo recibirá instrucciones específicas.
+                                </li>
+                            </ol>
+                        </div>
+
+                        <div class="info-card p-4 rounded-3">
+                            <h3 class="h4 mb-3">Formulario de solicitud</h3>
+                            <form>
+                                <div class="row g-3">
+                                    <div class="col-md-6">
+                                        <label for="centroEducativo" class="form-label">Centro educativo</label>
+                                        <input type="text" class="form-control bg-dark text-white border-0"
+                                            id="centroEducativo" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="contactoProfesor" class="form-label">Profesor/a responsable</label>
+                                        <input type="text" class="form-control bg-dark text-white border-0"
+                                            id="contactoProfesor" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="emailContacto" class="form-label">Email de contacto</label>
+                                        <input type="email" class="form-control bg-dark text-white border-0"
+                                            id="emailContacto" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="telefonoContacto" class="form-label">Teléfono de contacto</label>
+                                        <input type="tel" class="form-control bg-dark text-white border-0"
+                                            id="telefonoContacto" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="nivelEducativo" class="form-label">Nivel educativo</label>
+                                        <select class="form-select bg-dark text-white border-0" id="nivelEducativo"
+                                            required>
+                                            <option value="" selected disabled>Seleccionar...</option>
+                                            <option value="infantil">Educación Infantil</option>
+                                            <option value="primaria1">Primaria (1º-3º)</option>
+                                            <option value="primaria2">Primaria (4º-6º)</option>
+                                            <option value="eso1">ESO (1º-2º)</option>
+                                            <option value="eso2">ESO (3º-4º)</option>
+                                            <option value="bachillerato">Bachillerato</option>
+                                            <option value="fp">Formación Profesional</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="numEstudiantes" class="form-label">Número de estudiantes</label>
+                                        <input type="number" class="form-control bg-dark text-white border-0"
+                                            id="numEstudiantes" min="10" max="60" required>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="tipoVisita" class="form-label">Tipo de visita</label>
+                                        <select class="form-select bg-dark text-white border-0" id="tipoVisita"
+                                            required>
+                                            <option value="" selected disabled>Seleccionar...</option>
+                                            <option value="proyeccion">Proyección + Visita</option>
+                                            <option value="taller">Proyección + Taller</option>
+                                        </select>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <label for="fechaPreferida" class="form-label">Fecha preferida</label>
+                                        <input type="date" class="form-control bg-dark text-white border-0"
+                                            id="fechaPreferida" required>
+                                    </div>
+                                    <div class="col-12">
+                                        <label for="comentarios" class="form-label">Comentarios adicionales</label>
+                                        <textarea class="form-control bg-dark text-white border-0" id="comentarios"
+                                            rows="3"></textarea>
+                                    </div>
+                                    <div class="col-12">
+                                        <div class="form-check">
+                                            <input class="form-check-input" type="checkbox" id="aceptoPolitica"
+                                                required>
+                                            <label class="form-check-label" for="aceptoPolitica">
+                                                Acepto la política de privacidad y el tratamiento de datos
+                                            </label>
+                                        </div>
+                                    </div>
+                                    <div class="col-12 text-center">
+                                        <button type="submit" class="btn btn-primary px-4 py-2">
+                                            <i class="fas fa-paper-plane me-2"></i> Enviar solicitud
+                                        </button>
+                                    </div>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Preguntas frecuentes -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Preguntas frecuentes</h2>
+                        <p class="lead">Resolvemos tus dudas sobre las visitas escolares.</p>
+                    </div>
+                </div>
+
+                <div class="row justify-content-center">
+                    <div class="col-lg-10">
+                        <div class="accordion" id="accordionFAQ">
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white" type="button"
+                                        data-bs-toggle="collapse" data-bs-target="#faq1">
+                                        ¿Cuánto tiempo antes debo reservar?
+                                    </button>
+                                </h2>
+                                <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Recomendamos reservar con al menos 1 mes de antelación, especialmente para los
+                                        meses de mayor demanda (abril-junio). Para grupos numerosos o fechas
+                                        específicas, es aconsejable contactar con 2-3 meses de anticipación.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq2">
+                                        ¿Cuántos alumnos pueden venir por grupo?
+                                    </button>
+                                </h2>
+                                <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        La capacidad máxima de nuestra sala de proyección es de 60 alumnos por sesión.
+                                        Para los talleres, el límite es de 25 alumnos por grupo. Si su centro tiene más
+                                        alumnos, podemos organizar visitas simultáneas o consecutivas.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq3">
+                                        ¿Hay espacio para comer el almuerzo?
+                                    </button>
+                                </h2>
+                                <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Disponemos de una zona de merendero cubierta para grupos escolares, que debe
+                                        reservarse al mismo tiempo que la visita. En días de buen tiempo, también hay
+                                        áreas de picnic en el parque circundante.
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
+                                <h2 class="accordion-header">
+                                    <button class="accordion-button bg-dark-transparent text-white collapsed"
+                                        type="button" data-bs-toggle="collapse" data-bs-target="#faq4">
+                                        ¿Se entregan certificados de asistencia?
+                                    </button>
+                                </h2>
+                                <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                    <div class="accordion-body">
+                                        Sí, proporcionamos certificados de asistencia tanto para el centro educativo
+                                        como para los docentes que lo soliciten. Estos certificados son reconocidos como
+                                        actividad de formación complementaria.
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Call to action -->
+        <section class="py-5 bg-cta-gradient">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-8 mb-4 mb-lg-0">
+                        <h2 class="h3 fw-bold mb-2">¿Tienes alguna duda sobre las visitas escolares?</h2>
+                        <p class="mb-0">Nuestro equipo educativo está disponible para ayudarte a organizar la mejor
+                            experiencia para tu grupo.</p>
+                    </div>
+                    <div class="col-lg-4 text-lg-end">
+                        <a href="contacto.html" class="btn btn-light btn-lg">
+                            <i class="fas fa-envelope me-2"></i> Contactar ahora
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-img rounded-circle me-2"></div>
+                        <span class="fw-bold fs-5">Planetario de Madrid</span>
+                    </div>
+                    <p class="mb-3 opacity-75">Un viaje por el universo en el corazón de Madrid. Explora, aprende y
+                        déjate maravillar por los secretos del cosmos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Enlaces rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="proyecciones.html">Proyecciones</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="info.html">Información</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Visitas</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="grupos-escolares.html">Grupos escolares</a></li>
+                        <li><a href="visitas-guiadas.html">Visitas guiadas</a></li>
+                        <li><a href="cumpleanos.html">Cumpleaños estelares</a></li>
+                        <li><a href="eventos.html">Eventos privados</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3 fw-bold">Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-map-marker-alt mt-1 me-2 text-accent"></i>
+                            <span>Avda. del Planetario, 16<br>28045 Madrid</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-phone-alt mt-1 me-2 text-accent"></i>
+                            <span>91 467 34 62</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
+                            <span>info@planetmadrid.es</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 opacity-75">&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacidad.html" class="text-white opacity-75">Política de
+                                privacidad</a></li>
+                        <li class="list-inline-item ms-3"><a href="legal.html" class="text-white opacity-75">Aviso
+                                legal</a></li>
+                        <li class="list-inline-item ms-3"><a href="cookies.html"
+                                class="text-white opacity-75">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Añadir class active al enlace de navegación actual
+        document.addEventListener('DOMContentLoaded', function () {
+            const currentLocation = location.href;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Animación de scroll suave para anclas
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    e.preventDefault();
+                    const targetId = this.getAttribute('href');
+                    const targetElement = document.querySelector(targetId);
+                    if (targetElement) {
+                        window.scrollTo({
+                            top: targetElement.offsetTop - 80,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+
+</html>
