@@ -1,0 +1,944 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calendario de Actividades - Planetario de Madrid</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- CSS adicional para el calendario -->
+    <style>
+        .calendar-header {
+            background-color: rgba(11, 61, 145, 0.9);
+            border-radius: 10px 10px 0 0;
+        }
+
+        .calendar-day {
+            min-height: 120px;
+            background-color: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            transition: transform 0.2s, background-color 0.2s;
+        }
+
+        .calendar-day:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        .calendar-day.today {
+            border: 2px solid var(--color-accent);
+            background-color: rgba(238, 155, 0, 0.1);
+        }
+
+        .calendar-day .day-number {
+            font-size: 1.2rem;
+            font-weight: 600;
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            opacity: 0.7;
+        }
+
+        .calendar-day.empty {
+            background-color: rgba(0, 0, 0, 0.1);
+        }
+
+        .event-dot {
+            display: inline-block;
+            width: 10px;
+            height: 10px;
+            border-radius: 50%;
+            margin-right: 5px;
+        }
+
+        .event-proyeccion {
+            background-color: #0d6efd;
+            /* primary */
+        }
+
+        .event-taller {
+            background-color: #198754;
+            /* success */
+        }
+
+        .event-observacion {
+            background-color: #0dcaf0;
+            /* info */
+        }
+
+        .event-especial {
+            background-color: #dc3545;
+            /* danger */
+        }
+
+        .legend-item {
+            display: flex;
+            align-items: center;
+            margin-right: 15px;
+        }
+
+        .event-item {
+            font-size: 0.85rem;
+            padding: 3px 5px;
+            border-radius: 4px;
+            margin-bottom: 3px;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            cursor: pointer;
+            transition: background-color 0.2s;
+        }
+
+        .event-item:hover {
+            opacity: 0.9;
+        }
+
+        .filter-badge {
+            cursor: pointer;
+            transition: opacity 0.2s;
+        }
+
+        .filter-badge.active {
+            opacity: 1;
+        }
+
+        .filter-badge:not(.active) {
+            opacity: 0.5;
+        }
+
+        /* Modal personalizado */
+        .modal-content {
+            background-color: rgba(11, 61, 145, 0.95);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-header {
+            border-bottom-color: rgba(255, 255, 255, 0.1);
+        }
+
+        .modal-footer {
+            border-top-color: rgba(255, 255, 255, 0.1);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Skip Link para accesibilidad -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- Cabecera y Navegación -->
+    <header class="sticky-top">
+        <div class="container">
+            <nav class="navbar navbar-expand-lg navbar-dark">
+                <div class="container-fluid">
+                    <a href="index.html" class="navbar-brand d-flex align-items-center">
+                        <img src="img/logo.jpg" alt="Logo del Planetario de Madrid"
+                            class="logo-img rounded-circle me-2">
+                        <div>
+                            <span class="fs-4 fw-bold d-block">Planetario de Madrid</span>
+                            <small class="d-none d-md-block">Explora el Universo</small>
+                        </div>
+                    </a>
+
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarMain"
+                        aria-controls="navbarMain" aria-expanded="false" aria-label="Mostrar/ocultar navegación">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+
+                    <div class="collapse navbar-collapse" id="navbarMain">
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
+                            <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
+                            <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
+                            <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
+                            <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
+                            <li class="nav-item"><a class="nav-link active" href="calendario.html"
+                                    aria-current="page">Calendario</a></li>
+                            <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
+                        </ul>
+                        <div class="d-flex">
+                            <a href="entradas.html" class="btn btn-primary btn-tickets">
+                                Comprar Entradas
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Banner -->
+    <section class="page-banner d-flex align-items-center justify-content-center text-center">
+        <div class="banner-image"></div>
+        <div class="container z-index-1">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <h1 class="display-4 fw-bold mb-3 fade-in">Calendario de Actividades</h1>
+                    <p class="lead opacity-75 fade-in">Descubre y planifica tu visita con todas nuestras actividades</p>
+                </div>
+            </div>
+        </div>
+        <!-- Planetas decorativos -->
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
+    </section>
+
+    <!-- Contenido principal -->
+    <main id="main-content" class="pb-5">
+        <!-- Selector de mes y filtros -->
+        <section class="py-4 bg-dark">
+            <div class="container">
+                <div class="row align-items-center g-3">
+                    <div class="col-md-4">
+                        <div class="d-flex">
+                            <button class="btn btn-outline-light me-2" id="prevMonth">
+                                <i class="fas fa-chevron-left"></i>
+                            </button>
+                            <select class="form-select bg-dark text-white border-0" id="monthSelector">
+                                <option value="4">Mayo 2025</option>
+                                <option value="5">Junio 2025</option>
+                                <option value="6">Julio 2025</option>
+                                <option value="7">Agosto 2025</option>
+                                <option value="8">Septiembre 2025</option>
+                            </select>
+                            <button class="btn btn-outline-light ms-2" id="nextMonth">
+                                <i class="fas fa-chevron-right"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-8 text-md-end">
+                        <div class="d-flex flex-wrap justify-content-md-end">
+                            <span class="me-2 d-inline-block mt-2">Filtrar:</span>
+                            <span class="badge bg-primary me-2 mb-2 px-3 py-2 filter-badge active" data-filter="all">
+                                Todos
+                            </span>
+                            <span class="badge bg-primary me-2 mb-2 px-3 py-2 filter-badge" data-filter="proyeccion">
+                                <i class="fas fa-film me-1"></i> Proyecciones
+                            </span>
+                            <span class="badge bg-success me-2 mb-2 px-3 py-2 filter-badge" data-filter="taller">
+                                <i class="fas fa-tools me-1"></i> Talleres
+                            </span>
+                            <span class="badge bg-info me-2 mb-2 px-3 py-2 filter-badge" data-filter="observacion">
+                                <i class="fas fa-telescope me-1"></i> Observaciones
+                            </span>
+                            <span class="badge bg-danger me-2 mb-2 px-3 py-2 filter-badge" data-filter="especial">
+                                <i class="fas fa-star me-1"></i> Eventos Especiales
+                            </span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calendario -->
+        <section class="py-5">
+            <div class="container">
+                <!-- Días de la semana -->
+                <div class="row text-center mb-2">
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Lunes</h5>
+                    </div>
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Martes</h5>
+                    </div>
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Miércoles</h5>
+                    </div>
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Jueves</h5>
+                    </div>
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Viernes</h5>
+                    </div>
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Sábado</h5>
+                    </div>
+                    <div class="col calendar-header py-2">
+                        <h5 class="mb-0">Domingo</h5>
+                    </div>
+                </div>
+
+                <!-- Primera semana de Mayo -->
+                <div class="row g-0 mb-2">
+                    <!-- Celda vacía para el 29 de abril -->
+                    <div class="col calendar-day empty position-relative p-2">
+                        <div class="day-number text-muted">29</div>
+                    </div>
+                    <!-- Celda vacía para el 30 de abril -->
+                    <div class="col calendar-day empty position-relative p-2">
+                        <div class="day-number text-muted">30</div>
+                    </div>
+                    <!-- Día 1 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">1</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Planetario para peques" data-event-time="10:30">
+                                <small>10:30 Peques</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 2 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">2</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 3 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">3</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal" data-event-title="Agujeros Negros"
+                                data-event-time="19:00">
+                                <small>19:00 Agujeros Negros</small>
+                            </div>
+                            <div class="event-item bg-info text-white" data-event-type="observacion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Observación Nocturna" data-event-time="21:30">
+                                <small>21:30 Observación</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 4 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">4</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Mi Primer Mapa Estelar" data-event-time="12:00">
+                                <small>12:00 Mapa Estelar</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Segunda semana de Mayo (día 5-11) -->
+                <div class="row g-0 mb-2">
+                    <!-- Día 5 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">5</div>
+                        <div class="mt-4">
+                            <!-- Día sin actividades (Cerrado) -->
+                            <div class="text-muted text-center mt-3">
+                                <small>CERRADO</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 6 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">6</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 7 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">7</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 8 (HOY) -->
+                    <div class="col calendar-day today position-relative p-2">
+                        <div class="day-number">8</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-danger text-white" data-event-type="especial"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Día Internacional de la Astronomía" data-event-time="Todo el día">
+                                <small>Día Astronomía</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 9 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">9</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 10 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">10</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Construye tu Cohete" data-event-time="16:00">
+                                <small>16:00 Cohete</small>
+                            </div>
+                            <div class="event-item bg-info text-white" data-event-type="observacion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Observación Nocturna" data-event-time="21:30">
+                                <small>21:30 Observación</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 11 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">11</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Mi Primer Mapa Estelar" data-event-time="12:00">
+                                <small>12:00 Mapa Estelar</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tercera semana de Mayo (mostraremos solo esta parte) -->
+                <div class="row g-0 mb-2">
+                    <!-- Día 12 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">12</div>
+                        <div class="mt-4">
+                            <!-- Día sin actividades (Cerrado) -->
+                            <div class="text-muted text-center mt-3">
+                                <small>CERRADO</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 13 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">13</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 14 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">14</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 15 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">15</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-danger text-white" data-event-type="especial"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Noche de las Estrellas" data-event-time="19:00">
+                                <small>19:00 Noche Estrellas</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 16 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">16</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 17 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">17</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Construye tu Cohete" data-event-time="16:00">
+                                <small>16:00 Cohete</small>
+                            </div>
+                            <div class="event-item bg-info text-white" data-event-type="observacion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Observación Nocturna" data-event-time="21:30">
+                                <small>21:30 Observación</small>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Día 18 -->
+                    <div class="col calendar-day position-relative p-2">
+                        <div class="day-number">18</div>
+                        <div class="mt-4">
+                            <div class="event-item bg-primary text-white" data-event-type="proyeccion"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Cosmos: Un viaje por el universo" data-event-time="12:00, 17:00">
+                                <small>12:00 Cosmos</small>
+                            </div>
+                            <div class="event-item bg-success text-white" data-event-type="taller"
+                                data-bs-toggle="modal" data-bs-target="#eventModal"
+                                data-event-title="Mi Primer Mapa Estelar" data-event-time="12:00">
+                                <small>12:00 Mapa Estelar</small>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nota: El resto de semanas seguiría el mismo patrón -->
+
+                <!-- Leyenda -->
+                <div class="mt-4 d-flex flex-wrap">
+                    <div class="legend-item">
+                        <span class="event-dot event-proyeccion"></span>
+                        <small>Proyecciones</small>
+                    </div>
+                    <div class="legend-item">
+                        <span class="event-dot event-taller"></span>
+                        <small>Talleres</small>
+                    </div>
+                    <div class="legend-item">
+                        <span class="event-dot event-observacion"></span>
+                        <small>Observaciones</small>
+                    </div>
+                    <div class="legend-item">
+                        <span class="event-dot event-especial"></span>
+                        <small>Eventos Especiales</small>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Próximos eventos destacados -->
+        <section class="py-5 bg-stars">
+            <div class="container">
+                <div class="row justify-content-center mb-5">
+                    <div class="col-lg-8 text-center">
+                        <h2 class="display-5 fw-bold mb-3">Eventos destacados</h2>
+                        <p class="lead">No te pierdas estas actividades especiales</p>
+                    </div>
+                </div>
+
+                <div class="row g-4">
+                    <!-- Evento Destacado 1 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">15 de mayo, 19:00h</h3>
+                                    <p class="mb-0 opacity-75">Viernes</p>
+                                </div>
+                            </div>
+                            <h4 class="h4 mb-2">Noche de las Estrellas</h4>
+                            <p class="mb-3">Jornada especial de puertas abiertas con motivo del Día Internacional de la
+                                Astronomía. Incluye observaciones, charlas divulgativas, talleres exprés y proyección
+                                especial en la cúpula.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-danger px-3 py-2">Evento Especial</span>
+                                <a href="eventos.html" class="btn btn-outline-light btn-sm">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evento Destacado 2 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">22 de mayo, 21:00h</h3>
+                                    <p class="mb-0 opacity-75">Viernes</p>
+                                </div>
+                            </div>
+                            <h4 class="h4 mb-2">Observación: Eclipse Lunar</h4>
+                            <p class="mb-3">Una sesión especial para observar el próximo eclipse lunar parcial. Incluye
+                                una charla introductoria sobre el fenómeno, observación con telescopios especializados y
+                                sesión fotográfica guiada.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-info px-3 py-2">Observación Especial</span>
+                                <a href="eventos.html" class="btn btn-outline-light btn-sm">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Evento Destacado 3 -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-calendar-day"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">29 de mayo, 20:00h</h3>
+                                    <p class="mb-0 opacity-75">Viernes</p>
+                                </div>
+                            </div>
+                            <h4 class="h4 mb-2">Conferencia: "Exoplanetas y vida extraterrestre"</h4>
+                            <p class="mb-3">Conferencia a cargo de la Dra. Elena Martínez, astrobióloga del Centro de
+                                Astrobiología (CSIC-INTA), sobre los últimos descubrimientos de exoplanetas y las
+                                posibilidades de vida fuera de la Tierra.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="badge bg-danger px-3 py-2">Evento Especial</span>
+                                <a href="eventos.html" class="btn btn-outline-light btn-sm">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="text-center mt-4">
+                    <a href="actividades.html" class="btn btn-primary px-4 py-2">
+                        <i class="fas fa-list-alt me-2"></i> Ver todas las actividades
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Suscripción a alertas de actividades -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row align-items-center">
+                    <div class="col-lg-7 mb-4 mb-lg-0">
+                        <h2 class="display-6 fw-bold mb-3">Recibe alertas de actividades</h2>
+                        <p class="lead mb-4">Suscríbete para recibir recordatorios de las actividades que te interesan.
+                            Te enviaremos notificaciones cuando se acerquen las fechas de tus eventos favoritos.</p>
+                        <ul class="list-unstyled">
+                            <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Alertas personalizadas
+                                según tus intereses</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Notificación
+                                anticipada de nuevas actividades</li>
+                            <li class="mb-2"><i class="fas fa-check-circle text-accent me-2"></i> Recordatorios de
+                                eventos especiales</li>
+                            <li><i class="fas fa-check-circle text-accent me-2"></i> Cancelación en cualquier momento
+                            </li>
+                        </ul>
+                    </div>
+                    <div class="col-lg-5">
+                        <div class="info-card p-4 rounded-3">
+                            <h3 class="h4 mb-3">Suscríbete a las alertas</h3>
+                            <form>
+                                <div class="mb-3">
+                                    <label for="nombreSuscripcion" class="form-label">Nombre</label>
+                                    <input type="text" class="form-control bg-dark text-white border-0"
+                                        id="nombreSuscripcion" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label for="emailSuscripcion" class="form-label">Email</label>
+                                    <input type="email" class="form-control bg-dark text-white border-0"
+                                        id="emailSuscripcion" required>
+                                </div>
+                                <div class="mb-3">
+                                    <label class="form-label">Intereses (opcional)</label>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkProyecciones">
+                                        <label class="form-check-label" for="checkProyecciones">Proyecciones</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkTalleres">
+                                        <label class="form-check-label" for="checkTalleres">Talleres</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkObservaciones">
+                                        <label class="form-check-label" for="checkObservaciones">Observaciones
+                                            astronómicas</label>
+                                    </div>
+                                    <div class="form-check">
+                                        <input class="form-check-input" type="checkbox" id="checkEventos">
+                                        <label class="form-check-label" for="checkEventos">Eventos especiales</label>
+                                    </div>
+                                </div>
+                                <div class="mb-3 form-check">
+                                    <input type="checkbox" class="form-check-input" id="checkPolitica" required>
+                                    <label class="form-check-label" for="checkPolitica">He leído y acepto la política de
+                                        privacidad</label>
+                                </div>
+                                <div class="text-center">
+                                    <button type="submit" class="btn btn-primary px-4">Suscribirme</button>
+                                </div>
+                            </form>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Modal para detalles de eventos -->
+    <div class="modal fade" id="eventModal" tabindex="-1" aria-labelledby="eventModalLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered">
+            <div class="modal-content text-white">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="eventModalLabel">Detalles del evento</h5>
+                    <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
+                        aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h4 id="eventTitle" class="mb-3">Título del evento</h4>
+                    <p class="mb-2"><i class="fas fa-calendar-day text-accent me-2"></i> <span
+                            id="eventDate">Fecha</span></p>
+                    <p class="mb-2"><i class="fas fa-clock text-accent me-2"></i> <span id="eventTime">Hora</span></p>
+                    <p class="mb-2"><i class="fas fa-tag text-accent me-2"></i> <span id="eventType">Tipo</span></p>
+                    <p class="mb-4"><i class="fas fa-info-circle text-accent me-2"></i> <span
+                            id="eventDescription">Descripción del evento...</span></p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-light" data-bs-dismiss="modal">Cerrar</button>
+                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-white">
+        <div class="container">
+            <div class="row g-4">
+                <div class="col-md-4 mb-4 mb-md-0">
+                    <div class="d-flex align-items-center mb-3">
+                        <div class="logo-img rounded-circle me-2"></div>
+                        <span class="fw-bold fs-5">Planetario de Madrid</span>
+                    </div>
+                    <p class="mb-3 opacity-75">Un viaje por el universo en el corazón de Madrid. Explora, aprende y
+                        déjate maravillar por los secretos del cosmos.</p>
+                    <div class="social-links">
+                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
+                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                    </div>
+                </div>
+                <div class="col-md-2 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Enlaces rápidos</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="index.html">Inicio</a></li>
+                        <li><a href="exposiciones.html">Exposiciones</a></li>
+                        <li><a href="proyecciones.html">Proyecciones</a></li>
+                        <li><a href="actividades.html">Actividades</a></li>
+                        <li><a href="info.html">Información</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3 mb-4 mb-md-0">
+                    <h5 class="mb-3 fw-bold">Visitas</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li><a href="grupos-escolares.html">Grupos escolares</a></li>
+                        <li><a href="visitas-guiadas.html">Visitas guiadas</a></li>
+                        <li><a href="cumpleanos.html">Cumpleaños estelares</a></li>
+                        <li><a href="eventos.html">Eventos privados</a></li>
+                        <li><a href="accesibilidad.html">Accesibilidad</a></li>
+                    </ul>
+                </div>
+                <div class="col-md-3">
+                    <h5 class="mb-3 fw-bold">Contacto</h5>
+                    <ul class="list-unstyled footer-links">
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-map-marker-alt mt-1 me-2 text-accent"></i>
+                            <span>Avda. del Planetario, 16<br>28045 Madrid</span>
+                        </li>
+                        <li class="d-flex mb-2">
+                            <i class="fas fa-phone-alt mt-1 me-2 text-accent"></i>
+                            <span>91 467 34 62</span>
+                        </li>
+                        <li class="d-flex">
+                            <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
+                            <span>info@planetmadrid.es</span>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 opacity-25">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start mb-3 mb-md-0">
+                    <p class="mb-0 opacity-75">&copy; 2025 Planetario de Madrid. Todos los derechos reservados.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <ul class="list-inline mb-0">
+                        <li class="list-inline-item"><a href="privacidad.html" class="text-white opacity-75">Política de
+                                privacidad</a></li>
+                        <li class="list-inline-item ms-3"><a href="legal.html" class="text-white opacity-75">Aviso
+                                legal</a></li>
+                        <li class="list-inline-item ms-3"><a href="cookies.html"
+                                class="text-white opacity-75">Cookies</a></li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- JavaScript -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Navegación activa
+            const currentLocation = location.href;
+            const navLinks = document.querySelectorAll('.navbar-nav .nav-link');
+            navLinks.forEach(link => {
+                if (link.href === currentLocation) {
+                    link.classList.add('active');
+                }
+            });
+
+            // Filtros de eventos
+            const filterBadges = document.querySelectorAll('.filter-badge');
+            const eventItems = document.querySelectorAll('.event-item');
+
+            filterBadges.forEach(badge => {
+                badge.addEventListener('click', function () {
+                    // Quitar clase activa de todos los filtros
+                    filterBadges.forEach(b => b.classList.remove('active'));
+
+                    // Añadir clase activa al filtro seleccionado
+                    this.classList.add('active');
+
+                    const filterValue = this.dataset.filter;
+
+                    // Mostrar/ocultar eventos según el filtro
+                    eventItems.forEach(item => {
+                        if (filterValue === 'all') {
+                            item.style.display = 'block';
+                        } else {
+                            if (item.dataset.eventType === filterValue) {
+                                item.style.display = 'block';
+                            } else {
+                                item.style.display = 'none';
+                            }
+                        }
+                    });
+                });
+            });
+
+            // Modal de eventos
+            const eventModal = document.getElementById('eventModal');
+            if (eventModal) {
+                eventModal.addEventListener('show.bs.modal', function (event) {
+                    const button = event.relatedTarget;
+                    const title = button.getAttribute('data-event-title');
+                    const time = button.getAttribute('data-event-time');
+                    const type = button.getAttribute('data-event-type');
+
+                    // Fecha del evento (se toma del día del calendario donde está el evento)
+                    const dayNumber = button.closest('.calendar-day').querySelector('.day-number').textContent;
+                    const date = `${dayNumber} de Mayo, 2025`;
+
+                    // Mapeo de tipos de eventos a nombres legibles
+                    const typeNames = {
+                        'proyeccion': 'Proyección',
+                        'taller': 'Taller',
+                        'observacion': 'Observación Astronómica',
+                        'especial': 'Evento Especial'
+                    };
+
+                    // Descripción según el tipo de evento (estas descripciones serían dinámicas en un entorno real)
+                    let description = '';
+                    switch (type) {
+                        case 'proyeccion':
+                            description = 'Disfruta de una proyección inmersiva en nuestra cúpula de 15 metros de diámetro con imágenes de alta definición y un sistema de sonido envolvente.';
+                            break;
+                        case 'taller':
+                            description = 'Taller práctico donde aprenderás y crearás tus propios proyectos relacionados con la astronomía, guiado por nuestros educadores.';
+                            break;
+                        case 'observacion':
+                            description = 'Observación del cielo nocturno con telescopios profesionales, guiada por astrónomos que te ayudarán a identificar objetos celestes.';
+                            break;
+                        case 'especial':
+                            description = 'Evento especial con actividades únicas, charlas de expertos y experiencias exclusivas relacionadas con la astronomía y la exploración espacial.';
+                            break;
+                    }
+
+                    // Actualizar el contenido del modal
+                    document.getElementById('eventTitle').textContent = title;
+                    document.getElementById('eventDate').textContent = date;
+                    document.getElementById('eventTime').textContent = time;
+                    document.getElementById('eventType').textContent = typeNames[type] || 'Evento';
+                    document.getElementById('eventDescription').textContent = description;
+                });
+            }
+
+            // Control de meses (para futura implementación)
+            const prevMonthBtn = document.getElementById('prevMonth');
+            const nextMonthBtn = document.getElementById('nextMonth');
+            const monthSelector = document.getElementById('monthSelector');
+
+            if (prevMonthBtn && nextMonthBtn && monthSelector) {
+                prevMonthBtn.addEventListener('click', function () {
+                    const currentIndex = monthSelector.selectedIndex;
+                    if (currentIndex > 0) {
+                        monthSelector.selectedIndex = currentIndex - 1;
+                        // Aquí iría la lógica para cambiar la vista del calendario
+                    }
+                });
+
+                nextMonthBtn.addEventListener('click', function () {
+                    const currentIndex = monthSelector.selectedIndex;
+                    if (currentIndex < monthSelector.options.length - 1) {
+                        monthSelector.selectedIndex = currentIndex + 1;
+                        // Aquí iría la lógica para cambiar la vista del calendario
+                    }
+                });
+
+                monthSelector.addEventListener('change', function () {
+                    // Aquí iría la lógica para cambiar la vista del calendario
+                    // según el mes seleccionado
+                });
+            }
+        });
+    </script>
+</body>
+
+</html>
