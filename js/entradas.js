@@ -118,7 +118,7 @@ function updatePurchaseSummary() {
                     ticketName = 'Entrada Infantil';
                     break;
                 case 'infant':
-                    ticketName = 'Menores de 5 años';
+                    ticketName = 'Menores de 2 años';
                     break;
             }
 
@@ -228,7 +228,7 @@ function getTicketSummary() {
                     ticketName = 'Entrada Infantil';
                     break;
                 case 'infant':
-                    ticketName = 'Menores de 5 años';
+                    ticketName = 'Menores de 2 años';
                     break;
             }
 
