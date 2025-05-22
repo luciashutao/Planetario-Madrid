@@ -39,9 +39,9 @@
 
                     <div class="collapse navbar-collapse" id="navbarMain">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
-                            <a class="nav-link active" href="horarios.html" aria-current="page">Horarios y Tarifas</a>
+                            <li class="nav-item"><a class="nav-link active" href="horarios.html" aria-current="page">Horarios y Tarifas</a></li>
                             <li class="nav-item"><a class="nav-link" href="actividades.html">Actividades</a></li>
                             <li class="nav-item"><a class="nav-link" href="visitas.html">Visitas</a></li>
                             <li class="nav-item"><a class="nav-link" href="contacto.html">Contacto</a></li>
@@ -70,6 +70,9 @@
                 </ol>
             </nav>
         </div>
+        <!-- Planetas decorativos -->
+        <div class="planet planet-1"></div>
+        <div class="planet planet-2"></div>
     </section>
 
     <!-- Contenido principal -->
@@ -78,66 +81,112 @@
         <section class="py-5">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 mb-3 text-white">Horarios de apertura</h2>
+                    <h2 class="display-5 mb-3 text-white">
+                        <i class="fas fa-clock me-3 text-accent"></i>Horarios de apertura
+                    </h2>
                     <p class="section-subtitle text-white-50 mx-auto">Planifica tu visita al Planetario de Madrid</p>
                 </div>
 
                 <div class="row justify-content-center">
-                    <div class="col-lg-8">
-                        <div class="card bg-dark-transparent border-0 shadow-lg">
+                    <div class="col-lg-10">
+                        <!-- Horarios principales -->
+                        <div class="card bg-dark-transparent border-0 shadow-lg mb-4">
                             <div class="card-body p-4">
-                                <div class="table-responsive">
-                                    <table class="table table-hover text-white">
-                                        <thead>
-                                            <tr class="table-primary">
-                                                <th scope="col">Día</th>
-                                                <th scope="col">Horario</th>
-                                                <th scope="col">Observaciones</th>
-                                            </tr>
-                                        </thead>
-                                        <tbody>
-                                            <tr>
-                                                <td>Martes a Viernes</td>
-                                                <td>09:30 - 20:00h</td>
-                                                <td>Última entrada a las 19:00h</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Sábados</td>
-                                                <td>10:00 - 21:00h</td>
-                                                <td>Última entrada a las 20:00h</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Domingos y Festivos</td>
-                                                <td>10:00 - 19:00h</td>
-                                                <td>Última entrada a las 18:00h</td>
-                                            </tr>
-                                            <tr>
-                                                <td>Lunes</td>
-                                                <td colspan="2" class="text-center"><strong>Cerrado</strong> (excepto
-                                                    festivos)</td>
-                                            </tr>
-                                        </tbody>
-                                    </table>
-                                </div>
+                                <div class="row g-4">
+                                    <!-- Tarjeta Martes-Viernes -->
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="info-card p-3 rounded h-100 text-center">
+                                            <div class="icon-circle bg-primary mx-auto mb-3">
+                                                <i class="fas fa-calendar-week"></i>
+                                            </div>
+                                            <h3 class="h5 text-white mb-2">Martes - Viernes</h3>
+                                            <p class="text-accent h4 mb-2">09:30 - 20:00h</p>
+                                            <p class="text-white-50 small mb-0">Última entrada: 19:00h</p>
+                                            <span class="badge bg-warning text-dark mt-2">Mañanas escolares</span>
+                                        </div>
+                                    </div>
 
-                                <div class="alert alert-info mt-4">
-                                    <div class="d-flex align-items-center">
-                                        <i class="bi bi-info-circle-fill me-2 fs-4"></i>
-                                        <div>
-                                            <strong>Nota importante:</strong> El planetario permanecerá cerrado los días
-                                            1 y 6 de enero, 1 de mayo, 24, 25 y 31 de diciembre.
+                                    <!-- Tarjeta Sábados -->
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="info-card p-3 rounded h-100 text-center">
+                                            <div class="icon-circle bg-success mx-auto mb-3">
+                                                <i class="fas fa-calendar-day"></i>
+                                            </div>
+                                            <h3 class="h5 text-white mb-2">Sábados</h3>
+                                            <p class="text-accent h4 mb-2">10:00 - 21:00h</p>
+                                            <p class="text-white-50 small mb-0">Última entrada: 20:00h</p>
+                                            <span class="badge bg-success mt-2">Público general</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tarjeta Domingos -->
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="info-card p-3 rounded h-100 text-center">
+                                            <div class="icon-circle bg-info mx-auto mb-3">
+                                                <i class="fas fa-sun"></i>
+                                            </div>
+                                            <h3 class="h5 text-white mb-2">Domingos</h3>
+                                            <p class="text-accent h4 mb-2">10:00 - 21:00h</p>
+                                            <p class="text-white-50 small mb-0">Última entrada: 20:00h</p>
+                                            <span class="badge bg-info mt-2">Público general</span>
+                                        </div>
+                                    </div>
+
+                                    <!-- Tarjeta Lunes -->
+                                    <div class="col-md-6 col-lg-3">
+                                        <div class="info-card p-3 rounded h-100 text-center">
+                                            <div class="icon-circle bg-danger mx-auto mb-3">
+                                                <i class="fas fa-times"></i>
+                                            </div>
+                                            <h3 class="h5 text-white mb-2">Lunes</h3>
+                                            <p class="text-accent h4 mb-2">CERRADO</p>
+                                            <p class="text-white-50 small mb-0">Excepto festivos</p>
+                                            <span class="badge bg-danger mt-2">Cerrado</span>
                                         </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
 
-                        <div class="horario-especial p-4 rounded mt-4">
-                            <h3 class="h4 text-white">Horario de proyecciones en la cúpula</h3>
-                            <p class="text-white-50">Las proyecciones tienen lugar cada hora, desde las 10:00h hasta una
-                                hora antes del cierre. Para conocer la programación detallada de cada día, consulta
-                                nuestra <a href="proyecciones.html" class="text-primary">sección de proyecciones</a>.
-                            </p>
+                        <!-- Información adicional de horarios -->
+                        <div class="row g-4">
+                            <div class="col-md-6">
+                                <div class="info-card p-4 rounded h-100">
+                                    <h3 class="h4 text-white mb-3">
+                                        <i class="fas fa-film text-accent me-2"></i>Proyecciones
+                                    </h3>
+                                    <ul class="list-unstyled text-white-50">
+                                        <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i>Cada hora desde las 10:00h</li>
+                                        <li class="mb-2"><i class="fas fa-info-circle text-accent me-2"></i>Última proyección 1h antes del cierre</li>
+                                        <li class="mb-2"><i class="fas fa-exclamation-triangle text-accent me-2"></i>No se permite entrada una vez iniciada</li>
+                                        <li class="mb-0"><i class="fas fa-ticket-alt text-accent me-2"></i>Entrada específica requerida</li>
+                                    </ul>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="info-card p-4 rounded h-100">
+                                    <h3 class="h4 text-white mb-3">
+                                        <i class="fas fa-eye text-accent me-2"></i>Exposiciones
+                                    </h3>
+                                    <ul class="list-unstyled text-white-50">
+                                        <li class="mb-2"><i class="fas fa-gift text-accent me-2"></i>Acceso gratuito</li>
+                                        <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i>Durante todo el horario de apertura</li>
+                                        <li class="mb-2"><i class="fas fa-users text-accent me-2"></i>Visitas autoguiadas</li>
+                                        <li class="mb-0"><i class="fas fa-info text-accent me-2"></i>Contenido permanente y temporal</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Días especiales -->
+                        <div class="alert alert-info mt-4 bg-dark-transparent border-0">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-info-circle-fill me-2 fs-4 text-accent"></i>
+                                <div>
+                                    <strong>Días de cierre:</strong> 1 y 6 de enero, 1 de mayo, 24, 25 y 31 de diciembre.
+                                    <br><strong>Días gratuitos:</strong> 18 de mayo (Día de los Museos), 17 de mayo (Noche de los Museos).
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -148,152 +197,218 @@
         <section class="py-5 bg-stars">
             <div class="container">
                 <div class="text-center mb-5">
-                    <h2 class="display-5 mb-3 text-white">Tarifas</h2>
-                    <p class="section-subtitle text-white-50 mx-auto">Consulta los precios de las distintas modalidades
-                        de entrada</p>
+                    <h2 class="display-5 mb-3 text-white">
+                        <i class="fas fa-euro-sign me-3 text-accent"></i>Tarifas de Entrada
+                    </h2>
+                    <p class="section-subtitle text-white-50 mx-auto">Precios actualizados para proyecciones en la cúpula</p>
+                    <div class="alert alert-warning bg-dark-transparent border-0 d-inline-block">
+                        <i class="fas fa-gift me-2"></i>Las exposiciones tienen <strong>acceso gratuito</strong>
+                    </div>
                 </div>
 
-                <div class="row g-4">
-                    <div class="col-md-6 col-lg-3">
+                <div class="row g-4 justify-content-center">
+                    <!-- Entrada General -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="card price-card h-100">
                             <div class="card-header bg-transparent text-center border-0 pt-4">
+                                <div class="icon-circle bg-primary mx-auto mb-3">
+                                    <i class="fas fa-user"></i>
+                                </div>
                                 <h3 class="text-white">Entrada General</h3>
                                 <div class="price my-3">
-                                    <span class="amount display-6 text-white">8€</span>
+                                    <span class="amount display-4 text-accent fw-bold">3,60€</span>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Acceso a todas las
-                                        exposiciones</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> 1 proyección en la
-                                        cúpula</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Válida para un día
-                                    </li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Adultos (14+ años)</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>1 proyección en la cúpula</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Acceso gratuito a exposiciones</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Válida para el día seleccionado</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent text-center border-0 pb-4">
-                                <a href="entradas.html" class="btn btn-primary">Comprar entrada</a>
+                                <a href="entradas.html" class="btn btn-primary w-100">Comprar entrada</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <!-- Entrada Reducida -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="card price-card h-100">
                             <div class="card-header bg-transparent text-center border-0 pt-4">
+                                <div class="icon-circle bg-success mx-auto mb-3">
+                                    <i class="fas fa-users"></i>
+                                </div>
                                 <h3 class="text-white">Entrada Reducida</h3>
                                 <div class="price my-3">
-                                    <span class="amount display-6 text-white">6€</span>
+                                    <span class="amount display-4 text-accent fw-bold">1,65€</span>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Estudiantes con
-                                        carnet</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Jubilados</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Desempleados</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Carnet joven</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Niños (2-14 años)</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Mayores de 65 años</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Estudiantes con carnet</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Desempleados con justificante</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent text-center border-0 pb-4">
-                                <a href="entradas.html" class="btn btn-primary">Comprar entrada</a>
+                                <a href="entradas.html" class="btn btn-primary w-100">Comprar entrada</a>
                             </div>
                         </div>
                     </div>
 
-                    <div class="col-md-6 col-lg-3">
+                    <!-- Entrada Gratuita -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="card price-card h-100">
                             <div class="card-header bg-transparent text-center border-0 pt-4">
-                                <h3 class="text-white">Entrada Infantil</h3>
+                                <div class="icon-circle bg-info mx-auto mb-3">
+                                    <i class="fas fa-baby"></i>
+                                </div>
+                                <h3 class="text-white">Entrada Gratuita</h3>
                                 <div class="price my-3">
-                                    <span class="amount display-6 text-white">5€</span>
+                                    <span class="amount display-4 text-accent fw-bold">0€</span>
                                 </div>
                             </div>
                             <div class="card-body">
                                 <ul class="list-unstyled mb-0">
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Niños de 5 a 12 años
-                                    </li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Menores de 5 años:
-                                        gratis</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Acompañados por un
-                                        adulto</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Menores de 2 años</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>No ocupan butaca</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Deben ir acompañados</li>
+                                    <li class="mb-2 text-white"><i class="bi bi-check-circle-fill text-accent me-2"></i>Acceso a exposiciones incluido</li>
                                 </ul>
                             </div>
                             <div class="card-footer bg-transparent text-center border-0 pb-4">
-                                <a href="entradas.html" class="btn btn-primary">Comprar entrada</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="col-md-6 col-lg-3">
-                        <div class="card price-card h-100 featured">
-                            <div class="card-header bg-transparent text-center border-0 pt-4">
-                                <span
-                                    class="badge bg-primary position-absolute top-0 start-50 translate-middle px-3 py-2">Recomendado</span>
-                                <h3 class="text-white">Abono Anual</h3>
-                                <div class="price my-3">
-                                    <span class="amount display-6 text-white">30€</span>
-                                </div>
-                            </div>
-                            <div class="card-body">
-                                <ul class="list-unstyled mb-0">
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Acceso ilimitado
-                                        durante 1 año</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Todas las
-                                        proyecciones incluidas</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> 10% descuento en
-                                        tienda</li>
-                                    <li class="mb-2 text-white"><i
-                                            class="bi bi-check-circle-fill text-primary me-2"></i> Invitaciones a
-                                        eventos especiales</li>
-                                </ul>
-                            </div>
-                            <div class="card-footer bg-transparent text-center border-0 pb-4">
-                                <a href="abonos.html" class="btn btn-primary">Suscribirse</a>
+                                <a href="entradas.html" class="btn btn-primary w-100">Seleccionar fecha</a>
                             </div>
                         </div>
                     </div>
                 </div>
 
-                <div class="row mt-5">
+                <!-- Tarifas especiales -->
+                <div class="row mt-5 g-4">
                     <div class="col-md-6">
                         <div class="info-card p-4 rounded h-100">
-                            <h3 class="h4 text-white mb-3">Grupos escolares</h3>
-                            <p class="text-white-50 mb-3">Ofrecemos tarifas especiales para grupos escolares:</p>
-                            <ul class="text-white-50">
-                                <li>4€ por alumno (mínimo 15 estudiantes)</li>
-                                <li>Un profesor gratis por cada 15 alumnos</li>
-                                <li>Incluye una proyección adaptada a la edad</li>
-                                <li>Material didáctico disponible</li>
+                            <h3 class="h4 text-accent mb-3">
+                                <i class="fas fa-graduation-cap me-2"></i>Grupos Escolares
+                            </h3>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-white">Precio por alumno:</span>
+                                <span class="h4 text-accent mb-0">1,65€</span>
+                            </div>
+                            <ul class="text-white-50 mb-3">
+                                <li>Mínimo 15 estudiantes</li>
+                                <li>1 profesor gratuito por cada 15 alumnos</li>
+                                <li>Proyección adaptada a la edad</li>
+                                <li>Material didáctico incluido</li>
+                                <li>Reserva telefónica: 91 467 34 61</li>
                             </ul>
-                            <a href="grupos-escolares.html" class="btn btn-outline-light mt-3">Más información</a>
+                            <a href="visitas.html#grupos-escolares" class="btn btn-outline-light">Más información</a>
                         </div>
                     </div>
 
                     <div class="col-md-6">
                         <div class="info-card p-4 rounded h-100">
-                            <h3 class="h4 text-white mb-3">Grupos turísticos</h3>
-                            <p class="text-white-50 mb-3">Para grupos turísticos ofrecemos:</p>
-                            <ul class="text-white-50">
-                                <li>6€ por persona (mínimo 10 personas)</li>
-                                <li>Un guía gratis por cada grupo</li>
-                                <li>Posibilidad de visitas guiadas en varios idiomas</li>
-                                <li>Reserva necesaria con al menos 48h de antelación</li>
+                            <h3 class="h4 text-accent mb-3">
+                                <i class="fas fa-users me-2"></i>Grupos Concertados
+                            </h3>
+                            <div class="d-flex justify-content-between align-items-center mb-3">
+                                <span class="text-white">Precio por persona:</span>
+                                <span class="h4 text-accent mb-0">2,80€</span>
+                            </div>
+                            <ul class="text-white-50 mb-3">
+                                <li>Mínimo 15 personas</li>
+                                <li>Reserva telefónica obligatoria</li>
+                                <li>Disponible para público general</li>
+                                <li>Horarios flexibles</li>
+                                <li>Teléfono: 91 467 34 62</li>
                             </ul>
-                            <a href="grupos-turisticos.html" class="btn btn-outline-light mt-3">Reservar visita</a>
+                            <a href="contacto.html" class="btn btn-outline-light">Reservar grupo</a>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Descuentos especiales -->
+                <div class="row mt-4">
+                    <div class="col-12">
+                        <div class="info-card p-4 rounded">
+                            <h3 class="h4 text-accent mb-3">
+                                <i class="fas fa-percentage me-2"></i>Descuentos Especiales
+                            </h3>
+                            <div class="row g-3">
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-laptop text-accent me-2"></i>
+                                        <span class="text-white-50">Compra online: <strong class="text-white">5% descuento</strong></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-users text-accent me-2"></i>
+                                        <span class="text-white-50">Familia numerosa: <strong class="text-white">10% descuento</strong></span>
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="d-flex align-items-center">
+                                        <i class="fas fa-wheelchair text-accent me-2"></i>
+                                        <span class="text-white-50">Discapacidad ≥33%: <strong class="text-white">50% descuento</strong></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Calculadora rápida de precios -->
+        <section class="py-5">
+            <div class="container">
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <div class="card bg-dark-transparent border-0 shadow-lg">
+                            <div class="card-header bg-primary text-white py-3">
+                                <h2 class="h4 mb-0 text-center">
+                                    <i class="fas fa-calculator me-2"></i>Calculadora de Precios
+                                </h2>
+                            </div>
+                            <div class="card-body p-4">
+                                <div class="row g-4">
+                                    <div class="col-md-4">
+                                        <label class="form-label text-white">Entradas Generales (3,60€)</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-light" type="button" onclick="updateCalculator('general', -1)">-</button>
+                                            <input type="number" class="form-control text-center" id="general-count" value="0" min="0" readonly>
+                                            <button class="btn btn-outline-light" type="button" onclick="updateCalculator('general', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label text-white">Entradas Reducidas (1,65€)</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-light" type="button" onclick="updateCalculator('reducida', -1)">-</button>
+                                            <input type="number" class="form-control text-center" id="reducida-count" value="0" min="0" readonly>
+                                            <button class="btn btn-outline-light" type="button" onclick="updateCalculator('reducida', 1)">+</button>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <label class="form-label text-white">Niños < 2 años (0€)</label>
+                                        <div class="input-group">
+                                            <button class="btn btn-outline-light" type="button" onclick="updateCalculator('infantil', -1)">-</button>
+                                            <input type="number" class="form-control text-center" id="infantil-count" value="0" min="0" readonly>
+                                            <button class="btn btn-outline-light" type="button" onclick="updateCalculator('infantil', 1)">+</button>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="text-center mt-4 p-3 bg-cta-gradient rounded">
+                                    <h3 class="text-white mb-2">Total: <span id="total-price" class="text-accent">0,00€</span></h3>
+                                    <p class="text-white-50 mb-3">Precio con descuento online (5%): <span id="online-price" class="text-accent">0,00€</span></p>
+                                    <a href="entradas.html" class="btn btn-primary btn-lg" id="buy-button" style="display: none;">
+                                        <i class="fas fa-shopping-cart me-2"></i>Comprar Entradas
+                                    </a>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -301,109 +416,69 @@
         </section>
 
         <!-- Información adicional -->
-        <section class="py-5">
+        <section class="py-5 bg-stars">
             <div class="container">
-                <div class="row align-items-center g-5">
-                    <div class="col-lg-6">
-                        <h2 class="display-5 mb-4 text-white">Información adicional</h2>
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Información Práctica</h2>
+                </div>
 
-                        <div class="accordion" id="accordionInfo">
-                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
-                                <h3 class="accordion-header" id="headingOne">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne"
-                                        aria-expanded="false" aria-controls="collapseOne">
-                                        Métodos de pago
-                                    </button>
-                                </h3>
-                                <div id="collapseOne" class="accordion-collapse collapse" aria-labelledby="headingOne"
-                                    data-bs-parent="#accordionInfo">
-                                    <div class="accordion-body">
-                                        <p class="mb-0">Aceptamos pagos en efectivo, tarjetas de crédito/débito (Visa,
-                                            Mastercard, American Express) y pagos móviles (Apple Pay, Google Pay). Las
-                                            entradas online pueden pagarse mediante tarjeta o PayPal.</p>
-                                    </div>
-                                </div>
+                <div class="row g-4">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="info-card p-4 rounded h-100 text-center">
+                            <div class="icon-circle bg-accent mx-auto mb-3">
+                                <i class="fas fa-credit-card"></i>
                             </div>
-
-                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
-                                <h3 class="accordion-header" id="headingTwo">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo"
-                                        aria-expanded="false" aria-controls="collapseTwo">
-                                        Accesibilidad
-                                    </button>
-                                </h3>
-                                <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo"
-                                    data-bs-parent="#accordionInfo">
-                                    <div class="accordion-body">
-                                        <p>El Planetario de Madrid está adaptado para personas con movilidad reducida,
-                                            con rampas de acceso, ascensores y servicios adaptados. Disponemos de
-                                            sistemas de audiodescripción para personas con discapacidad visual y bucle
-                                            magnético para personas con discapacidad auditiva.</p>
-                                        <p class="mb-0">Las personas con discapacidad igual o superior al 33% tienen un
-                                            descuento del 50% en la entrada. El acompañante tiene entrada gratuita
-                                            cuando la persona con discapacidad requiere asistencia.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item bg-dark-transparent text-white border-0 mb-3">
-                                <h3 class="accordion-header" id="headingThree">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree"
-                                        aria-expanded="false" aria-controls="collapseThree">
-                                        Política de cancelación
-                                    </button>
-                                </h3>
-                                <div id="collapseThree" class="accordion-collapse collapse"
-                                    aria-labelledby="headingThree" data-bs-parent="#accordionInfo">
-                                    <div class="accordion-body">
-                                        <p class="mb-0">Las entradas individuales pueden cancelarse hasta 24 horas antes
-                                            de la visita con reembolso completo. Las reservas de grupos pueden
-                                            cancelarse hasta 7 días antes con reembolso completo, o hasta 48 horas antes
-                                            con un cargo del 50%. Para más información, consulta nuestra política de
-                                            cancelación completa.</p>
-                                    </div>
-                                </div>
-                            </div>
-
-                            <div class="accordion-item bg-dark-transparent text-white border-0">
-                                <h3 class="accordion-header" id="headingFour">
-                                    <button class="accordion-button collapsed bg-dark-transparent text-white"
-                                        type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour"
-                                        aria-expanded="false" aria-controls="collapseFour">
-                                        Días de entrada gratuita
-                                    </button>
-                                </h3>
-                                <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingFour"
-                                    data-bs-parent="#accordionInfo">
-                                    <div class="accordion-body">
-                                        <p class="mb-0">El acceso al Planetario de Madrid es gratuito los siguientes
-                                            días: 18 de mayo (Día Internacional de los Museos), 12 de octubre (Fiesta
-                                            Nacional de España) y 6 de diciembre (Día de la Constitución Española).
-                                            Además, el último domingo de cada mes, la entrada es gratuita para todos los
-                                            visitantes (sujeto a disponibilidad).</p>
-                                    </div>
-                                </div>
-                            </div>
+                            <h3 class="h5 text-white mb-3">Métodos de Pago</h3>
+                            <ul class="list-unstyled text-white-50 mb-0">
+                                <li class="mb-1">• Efectivo</li>
+                                <li class="mb-1">• Tarjeta de crédito/débito</li>
+                                <li class="mb-1">• Apple Pay / Google Pay</li>
+                                <li class="mb-1">• PayPal (online)</li>
+                            </ul>
                         </div>
                     </div>
 
-                    <div class="col-lg-6">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img src="img/mapa-planteario.png" alt="Mapa del Planetario de Madrid" class="img-fluid">
+                    <div class="col-md-6 col-lg-3">
+                        <div class="info-card p-4 rounded h-100 text-center">
+                            <div class="icon-circle bg-accent mx-auto mb-3">
+                                <i class="fas fa-undo"></i>
+                            </div>
+                            <h3 class="h5 text-white mb-3">Cancelaciones</h3>
+                            <ul class="list-unstyled text-white-50 mb-0">
+                                <li class="mb-1">• Hasta 24h antes: 100%</li>
+                                <li class="mb-1">• Grupos hasta 7 días: 100%</li>
+                                <li class="mb-1">• Grupos hasta 48h: 50%</li>
+                                <li class="mb-1">• Reembolso automático</li>
+                            </ul>
                         </div>
+                    </div>
 
-                        <div class="mt-4 p-4 rounded visit-tips">
-                            <h3 class="h4 text-white mb-3">Consejos para tu visita</h3>
-                            <ul class="text-white-50 mb-0">
-                                <li>Recomendamos llegar al menos 15 minutos antes del inicio de cada proyección.</li>
-                                <li>No está permitido entrar a la sala de proyección una vez iniciado el espectáculo.
-                                </li>
-                                <li>La compra anticipada de entradas online te garantiza tu plaza y evita esperas.</li>
-                                <li>Los días de mayor afluencia son los fines de semana y festivos.</li>
-                                <li>Aprovecha los días laborables para una experiencia más tranquila.</li>
+                    <div class="col-md-6 col-lg-3">
+                        <div class="info-card p-4 rounded h-100 text-center">
+                            <div class="icon-circle bg-accent mx-auto mb-3">
+                                <i class="fas fa-universal-access"></i>
+                            </div>
+                            <h3 class="h5 text-white mb-3">Accesibilidad</h3>
+                            <ul class="list-unstyled text-white-50 mb-0">
+                                <li class="mb-1">• Instalación accesible</li>
+                                <li class="mb-1">• Máx. 5 sillas de ruedas/sesión</li>
+                                <li class="mb-1">• Audiodescripción disponible</li>
+                                <li class="mb-1">• Comunicar necesidades</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6 col-lg-3">
+                        <div class="info-card p-4 rounded h-100 text-center">
+                            <div class="icon-circle bg-accent mx-auto mb-3">
+                                <i class="fas fa-gift"></i>
+                            </div>
+                            <h3 class="h5 text-white mb-3">Días Gratuitos</h3>
+                            <ul class="list-unstyled text-white-50 mb-0">
+                                <li class="mb-1">• 18 mayo: Día Museos</li>
+                                <li class="mb-1">• 17 mayo: Noche Museos</li>
+                                <li class="mb-1">• 12 octubre: Fiesta Nacional</li>
+                                <li class="mb-1">• 6 diciembre: Constitución</li>
                             </ul>
                         </div>
                     </div>
@@ -419,7 +494,14 @@
                         <h2 class="display-5 mb-4 text-white">¿Listo para explorar el universo?</h2>
                         <p class="lead text-white-50 mb-4">Compra tus entradas online y ahorra tiempo evitando colas.
                             Además, obtendrás un 5% de descuento respecto al precio en taquilla.</p>
-                        <a href="entradas.html" class="btn btn-primary btn-lg px-5 py-3">Comprar entradas</a>
+                        <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                            <a href="entradas.html" class="btn btn-primary btn-lg px-5 py-3">
+                                <i class="fas fa-ticket-alt me-2"></i>Comprar entradas
+                            </a>
+                            <a href="calendario.html" class="btn btn-outline-light btn-lg px-5 py-3">
+                                <i class="fas fa-calendar-alt me-2"></i>Ver calendario
+                            </a>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -510,6 +592,62 @@
 
     <!-- Script personalizado para navegación y animaciones -->
     <script src="js/scripts.js"></script>
+
+    <!-- Script específico para la calculadora de precios -->
+    <script>
+        // Precios base
+        const prices = {
+            general: 3.60,
+            reducida: 1.65,
+            infantil: 0.00
+        };
+
+        // Función para actualizar la calculadora
+        function updateCalculator(type, change) {
+            const countElement = document.getElementById(type + '-count');
+            let currentValue = parseInt(countElement.value);
+            let newValue = Math.max(0, currentValue + change);
+            
+            countElement.value = newValue;
+            calculateTotal();
+        }
+
+        // Función para calcular el total
+        function calculateTotal() {
+            const generalCount = parseInt(document.getElementById('general-count').value);
+            const reducidaCount = parseInt(document.getElementById('reducida-count').value);
+            const infantilCount = parseInt(document.getElementById('infantil-count').value);
+
+            const total = (generalCount * prices.general) + 
+                         (reducidaCount * prices.reducida) + 
+                         (infantilCount * prices.infantil);
+
+            const onlinePrice = total * 0.95; // 5% descuento online
+
+            document.getElementById('total-price').textContent = total.toFixed(2) + '€';
+            document.getElementById('online-price').textContent = onlinePrice.toFixed(2) + '€';
+
+            const buyButton = document.getElementById('buy-button');
+            if (total > 0) {
+                buyButton.style.display = 'inline-block';
+            } else {
+                buyButton.style.display = 'none';
+            }
+        }
+
+        // Permitir input directo en los campos
+        document.addEventListener('DOMContentLoaded', function() {
+            const inputs = ['general-count', 'reducida-count', 'infantil-count'];
+            
+            inputs.forEach(inputId => {
+                const input = document.getElementById(inputId);
+                input.addEventListener('input', function() {
+                    if (this.value < 0) this.value = 0;
+                    calculateTotal();
+                });
+            });
+        });
+    </script>
 </body>
 
 </html>
