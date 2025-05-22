@@ -10,6 +10,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/carrusel.css">
 </head>
 
 <body>
@@ -56,24 +57,111 @@
     </header>
 
     <!-- Hero Section -->
-    <section class="hero position-relative d-flex align-items-center justify-content-center text-center text-white"
-        id="home">
-        <div class="hero-image position-absolute"></div>
-        <div class="planet planet-1"></div>
-        <div class="planet planet-2"></div>
-        <div class="container py-5 position-relative z-index-1 fade-in">
-            <div class="row justify-content-center">
-                <div class="col-md-10 col-lg-8">
-                    <h1 class="display-4 fw-bold mb-3">Descubre los secretos del universo</h1>
-                    <p class="lead mb-4">El Planetario de Madrid te invita a un viaje fascinante por el cosmos.
-                        Exposiciones, proyecciones y actividades para toda la familia.</p>
-                    <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
-                        <a href="exposiciones.html" class="btn btn-primary btn-lg">Ver Exposiciones</a>
-                        <a href="horarios.html" class="btn btn-outline-light btn-lg">Horarios y Tarifas</a>
+    <!-- Carrusel Hero Section -->
+    <section id="heroCarousel" class="carousel slide position-relative" data-bs-ride="carousel" data-bs-interval="5000">
+        <!-- Indicadores del carrusel -->
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true"
+                aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+
+        <!-- Slides del carrusel -->
+        <div class="carousel-inner">
+            <!-- Slide 1: Bienvenida -->
+            <div class="carousel-item active">
+                <div class="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                    style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/hero-bg.jpg') center/cover;">
+                    <div class="planet planet-1"></div>
+                    <div class="planet planet-2"></div>
+                    <div class="container py-5 position-relative z-index-1">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8">
+                                <h1 class="display-4 fw-bold mb-3 fade-in">Descubre los secretos del universo</h1>
+                                <p class="lead mb-4">El Planetario de Madrid te invita a un viaje fascinante por el
+                                    cosmos. Exposiciones, proyecciones y actividades para toda la familia.</p>
+                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                    <a href="exposiciones.html" class="btn btn-primary btn-lg">Ver Exposiciones</a>
+                                    <a href="horarios.html" class="btn btn-outline-light btn-lg">Horarios y Tarifas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 2: Exposiciones -->
+            <div class="carousel-item">
+                <div class="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                    style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/galactica.jpg') center/cover;">
+                    <div class="container py-5 position-relative z-index-1">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8">
+                                <h1 class="display-4 fw-bold mb-3">Exposiciones Fascinantes</h1>
+                                <p class="lead mb-4">Explora nuestras exposiciones interactivas sobre el sistema solar,
+                                    las galaxias y los misterios del espacio profundo.</p>
+                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                    <a href="exposiciones.html" class="btn btn-primary btn-lg">Explorar Exposiciones</a>
+                                    <a href="entradas.html" class="btn btn-outline-light btn-lg">Comprar Entradas</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 3: Proyecciones -->
+            <div class="carousel-item">
+                <div class="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                    style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/luna.png') center/cover;">
+                    <div class="container py-5 position-relative z-index-1">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8">
+                                <h1 class="display-4 fw-bold mb-3">Proyecciones Inmersivas</h1>
+                                <p class="lead mb-4">Disfruta de espectaculares proyecciones en nuestra cúpula de 360°.
+                                    Una experiencia única que te transportará a otros mundos.</p>
+                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                    <a href="horarios.html" class="btn btn-primary btn-lg">Ver Horarios</a>
+                                    <a href="entradas.html" class="btn btn-outline-light btn-lg">Reservar Ahora</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Slide 4: Actividades -->
+            <div class="carousel-item">
+                <div class="hero-slide d-flex align-items-center justify-content-center text-center text-white"
+                    style="background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('img/espacio.jpg') center/cover;">
+                    <div class="container py-5 position-relative z-index-1">
+                        <div class="row justify-content-center">
+                            <div class="col-md-10 col-lg-8">
+                                <h1 class="display-4 fw-bold mb-3">Actividades para Toda la Familia</h1>
+                                <p class="lead mb-4">Talleres educativos, observaciones astronómicas y eventos
+                                    especiales. La ciencia nunca había sido tan divertida.</p>
+                                <div class="d-flex flex-column flex-sm-row justify-content-center gap-3">
+                                    <a href="actividades.html" class="btn btn-primary btn-lg">Ver Actividades</a>
+                                    <a href="contacto.html" class="btn btn-outline-light btn-lg">Más Información</a>
+                                </div>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+
+        <!-- Controles del carrusel -->
+        <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Anterior</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Siguiente</span>
+        </button>
     </section>
 
     <!-- Contenido principal -->
