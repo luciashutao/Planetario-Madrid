@@ -37,7 +37,7 @@
 
                     <div class="collapse navbar-collapse" id="navbarMain">
                         <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-
+                            <li class="nav-item"><a class="nav-link" href="index.html">Inicio</a></li>
                             <li class="nav-item"><a class="nav-link" href="exposiciones.html">Exposiciones</a></li>
                             <li class="nav-item"><a class="nav-link" href="horarios.html">Horarios y Tarifas</a></li>
                             <li class="nav-item"><a class="nav-link active" href="actividades.html"
@@ -106,232 +106,268 @@
                     <div class="col-lg-10">
                         <div class="text-center mb-5">
                             <h2 class="display-5 fw-bold mb-4">Descubre todas nuestras actividades</h2>
-                            <p class="lead">El Planetario de Madrid ofrece mucho más que exposiciones. Disfruta de
-                                proyecciones inmersivas en nuestra cúpula, participa en talleres prácticos, observa el
-                                cielo nocturno con nuestros telescopios y asiste a eventos especiales durante todo el
-                                año.</p>
+                            <p class="lead">El Planetario de Madrid ofrece proyecciones inmersivas en nuestra cúpula de
+                                15 metros, talleres prácticos en colaboración con AIRBUS, observaciones astronómicas con
+                                telescopios y eventos especiales durante todo el año.</p>
+                            <p class="text-white-50">Durante el curso escolar, las mañanas están reservadas a las
+                                visitas escolares, mientras que las tardes, días de fiesta y fines de semana se dirigen
+                                al público en general.</p>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Filtros -->
-        <section class="py-3 bg-dark-transparent">
-            <div class="container">
-                <div class="row justify-content-center align-items-center g-3">
-                    <div class="col-md-2">
-                        <h3 class="h5 mb-0">Filtrar por:</h3>
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-select bg-dark text-white" id="filtroTipo">
-                            <option value="todos">Todos los tipos</option>
-                            <option value="proyeccion">Proyecciones</option>
-                            <option value="observacion">Observaciones</option>
-                            <option value="taller">Talleres</option>
-                            <option value="evento">Eventos</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-select bg-dark text-white" id="filtroEdad">
-                            <option value="todos">Todas las edades</option>
-                            <option value="infantil">Infantil (3-6)</option>
-                            <option value="primaria">Primaria (7-12)</option>
-                            <option value="juvenil">Juvenil (13-17)</option>
-                            <option value="adulto">Adultos (18+)</option>
-                            <option value="familiar">Familiar</option>
-                        </select>
-                    </div>
-                    <div class="col-md-3">
-                        <select class="form-select bg-dark text-white" id="filtroFecha">
-                            <option value="todos">Cualquier fecha</option>
-                            <option value="hoy">Hoy</option>
-                            <option value="semana">Esta semana</option>
-                            <option value="finde">Fin de semana</option>
-                            <option value="mes">Este mes</option>
-                        </select>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- Proyecciones -->
+        <!-- Proyecciones en la Cúpula -->
         <section id="proyecciones" class="py-5">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
                         <h2 class="display-5 fw-bold mb-3">Proyecciones en la Cúpula</h2>
-                        <p class="lead">Experiencias inmersivas bajo nuestra cúpula de 15 metros</p>
+                        <p class="lead">Experiencias inmersivas con sistema fulldome que sitúa al espectador en el
+                            interior de la escena</p>
                     </div>
                 </div>
 
-                <div class="row g-4 actividades-grid">
-                    <!-- Proyección 1 -->
-                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="proyeccion" data-edad="familiar">
+                <div class="row g-4">
+                    <!-- El Cielo de Cloe -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="dome-show-card h-100">
-                            <img src="img/proyeccion-cosmos.jpg" class="card-img-top"
-                                alt="Proyección Cosmos: Un viaje por el universo">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="badge bg-primary">Proyección</span>
-                                    <span class="badge bg-info">Familiar</span>
-                                </div>
-                                <h3 class="card-title h4">Cosmos: Un viaje por el universo</h3>
-                                <p class="card-text">Un fascinante recorrido por el universo conocido, desde nuestro
-                                    sistema solar hasta los confines más lejanos del cosmos. Descubre nebulosas,
-                                    galaxias y fenómenos cósmicos sorprendentes.</p>
-                                <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 45 minutos
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Mar-Dom: 12:00h,
-                                        17:00h</li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Todos los públicos
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">7€</span>
-                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Proyección 2 -->
-                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="proyeccion" data-edad="adulto">
-                        <div class="dome-show-card h-100">
-                            <img src="img/proyeccion-agujeros-negros.jpg" class="card-img-top"
-                                alt="Proyección Agujeros Negros">
-                            <div class="card-body">
-                                <div class="d-flex justify-content-between mb-2">
-                                    <span class="badge bg-primary">Proyección</span>
-                                    <span class="badge bg-danger">Adultos</span>
-                                </div>
-                                <h3 class="card-title h4">Agujeros Negros: Al límite del espacio-tiempo</h3>
-                                <p class="card-text">Adéntrate en uno de los fenómenos más misteriosos del universo: los
-                                    agujeros negros. Descubre su formación, características y los últimos hallazgos
-                                    científicos sobre estos objetos cósmicos.</p>
-                                <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 50 minutos
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Viernes y Sábados:
-                                        19:00h</li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Adultos y jóvenes +12
-                                    </li>
-                                </ul>
-                                <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">7€</span>
-                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Proyección 3 -->
-                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="proyeccion" data-edad="infantil">
-                        <div class="dome-show-card h-100">
-                            <img src="img/proyeccion-exploradores.jpg" class="card-img-top"
-                                alt="Proyección Pequeños Exploradores del Espacio">
+                            <img src="img/Proyecciones/cloe.jpg" class="card-img-top" alt="El Cielo de Cloe">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-primary">Proyección</span>
                                     <span class="badge bg-success">Infantil</span>
                                 </div>
-                                <h3 class="card-title h4">Pequeños Exploradores del Espacio</h3>
-                                <p class="card-text">Una aventura espacial diseñada especialmente para los más pequeños.
-                                    Junto a Luna, una simpática astronauta, los niños aprenderán sobre los planetas, las
-                                    estrellas y otros cuerpos celestes.</p>
+                                <h3 class="card-title h4">El Cielo de Cloe</h3>
+                                <p class="card-text">¡Hola niños! Me llamo Cloe, soy una "profe" muy especial del
+                                    Planetario. Una clase muy divertida en la que aprenderéis cosas asombrosas del
+                                    cielo, con canciones pegajosas y personajes inolvidables.</p>
                                 <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 30 minutos
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 35 minutos
                                     </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Sábados y
-                                        Domingos: 11:00h</li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Niños de 3 a 6 años
-                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Dirigido a: Público
+                                        infantil (hasta 6 años)</li>
                                 </ul>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">5€</span>
+                                    <span class="h5 mb-0">3,60€</span>
                                     <a href="entradas.html" class="btn btn-primary">Reservar</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Ver todas las proyecciones -->
+                    <!-- Agujeros Negros -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/Proyecciones/agujero.jpg" class="card-img-top" alt="Agujeros Negros">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-warning">Premiada</span>
+                                </div>
+                                <h3 class="card-title h4">Agujeros Negros: Al límite de lo conocido</h3>
+                                <p class="card-text">Los agujeros negros son probablemente los objetos más
+                                    extraordinarios del cosmos. Premiada como Mejor Película Científica 2024 en el Dome
+                                    Fest West de Estados Unidos.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 30 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Recomendado: Mayores
+                                        de 12 años</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">3,60€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Biosfera Oscura -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/Proyecciones/biosfera.png" class="card-img-top" alt="Biosfera Oscura">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-warning">Premiada</span>
+                                </div>
+                                <h3 class="card-title h4">Biosfera Oscura</h3>
+                                <p class="card-text">Nos lleva a las fronteras del conocimiento de la vida. Bajo las
+                                    profundidades de la corteza terrestre, los científicos han encontrado vida en
+                                    condiciones extremas. Premiada en múltiples festivales internacionales.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 28 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Recomendado: Mayores
+                                        de 12 años</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">3,60€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Del Sistema Solar al Mundo Anillo -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/Proyecciones/explorando.jpg" class="card-img-top"
+                                alt="Del Sistema Solar al Mundo Anillo">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-info">Familiar</span>
+                                </div>
+                                <h3 class="card-title h4">Del Sistema Solar al Mundo Anillo</h3>
+                                <p class="card-text">Reposición de dos producciones clásicas. Un viaje desde nuestro
+                                    Sistema Solar hasta conceptos más avanzados del cosmos. Formato fulldome
+                                    espectacular.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 35 minutos
+                                        (15+20 min)</li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Para todos los
+                                        públicos</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">3,60€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Polaris -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/Proyecciones/polaris.jpg" class="card-img-top"
+                                alt="Polaris, el submarino espacial">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-success">Infantil</span>
+                                </div>
+                                <h3 class="card-title h4">Polaris, el submarino espacial</h3>
+                                <p class="card-text">James, un pingüino turista, emprende un viaje extraordinario junto
+                                    a Vladimir, un oso divertido y sabio, y Lucia, una pájaro colorido y valiente.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 30 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Recomendado: A partir
+                                        de 6 años</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">3,60€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- En Órbita con López -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/Proyecciones/despegamos.jpg" class="card-img-top" alt="En Órbita con López">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Proyección</span>
+                                    <span class="badge bg-success">Infantil</span>
+                                </div>
+                                <h3 class="card-title h4">En Órbita con López</h3>
+                                <p class="card-text">La mayoría de las proyecciones hablan del espacio, pero pocas veces
+                                    del espacio que hay en casa. Una divertida aventura espacial para los más pequeños.
+                                </p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 31 minutos
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Recomendado: A partir
+                                        de 6 años</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">3,60€</span>
+                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ver horarios completos -->
                     <div class="col-12 text-center mt-4">
-                        <a href="proyecciones.html" class="btn btn-outline-light px-4 py-2">
-                            <i class="fas fa-film me-2"></i> Ver todas las proyecciones
+                        <a href="horarios.html" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-clock me-2"></i> Ver horarios completos
                         </a>
                     </div>
                 </div>
             </div>
         </section>
 
-        <!-- Observaciones -->
+        <!-- Observaciones Astronómicas -->
         <section id="observaciones" class="py-5 bg-stars">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
                         <h2 class="display-5 fw-bold mb-3">Observaciones Astronómicas</h2>
-                        <p class="lead">Contempla el cielo real a través de telescopios profesionales</p>
+                        <p class="lead">Jornadas especiales de observación con telescopios profesionales</p>
                     </div>
                 </div>
 
-                <div class="row g-4 actividades-grid">
-                    <!-- Observación 1 -->
-                    <div class="col-md-6 actividad-item" data-tipo="observacion" data-edad="familiar">
+                <div class="row g-4">
+                    <!-- Jornada Pública de Observación -->
+                    <div class="col-md-6">
                         <div class="dome-show-card h-100">
-                            <img src="img/observacion-nocturna.jpg" class="card-img-top"
-                                alt="Observación Nocturna del Cielo">
+                            <img src="img/observacion-telescopios.jpg" class="card-img-top"
+                                alt="Jornada de Observación con Telescopios">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-primary">Observación</span>
-                                    <span class="badge bg-info">Familiar</span>
+                                    <span class="badge bg-success">Gratuito</span>
                                 </div>
-                                <h3 class="card-title h4">Observación Nocturna del Cielo</h3>
-                                <p class="card-text">Observa el cielo nocturno a través de nuestros telescopios
-                                    profesionales. Nuestros astrónomos te guiarán en la identificación de
-                                    constelaciones, planetas y otros objetos celestes visibles esa noche.</p>
+                                <h3 class="card-title h4">Jornada Pública de Observación con Telescopios</h3>
+                                <p class="card-text">Observación astronómica gratuita con una veintena de grandes
+                                    telescopios y asesoramiento de expertos. En colaboración con AIRBUS y la Agrupación
+                                    Astronómica de Madrid (AAM).</p>
                                 <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90 minutos
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Viernes y Sábados:
-                                        21:30h (según clima)</li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Todos los públicos
-                                    </li>
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 21:00h -
+                                        00:00h</li>
+                                    <li class="mb-2"><i class="fas fa-telescope text-accent me-2"></i> 20 telescopios de
+                                        grandes dimensiones</li>
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-accent me-2"></i> Explanada
+                                        del Parque Tierno Galván</li>
                                 </ul>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">10€</span>
-                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                    <span class="text-accent">Entrada gratuita</span>
+                                    <a href="#eventos" class="btn btn-primary">Ver próximas fechas</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Observación 2 -->
-                    <div class="col-md-6 actividad-item" data-tipo="observacion" data-edad="adulto">
+                    <!-- Observación del Sol -->
+                    <div class="col-md-6">
                         <div class="dome-show-card h-100">
-                            <img src="img/observacion-especial.jpg" class="card-img-top"
-                                alt="Observación Especial: Eclipse Lunar">
+                            <img src="img/observacion-solar.jpg" class="card-img-top" alt="Observación Solar">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-primary">Observación</span>
-                                    <span class="badge bg-danger">Evento Especial</span>
+                                    <span class="badge bg-warning">Especial</span>
                                 </div>
-                                <h3 class="card-title h4">Observación Especial: Eclipse Lunar</h3>
-                                <p class="card-text">Una sesión especial para observar el próximo eclipse lunar parcial.
-                                    Incluye una charla introductoria sobre el fenómeno, observación con telescopios
-                                    especializados y sesión fotográfica guiada.</p>
+                                <h3 class="card-title h4">Observación Solar con Telescopios</h3>
+                                <p class="card-text">Observación segura del Sol utilizando telescopios especializados.
+                                    Contempla las manchas solares, protuberancias y detalles de la cromosfera con total
+                                    seguridad.</p>
                                 <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 3 horas
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> 22 de mayo, 21:00h
-                                    </li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Adultos y jóvenes +10
-                                    </li>
+                                    <li class="mb-2"><i class="fas fa-sun text-accent me-2"></i> Telescopios con filtros
+                                        especializados</li>
+                                    <li class="mb-2"><i class="fas fa-shield-alt text-accent me-2"></i> Observación 100%
+                                        segura</li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Incluido en talleres
+                                        de verano</li>
                                 </ul>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">15€</span>
-                                    <a href="entradas.html" class="btn btn-primary">Reservar</a>
+                                    <span class="text-accent">Actividad especial</span>
+                                    <a href="#talleres" class="btn btn-primary">Ver talleres</a>
                                 </div>
                             </div>
                         </div>
@@ -346,95 +382,117 @@
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
                         <h2 class="display-5 fw-bold mb-3">Talleres Prácticos</h2>
-                        <p class="lead">Aprende haciendo en nuestros talleres interactivos</p>
+                        <p class="lead">Talleres en colaboración con AIRBUS para todas las edades</p>
                     </div>
                 </div>
 
-                <div class="row g-4 actividades-grid">
-                    <!-- Taller 1 -->
-                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="taller" data-edad="primaria">
+                <div class="row g-4">
+                    <!-- Pequeños Astrónomos 2.0 -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="dome-show-card h-100">
-                            <img src="img/taller-cohete.jpg" class="card-img-top" alt="Taller Construye tu Cohete">
+                            <img src="img/pequenos-astronomos.jpg" class="card-img-top" alt="Pequeños Astrónomos 2.0">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-primary">Taller</span>
-                                    <span class="badge bg-warning">Primaria</span>
+                                    <span class="badge bg-success">6-9 años</span>
                                 </div>
-                                <h3 class="card-title h4">Construye tu Cohete</h3>
-                                <p class="card-text">Taller práctico donde los participantes aprenderán sobre propulsión
-                                    y física espacial mientras construyen y lanzan su propio cohete de agua. Cada
-                                    participante se llevará su creación a casa.</p>
+                                <h3 class="card-title h4">Pequeños Astrónomos 2.0</h3>
+                                <p class="card-text">Talleres destinados a niños y niñas de 6 a 9 años. Modalidades:
+                                    "Planeta misterioso", "Detective de constelaciones", "Universo lejano", "Academia
+                                    espacial".</p>
                                 <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 2 horas
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Sábados: 16:00h
-                                    </li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Niños de 7 a 12 años
-                                    </li>
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 1 hora</li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Fines de semana y
+                                        días sin cole</li>
+                                    <li class="mb-2"><i class="fas fa-map-marker-alt text-accent me-2"></i> Sala de
+                                        Vídeo</li>
                                 </ul>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">12€</span>
-                                    <a href="talleres.html" class="btn btn-primary">Inscribirse</a>
+                                    <span class="text-accent">Entrada gratuita</span>
+                                    <a href="#" class="btn btn-primary">Reservar online</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Taller 2 -->
-                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="taller" data-edad="juvenil">
+                    <!-- Generación Planetario -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="dome-show-card h-100">
-                            <img src="img/taller-astrofotografia.jpg" class="card-img-top"
-                                alt="Taller de Astrofotografía">
+                            <img src="img/generacion-planetario.jpg" class="card-img-top" alt="Generación Planetario">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-primary">Taller</span>
-                                    <span class="badge bg-danger">Jóvenes</span>
+                                    <span class="badge bg-warning">10-12 años</span>
                                 </div>
-                                <h3 class="card-title h4">Astrofotografía Básica</h3>
-                                <p class="card-text">Aprende las técnicas básicas para fotografiar el cielo nocturno,
-                                    desde la Luna y los planetas hasta las estrellas y constelaciones. Incluye sesión
-                                    práctica en nuestra terraza astronómica.</p>
+                                <h3 class="card-title h4">Generación Planetario</h3>
+                                <p class="card-text">Talleres para niños y niñas de 10 a 12 años. Modalidad actual: "El
+                                    camino del Sol" - ¿Sabes que el Sol no sale siempre exactamente por el este?</p>
                                 <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 3 horas
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Último viernes de
-                                        mes: 19:00h</li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Jóvenes de 13 a 17
-                                        años</li>
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 1 hora</li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Fines de semana y
+                                        días sin cole</li>
+                                    <li class="mb-2"><i class="fas fa-graduation-cap text-accent me-2"></i>
+                                        Experimentación y juego</li>
                                 </ul>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">15€</span>
-                                    <a href="talleres.html" class="btn btn-primary">Inscribirse</a>
+                                    <span class="text-accent">Entrada gratuita</span>
+                                    <a href="#" class="btn btn-primary">Reservar online</a>
                                 </div>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Taller 3 -->
-                    <div class="col-md-6 col-lg-4 actividad-item" data-tipo="taller" data-edad="infantil">
+                    <!-- Astroabuel@s y pequeastrónom@s -->
+                    <div class="col-md-6 col-lg-4">
                         <div class="dome-show-card h-100">
-                            <img src="img/taller-constelaciones.jpg" class="card-img-top"
-                                alt="Taller Mi Primer Mapa Estelar">
+                            <img src="img/astroabuelos.jpg" class="card-img-top" alt="Astroabuel@s y pequeastrónom@s">
                             <div class="card-body">
                                 <div class="d-flex justify-content-between mb-2">
                                     <span class="badge bg-primary">Taller</span>
-                                    <span class="badge bg-success">Infantil</span>
+                                    <span class="badge bg-info">Intergeneracional</span>
                                 </div>
-                                <h3 class="card-title h4">Mi Primer Mapa Estelar</h3>
-                                <p class="card-text">Taller creativo donde los más pequeños aprenderán sobre las
-                                    constelaciones mientras crean su propio mapa estelar luminoso. Una forma divertida
-                                    de introducirse en el mundo de la astronomía.</p>
+                                <h3 class="card-title h4">Astroabuel@s y pequeastrónom@s</h3>
+                                <p class="card-text">Talleres intergeneracionales destinados a niños y niñas de 6 a 9
+                                    años acompañados de sus abuelos/as. Una experiencia única para compartir en familia.
+                                </p>
                                 <ul class="list-unstyled mb-3">
-                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 90 minutos
-                                    </li>
-                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Domingos: 12:00h
-                                    </li>
-                                    <li><i class="fas fa-users text-accent me-2"></i> Recomendado: Niños de 4 a 6 años
-                                    </li>
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 1 hora</li>
+                                    <li class="mb-2"><i class="fas fa-heart text-accent me-2"></i> Niños + Abuelos</li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Fines de semana
+                                        especiales</li>
                                 </ul>
                                 <div class="d-flex justify-content-between align-items-center">
-                                    <span class="h5 mb-0">10€</span>
-                                    <a href="talleres.html" class="btn btn-primary">Inscribirse</a>
+                                    <span class="text-accent">Entrada gratuita</span>
+                                    <a href="#" class="btn btn-primary">Reservar online</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Talleres de Verano -->
+                    <div class="col-md-6 col-lg-4">
+                        <div class="dome-show-card h-100">
+                            <img src="img/dia-planetario.jpg" class="card-img-top" alt="Un Día Planetario">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-2">
+                                    <span class="badge bg-primary">Taller</span>
+                                    <span class="badge bg-danger">Verano</span>
+                                </div>
+                                <h3 class="card-title h4">"Un Día Planetario"</h3>
+                                <p class="card-text">Taller intensivo de mañana completa. Incluye observación solar con
+                                    telescopio, taller temático de astronomía, misión espacial y proyección en la
+                                    cúpula.</p>
+                                <ul class="list-unstyled mb-3">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 9:00 a
+                                        13:45h</li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Niños nacidos
+                                        2014-2017</li>
+                                    <li class="mb-2"><i class="fas fa-sun text-accent me-2"></i> Incluye observación
+                                        solar</li>
+                                </ul>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0">Consultar precio</span>
+                                    <a href="#" class="btn btn-primary">Más información</a>
                                 </div>
                             </div>
                         </div>
@@ -442,8 +500,8 @@
 
                     <!-- Ver todos los talleres -->
                     <div class="col-12 text-center mt-4">
-                        <a href="talleres.html" class="btn btn-outline-light px-4 py-2">
-                            <i class="fas fa-hands me-2"></i> Ver todos los talleres
+                        <a href="#" class="btn btn-outline-light px-4 py-2">
+                            <i class="fas fa-hands me-2"></i> Reservar talleres online
                         </a>
                     </div>
                 </div>
@@ -456,70 +514,192 @@
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
                         <h2 class="display-5 fw-bold mb-3">Eventos Especiales</h2>
-                        <p class="lead">Experiencias únicas para momentos señalados</p>
+                        <p class="lead">Celebraciones y eventos únicos durante todo el año</p>
                     </div>
                 </div>
 
-                <div class="row g-4 actividades-grid">
-                    <!-- Evento 1 -->
-                    <div class="col-md-6 actividad-item" data-tipo="evento" data-edad="familiar">
+                <div class="row g-4">
+                    <!-- Día Internacional de los Museos -->
+                    <div class="col-md-6">
                         <div class="event-card p-4 rounded-3 h-100">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="icon-circle bg-accent me-3">
                                     <i class="fas fa-calendar-day"></i>
                                 </div>
                                 <div>
-                                    <h3 class="h5 mb-0">15 de mayo, 19:00h</h3>
-                                    <p class="mb-0 opacity-75">Viernes</p>
+                                    <h3 class="h5 mb-0">18 de mayo, 2025</h3>
+                                    <p class="mb-0 opacity-75">Domingo</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
                                 <span class="badge bg-primary">Evento Especial</span>
-                                <span class="badge bg-info">Familiar</span>
+                                <span class="badge bg-success">Gratuito</span>
                             </div>
-                            <h4 class="h4 mb-2">Noche de las Estrellas</h4>
-                            <p class="mb-3">Jornada especial de puertas abiertas con motivo del Día Internacional de la
-                                Astronomía. Incluye observaciones, charlas divulgativas, talleres exprés y proyección
-                                especial en la cúpula.</p>
+                            <h4 class="h4 mb-2">Día Internacional de los Museos</h4>
+                            <p class="mb-3">Acceso gratuito a las proyecciones fulldome previa reserva de invitación.
+                                Programas especiales: "El cielo de Cloe", "3-2-1 ¡Despegamos!", "Polaris", "Agujeros
+                                negros" y "Biosfera oscura".</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-accent">Entrada libre hasta completar aforo</span>
-                                <a href="eventos.html" class="btn btn-primary">Más información</a>
+                                <span class="text-accent">Entrada gratuita con invitación</span>
+                                <a href="#" class="btn btn-primary">Reservar invitación</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Evento 2 -->
-                    <div class="col-md-6 actividad-item" data-tipo="evento" data-edad="adulto">
+                    <!-- Noche de los Museos -->
+                    <div class="col-md-6">
                         <div class="event-card p-4 rounded-3 h-100">
                             <div class="d-flex align-items-center mb-3">
                                 <div class="icon-circle bg-accent me-3">
-                                    <i class="fas fa-calendar-day"></i>
+                                    <i class="fas fa-moon"></i>
                                 </div>
                                 <div>
-                                    <h3 class="h5 mb-0">29 de mayo, 20:00h</h3>
-                                    <p class="mb-0 opacity-75">Viernes</p>
+                                    <h3 class="h5 mb-0">17 de mayo, 2025</h3>
+                                    <p class="mb-0 opacity-75">Sábado - Hasta las 22:45h</p>
                                 </div>
                             </div>
                             <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-primary">Evento Especial</span>
-                                <span class="badge bg-danger">Adultos</span>
+                                <span class="badge bg-primary">Maratón Planetario</span>
+                                <span class="badge bg-success">Gratuito</span>
                             </div>
-                            <h4 class="h4 mb-2">Conferencia: "Exoplanetas y vida extraterrestre"</h4>
-                            <p class="mb-3">Conferencia a cargo de la Dra. Elena Martínez, astrobióloga del Centro de
-                                Astrobiología (CSIC-INTA), sobre los últimos descubrimientos de exoplanetas y las
-                                posibilidades de vida fuera de la Tierra.</p>
+                            <h4 class="h4 mb-2">Noche de los Museos - Maratón Planetario</h4>
+                            <p class="mb-3">Horario ampliado hasta las 22:45h con tres sesiones gratuitas especiales:
+                                "Cielo profundo" (20:00h), "Spherium" (21:00h) y "Origins" (22:00h).</p>
                             <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0">5€</span>
-                                <a href="eventos.html" class="btn btn-primary">Reservar</a>
+                                <span class="text-accent">Entrada gratuita con invitación</span>
+                                <a href="#" class="btn btn-primary">Reservar invitación</a>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Ver todos los eventos -->
+                    <!-- Jornadas de Observación -->
+                    <div class="col-md-6">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-telescope"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">Fechas especiales</h3>
+                                    <p class="mb-0 opacity-75">Según condiciones meteorológicas</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Observación</span>
+                                <span class="badge bg-success">Gratuito</span>
+                            </div>
+                            <h4 class="h4 mb-2">Jornadas Públicas de Observación</h4>
+                            <p class="mb-3">Observación astronómica gratuita con 20 telescopios profesionales, pantalla
+                                LED de 5x3 metros y asesoramiento de expertos. De 21:00h a 00:00h en la explanada del
+                                Parque Tierno Galván.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="text-accent">Entrada libre</span>
+                                <a href="#" class="btn btn-primary">Próximas fechas</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Curso Del Planetario al Cosmos -->
+                    <div class="col-md-6">
+                        <div class="event-card p-4 rounded-3 h-100">
+                            <div class="d-flex align-items-center mb-3">
+                                <div class="icon-circle bg-accent me-3">
+                                    <i class="fas fa-graduation-cap"></i>
+                                </div>
+                                <div>
+                                    <h3 class="h5 mb-0">Edición 2025</h3>
+                                    <p class="mb-0 opacity-75">Curso de astronomía y astrofísica</p>
+                                </div>
+                            </div>
+                            <div class="d-flex justify-content-between mb-2">
+                                <span class="badge bg-primary">Curso</span>
+                                <span class="badge bg-warning">Inscripciones abiertas</span>
+                            </div>
+                            <h4 class="h4 mb-2">Del Planetario al Cosmos</h4>
+                            <p class="mb-3">Curso de astronomía y astrofísica dirigido a público adulto interesado en
+                                profundizar en el conocimiento del universo. Incluye sesiones teóricas y prácticas.</p>
+                            <div class="d-flex justify-content-between align-items-center">
+                                <span class="h5 mb-0">Consultar precio</span>
+                                <a href="#" class="btn btn-primary">Más información</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Ver calendario completo -->
                     <div class="col-12 text-center mt-4">
-                        <a href="eventos.html" class="btn btn-outline-light px-4 py-2">
+                        <a href="#" class="btn btn-outline-light px-4 py-2">
                             <i class="fas fa-calendar-alt me-2"></i> Ver calendario completo
                         </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Información práctica -->
+        <section class="py-5">
+            <div class="container">
+                <div class="text-center mb-5">
+                    <h2 class="display-5 fw-bold mb-3">Información Práctica</h2>
+                </div>
+
+                <div class="row g-4">
+                    <div class="col-md-6">
+                        <div class="info-card p-4 rounded h-100">
+                            <h3 class="text-accent mb-3">
+                                <i class="fas fa-ticket-alt me-2"></i>Precios y Entradas
+                            </h3>
+                            <ul class="list-unstyled text-white-50">
+                                <li class="mb-2"><strong>Adultos:</strong> 3,60€</li>
+                                <li class="mb-2"><strong>Niños (2-14 años) y +65:</strong> 1,65€</li>
+                                <li class="mb-2"><strong>Menores de 2 años:</strong> Gratis (sin butaca)</li>
+                                <li class="mb-2"><strong>Grupos (+15 personas):</strong> 2,80€</li>
+                                <li class="mb-2"><strong>Talleres:</strong> Gratuitos con reserva</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="info-card p-4 rounded h-100">
+                            <h3 class="text-accent mb-3">
+                                <i class="fas fa-clock me-2"></i>Horarios
+                            </h3>
+                            <ul class="list-unstyled text-white-50">
+                                <li class="mb-2"><strong>Martes a domingo:</strong> 10:00-13:45h y 17:00-19:45h</li>
+                                <li class="mb-2"><strong>Cerrado:</strong> Todos los lunes</li>
+                                <li class="mb-2"><strong>Mañanas:</strong> Reservadas para grupos escolares</li>
+                                <li class="mb-2"><strong>Tardes y fines de semana:</strong> Público general</li>
+                                <li class="mb-2"><strong>Importante:</strong> No se permite entrada una vez comenzada la
+                                    proyección</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="info-card p-4 rounded h-100">
+                            <h3 class="text-accent mb-3">
+                                <i class="fas fa-universal-access me-2"></i>Accesibilidad
+                            </h3>
+                            <ul class="list-unstyled text-white-50">
+                                <li class="mb-2">Máximo 5 sillas de ruedas por sesión</li>
+                                <li class="mb-2">Comunicar necesidades telefónicamente antes de la compra</li>
+                                <li class="mb-2">No se permiten carritos de bebé en la sala</li>
+                                <li class="mb-2">Guía visual y de lenguaje claro disponibles</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="col-md-6">
+                        <div class="info-card p-4 rounded h-100">
+                            <h3 class="text-accent mb-3">
+                                <i class="fas fa-handshake me-2"></i>Colaboraciones
+                            </h3>
+                            <ul class="list-unstyled text-white-50">
+                                <li class="mb-2"><strong>AIRBUS:</strong> Talleres y actividades</li>
+                                <li class="mb-2"><strong>AAM:</strong> Agrupación Astronómica de Madrid</li>
+                                <li class="mb-2"><strong>ESA:</strong> Contenidos espaciales</li>
+                                <li class="mb-2"><strong>CEATE:</strong> Voluntarios guía</li>
+                            </ul>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -531,8 +711,8 @@
                 <div class="row align-items-center">
                     <div class="col-lg-8 mb-4 mb-lg-0">
                         <h2 class="h3 fw-bold mb-2">¿Quieres estar al día de todas nuestras actividades?</h2>
-                        <p class="mb-0">Suscríbete a nuestra newsletter y recibe información sobre eventos especiales,
-                            nuevas actividades y ofertas exclusivas.</p>
+                        <p class="mb-0">Suscríbete para recibir información sobre eventos especiales, nuevas actividades
+                            y reservas de talleres gratuitos.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a href="#suscripcion" class="btn btn-light btn-lg" data-bs-toggle="modal"
@@ -551,7 +731,7 @@
         <div class="modal-dialog modal-dialog-centered">
             <div class="modal-content bg-dark-transparent text-white">
                 <div class="modal-header border-0">
-                    <h5 class="modal-title" id="modalSuscripcionLabel">Suscríbete a nuestra newsletter</h5>
+                    <h5 class="modal-title" id="modalSuscripcionLabel">Suscríbete a nuestras novedades</h5>
                     <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal"
                         aria-label="Close"></button>
                 </div>
@@ -585,13 +765,16 @@
             <div class="row g-4">
                 <div class="col-md-4 col-lg-3">
                     <h3 class="text-accent mb-4">Planetario de Madrid</h3>
-                    <p class="text-white-50">Un espacio único para descubrir y explorar el universo en pleno corazón de
-                        Madrid.</p>
+                    <p class="text-white-50">Centro de divulgación astronómica y científica del Ayuntamiento de Madrid
+                        en colaboración con AIRBUS.</p>
                     <div class="social-links">
-                        <a href="#" class="social-link"><i class="fab fa-facebook-f"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-twitter"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-instagram"></i></a>
-                        <a href="#" class="social-link"><i class="fab fa-youtube"></i></a>
+                        <a href="https://www.facebook.com/PlanetarioMadrid" class="social-link"><i
+                                class="fab fa-facebook-f"></i></a>
+                        <a href="https://vimeo.com/user14912981" class="social-link"><i class="fab fa-vimeo"></i></a>
+                        <a href="https://www.instagram.com/planetariomadrid" class="social-link"><i
+                                class="fab fa-instagram"></i></a>
+                        <a href="https://www.youtube.com/c/PlanetariodeMadridoficial%20" class="social-link"><i
+                                class="fab fa-youtube"></i></a>
                     </div>
                 </div>
 
@@ -611,9 +794,10 @@
                     <ul class="list-unstyled footer-links">
                         <li><a href="contacto.html">Cómo llegar</a></li>
                         <li><a href="visitas.html">Planifica tu visita</a></li>
-                        <li><a href="calendario.html">Calendario</a></li>
-                        <li><a href="faq.html">Preguntas frecuentes</a></li>
-                        <li><a href="prensa.html">Prensa</a></li>
+                        <li><a href="horarios.html">Reservas online</a></li>
+                        <li><a href="#" onclick="window.open('https://planetmad.es', '_blank')">Web oficial</a></li>
+                        <li><a href="#" onclick="window.open('https://planetmad.es/agenda/', '_blank')">Agenda
+                                oficial</a></li>
                     </ul>
                 </div>
 
@@ -630,7 +814,7 @@
                         </li>
                         <li class="d-flex">
                             <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
-                            <span>info@planetmadrid.es</span>
+                            <span>talleres@planetmad.es</span>
                         </li>
                     </ul>
                 </div>
@@ -671,12 +855,11 @@
             // Navegación suave para anclas
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
-                    if (this.getAttribute('href').length > 1) { // Evita el comportamiento para enlaces vacíos (#)
+                    if (this.getAttribute('href').length > 1) {
                         e.preventDefault();
                         const targetId = this.getAttribute('href');
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
-                            // Aumentado el offset para dejar más espacio
                             window.scrollTo({
                                 top: targetElement.offsetTop - 180,
                                 behavior: 'smooth'
@@ -695,7 +878,6 @@
 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    const sectionHeight = section.clientHeight;
                     if (pageYOffset >= (sectionTop - 200)) {
                         current = section.getAttribute('id');
                     }
@@ -708,69 +890,6 @@
                     }
                 });
             });
-
-            // Sistema de filtrado de actividades
-            const filtroTipo = document.getElementById('filtroTipo');
-            const filtroEdad = document.getElementById('filtroEdad');
-            const filtroFecha = document.getElementById('filtroFecha');
-            const actividadItems = document.querySelectorAll('.actividad-item');
-
-            function aplicarFiltros() {
-                const tipoSeleccionado = filtroTipo.value;
-                const edadSeleccionada = filtroEdad.value;
-                const fechaSeleccionada = filtroFecha.value;
-
-                actividadItems.forEach(item => {
-                    const tipoItem = item.dataset.tipo;
-                    const edadItem = item.dataset.edad;
-
-                    // Lógica para mostrar/ocultar según filtros
-                    const mostrarPorTipo = tipoSeleccionado === 'todos' || tipoItem === tipoSeleccionado;
-                    const mostrarPorEdad = edadSeleccionada === 'todos' || edadItem === edadSeleccionada;
-                    const mostrarPorFecha = true; // Para simplificar, asumimos que todos pasan el filtro de fecha
-
-                    if (mostrarPorTipo && mostrarPorEdad && mostrarPorFecha) {
-                        item.style.display = 'block';
-                    } else {
-                        item.style.display = 'none';
-                    }
-                });
-
-                // Comprobar si hay resultados visibles
-                let hayResultados = false;
-                actividadItems.forEach(item => {
-                    if (item.style.display !== 'none') {
-                        hayResultados = true;
-                    }
-                });
-
-                // Mostrar mensaje si no hay resultados
-                const mensajeNoResultados = document.getElementById('mensajeNoResultados');
-                if (!hayResultados) {
-                    // Si no existe el mensaje, lo creamos
-                    if (!mensajeNoResultados) {
-                        const mensaje = document.createElement('div');
-                        mensaje.id = 'mensajeNoResultados';
-                        mensaje.className = 'col-12 text-center mt-4';
-                        mensaje.innerHTML = `
-                            <div class="alert alert-dark">
-                                <i class="fas fa-info-circle me-2"></i> No se encontraron actividades con los filtros seleccionados. Prueba con otras opciones.
-                            </div>
-                        `;
-                        document.querySelector('.actividades-grid').appendChild(mensaje);
-                    }
-                } else {
-                    // Si existe el mensaje y hay resultados, lo eliminamos
-                    if (mensajeNoResultados) {
-                        mensajeNoResultados.remove();
-                    }
-                }
-            }
-
-            // Event listeners para los filtros
-            filtroTipo.addEventListener('change', aplicarFiltros);
-            filtroEdad.addEventListener('change', aplicarFiltros);
-            filtroFecha.addEventListener('change', aplicarFiltros);
         });
     </script>
 </body>
