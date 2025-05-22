@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 - Página no encontrada | Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0b3d91 0%, #061942 50%, #000000 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .floating-planet {
+            position: absolute;
+            border-radius: 50%;
+            animation: float 6s ease-in-out infinite;
+            opacity: 0.6;
+        }
+
+        .planet-404 {
+            width: 200px;
+            height: 200px;
+            background: radial-gradient(circle at 30% 30%, #ee9b00, #b8860b);
+            top: 10%;
+            right: 10%;
+            animation-delay: 0s;
+        }
+
+        .planet-small-1 {
+            width: 60px;
+            height: 60px;
+            background: radial-gradient(circle at 40% 20%, #7c3aed, #4c1d95);
+            top: 20%;
+            left: 15%;
+            animation-delay: 2s;
+        }
+
+        .planet-small-2 {
+            width: 80px;
+            height: 80px;
+            background: radial-gradient(circle at 50% 30%, #00b4d8, #0077b6);
+            bottom: 25%;
+            right: 20%;
+            animation-delay: 4s;
+        }
+
+        .error-number {
+            font-size: 8rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #ee9b00, #ffffff, #7c3aed);
+            background-size: 200% 200%;
+            animation: gradientShift 3s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(238, 155, 0, 0.5);
+        }
+
+        .satellite {
+            position: absolute;
+            top: 15%;
+            left: 5%;
+            animation: orbit 8s linear infinite;
+            transform-origin: 150px 150px;
+        }
+
+        .satellite-icon {
+            font-size: 2rem;
+            color: #ee9b00;
+            filter: drop-shadow(0 0 10px rgba(238, 155, 0, 0.7));
+        }
+
+        @keyframes float {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-20px) rotate(5deg);
+            }
+        }
+
+        @keyframes gradientShift {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes orbit {
+            0% {
+                transform: rotate(0deg) translateX(150px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(150px) rotate(-360deg);
+            }
+        }
+
+        .stars {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, #fff, transparent),
+                radial-gradient(2px 2px at 40% 70%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 40%, #fff, transparent),
+                radial-gradient(1px 1px at 70% 80%, #fff, transparent),
+                radial-gradient(2px 2px at 10% 90%, #fff, transparent);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 150px 150px, 450px 450px;
+            animation: sparkle 4s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes sparkle {
+
+            0%,
+            100% {
+                opacity: 0.8;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .btn-return {
+            background: linear-gradient(45deg, #ee9b00, #f4a261);
+            border: none;
+            box-shadow: 0 4px 15px rgba(238, 155, 0, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-return:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(238, 155, 0, 0.6);
+            background: linear-gradient(45deg, #f4a261, #ee9b00);
+        }
+
+        @media (max-width: 768px) {
+            .error-number {
+                font-size: 5rem;
+            }
+
+            .planet-404 {
+                width: 120px;
+                height: 120px;
+                top: 5%;
+                right: 5%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container d-flex align-items-center justify-content-center">
+        <!-- Fondo de estrellas -->
+        <div class="stars"></div>
+
+        <!-- Planetas flotantes -->
+        <div class="floating-planet planet-404"></div>
+        <div class="floating-planet planet-small-1"></div>
+        <div class="floating-planet planet-small-2"></div>
+
+        <!-- Satélite en órbita -->
+        <div class="satellite">
+            <i class="bi bi-router-fill satellite-icon"></i>
+        </div>
+
+        <div class="container text-center position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="content-box p-5">
+                        <!-- Número de error -->
+                        <h1 class="error-number mb-4">404</h1>
+
+                        <!-- Título -->
+                        <h2 class="text-white mb-4">¡Oops! Nos hemos perdido en el espacio</h2>
+
+                        <!-- Descripción -->
+                        <p class="text-white-50 mb-4 fs-5">
+                            Parece que la página que buscas ha viajado a una galaxia muy, muy lejana...
+                            Nuestros astrónomos están trabajando para localizarla.
+                        </p>
+
+                        <!-- Mensaje adicional -->
+                        <div class="alert alert-info bg-transparent border-info text-white mb-4">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-info-circle-fill me-3 fs-4"></i>
+                                <div>
+                                    <strong>Transmisión desde el Centro de Control:</strong><br>
+                                    La página solicitada no se encuentra en nuestras coordenadas espaciales.
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
+                            <a href="index.html" class="btn btn-return btn-lg text-white px-4">
+                                <i class="bi bi-house-fill me-2"></i>
+                                Volver a la Base
+                            </a>
+                            <a href="javascript:history.back()" class="btn btn-outline-light btn-lg px-4">
+                                <i class="bi bi-arrow-left me-2"></i>
+                                Retroceder
+                            </a>
+                        </div>
+
+                        <!-- Enlaces útiles -->
+                        <div class="row mt-5">
+                            <div class="col-md-4 mb-3">
+                                <a href="exposiciones.html" class="text-decoration-none">
+                                    <div class="text-white-50 hover-text-white">
+                                        <i class="bi bi-star-fill fs-4 d-block mb-2 text-warning"></i>
+                                        <span>Exposiciones</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <a href="horarios.html" class="text-decoration-none">
+                                    <div class="text-white-50 hover-text-white">
+                                        <i class="bi bi-clock-fill fs-4 d-block mb-2 text-info"></i>
+                                        <span>Horarios</span>
+                                    </div>
+                                </a>
+                            </div>
+                            <div class="col-md-4 mb-3">
+                                <a href="contacto.html" class="text-decoration-none">
+                                    <div class="text-white-50 hover-text-white">
+                                        <i class="bi bi-telephone-fill fs-4 d-block mb-2 text-success"></i>
+                                        <span>Contacto</span>
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Añadir efectos hover a los enlaces útiles
+        document.querySelectorAll('.hover-text-white').forEach(element => {
+            element.addEventListener('mouseenter', function () {
+                this.classList.remove('text-white-50');
+                this.classList.add('text-white');
+            });
+
+            element.addEventListener('mouseleave', function () {
+                this.classList.remove('text-white');
+                this.classList.add('text-white-50');
+            });
+        });
+    </script>
+</body>
+
+</html>

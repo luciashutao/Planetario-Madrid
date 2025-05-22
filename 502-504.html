@@ -1,0 +1,402 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Error del Servidor - Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .error-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #1a1a2e 0%, #16213e 50%, #0f0f23 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .satellite-broken {
+            position: absolute;
+            top: 20%;
+            right: 15%;
+            animation: malfunction 2s ease-in-out infinite alternate;
+        }
+
+        .satellite-icon {
+            font-size: 4rem;
+            color: #dc3545;
+            filter: drop-shadow(0 0 20px rgba(220, 53, 69, 0.8));
+        }
+
+        .signal-lines {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+        }
+
+        .signal-line {
+            width: 3px;
+            height: 40px;
+            background: #dc3545;
+            margin: 0 3px;
+            animation: signal-error 1.5s ease-in-out infinite;
+            opacity: 0.7;
+        }
+
+        .signal-line:nth-child(1) {
+            animation-delay: 0s;
+        }
+
+        .signal-line:nth-child(2) {
+            animation-delay: 0.2s;
+        }
+
+        .signal-line:nth-child(3) {
+            animation-delay: 0.4s;
+        }
+
+        .signal-line:nth-child(4) {
+            animation-delay: 0.6s;
+        }
+
+        .error-number {
+            font-size: 6rem;
+            font-weight: 900;
+            background: linear-gradient(45deg, #dc3545, #ff6b6b, #ffd93d);
+            background-size: 200% 200%;
+            animation: errorPulse 2s ease-in-out infinite;
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            text-shadow: 0 0 30px rgba(220, 53, 69, 0.5);
+        }
+
+        .content-box {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            border: 1px solid rgba(220, 53, 69, 0.3);
+            box-shadow: 0 8px 32px rgba(220, 53, 69, 0.2);
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #dc3545;
+            animation: blink 1s infinite;
+            margin-right: 8px;
+        }
+
+        .system-status {
+            background: rgba(220, 53, 69, 0.1);
+            border-left: 4px solid #dc3545;
+            font-family: 'Courier New', monospace;
+        }
+
+        .btn-retry {
+            background: linear-gradient(45deg, #28a745, #20c997);
+            border: none;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-retry:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(40, 167, 69, 0.6);
+        }
+
+        .floating-debris {
+            position: absolute;
+            width: 8px;
+            height: 8px;
+            background: #ffd93d;
+            border-radius: 50%;
+            animation: float-debris 4s linear infinite;
+        }
+
+        .debris-1 {
+            top: 30%;
+            left: 20%;
+            animation-delay: 0s;
+        }
+
+        .debris-2 {
+            top: 60%;
+            left: 80%;
+            animation-delay: 1s;
+        }
+
+        .debris-3 {
+            top: 80%;
+            left: 30%;
+            animation-delay: 2s;
+        }
+
+        @keyframes malfunction {
+            0% {
+                transform: rotate(0deg) scale(1);
+            }
+
+            100% {
+                transform: rotate(-5deg) scale(1.1);
+            }
+        }
+
+        @keyframes signal-error {
+
+            0%,
+            100% {
+                opacity: 0.3;
+                height: 20px;
+            }
+
+            50% {
+                opacity: 1;
+                height: 50px;
+            }
+        }
+
+        @keyframes errorPulse {
+
+            0%,
+            100% {
+                background-position: 0% 50%;
+            }
+
+            50% {
+                background-position: 100% 50%;
+            }
+        }
+
+        @keyframes blink {
+
+            0%,
+            50% {
+                opacity: 1;
+            }
+
+            51%,
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        @keyframes float-debris {
+            0% {
+                transform: translateY(0) rotate(0deg);
+                opacity: 1;
+            }
+
+            100% {
+                transform: translateY(-100vh) rotate(360deg);
+                opacity: 0;
+            }
+        }
+
+        .stars-error {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, #dc3545, transparent),
+                radial-gradient(1px 1px at 40% 70%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 40%, #ffd93d, transparent);
+            background-size: 550px 550px, 350px 350px, 250px 250px;
+            animation: sparkle-error 3s linear infinite;
+            opacity: 0.6;
+        }
+
+        @keyframes sparkle-error {
+
+            0%,
+            100% {
+                opacity: 0.6;
+            }
+
+            50% {
+                opacity: 0.9;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .error-number {
+                font-size: 4rem;
+            }
+
+            .satellite-broken {
+                top: 10%;
+                right: 10%;
+            }
+
+            .satellite-icon {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="error-container d-flex align-items-center justify-content-center">
+        <!-- Fondo de estrellas con errores -->
+        <div class="stars-error"></div>
+
+        <!-- Satélite averiado -->
+        <div class="satellite-broken">
+            <i class="bi bi-broadcast-pin satellite-icon"></i>
+        </div>
+
+        <!-- Líneas de señal con error -->
+        <div class="signal-lines d-flex">
+            <div class="signal-line"></div>
+            <div class="signal-line"></div>
+            <div class="signal-line"></div>
+            <div class="signal-line"></div>
+        </div>
+
+        <!-- Debris flotante -->
+        <div class="floating-debris debris-1"></div>
+        <div class="floating-debris debris-2"></div>
+        <div class="floating-debris debris-3"></div>
+
+        <div class="container text-center position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="content-box p-5">
+                        <!-- Número de error dinámico -->
+                        <h1 class="error-number mb-4" id="errorCode">502</h1>
+
+                        <!-- Título -->
+                        <h2 class="text-white mb-4">
+                            <span class="status-indicator"></span>
+                            Sistema fuera de línea
+                        </h2>
+
+                        <!-- Descripción -->
+                        <p class="text-white-50 mb-4 fs-5">
+                            Houston, tenemos un problema. Nuestros servidores están experimentando
+                            dificultades técnicas temporales.
+                        </p>
+
+                        <!-- Estado del sistema -->
+                        <div class="system-status p-3 mb-4 text-start">
+                            <div class="text-white-50 small mb-2">ESTADO DEL SISTEMA:</div>
+                            <div class="text-danger mb-1">
+                                <i class="bi bi-x-circle-fill me-2"></i>
+                                <span id="errorMessage">Error de Gateway - Conexión con el servidor interrumpida</span>
+                            </div>
+                            <div class="text-warning">
+                                <i class="bi bi-tools me-2"></i>
+                                Nuestro equipo técnico está trabajando en una solución
+                            </div>
+                        </div>
+
+                        <!-- Tiempo estimado -->
+                        <div class="alert alert-warning bg-transparent border-warning text-white mb-4">
+                            <div class="d-flex align-items-center">
+                                <i class="bi bi-clock-fill me-3 fs-4"></i>
+                                <div>
+                                    <strong>Tiempo estimado de reparación:</strong><br>
+                                    <span id="countdown">5:00</span> minutos
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Botones de acción -->
+                        <div class="d-flex flex-column flex-md-row justify-content-center gap-3 mb-4">
+                            <button onclick="location.reload()" class="btn btn-retry btn-lg text-white px-4">
+                                <i class="bi bi-arrow-clockwise me-2"></i>
+                                Reintentar Conexión
+                            </button>
+                            <a href="index.html" class="btn btn-outline-light btn-lg px-4">
+                                <i class="bi bi-house-fill me-2"></i>
+                                Ir al Inicio
+                            </a>
+                        </div>
+
+                        <!-- Información adicional -->
+                        <div class="row mt-5">
+                            <div class="col-md-6 mb-3">
+                                <div class="text-white-50">
+                                    <i class="bi bi-telephone-fill fs-4 d-block mb-2 text-info"></i>
+                                    <span>¿Necesitas ayuda urgente?</span><br>
+                                    <a href="tel:+34914673461" class="text-info">91 467 34 61</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="text-white-50">
+                                    <i class="bi bi-envelope-fill fs-4 d-block mb-2 text-success"></i>
+                                    <span>Reportar el problema</span><br>
+                                    <a href="mailto:soporte@planetmad.es" class="text-success">soporte@planetmad.es</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Alternar entre códigos de error 502 y 504
+        const errorCodes = [
+            { code: '502', message: 'Error de Gateway - Conexión con el servidor interrumpida' },
+            { code: '504', message: 'Timeout del Gateway - El servidor no responde' }
+        ];
+
+        let currentError = 0;
+
+        function switchError() {
+            const errorCodeElement = document.getElementById('errorCode');
+            const errorMessageElement = document.getElementById('errorMessage');
+
+            currentError = (currentError + 1) % errorCodes.length;
+            errorCodeElement.textContent = errorCodes[currentError].code;
+            errorMessageElement.textContent = errorCodes[currentError].message;
+        }
+
+        // Cambiar error cada 8 segundos
+        setInterval(switchError, 8000);
+
+        // Contador regresivo
+        let timeLeft = 300; // 5 minutos en segundos
+
+        function updateCountdown() {
+            const minutes = Math.floor(timeLeft / 60);
+            const seconds = timeLeft % 60;
+            const countdownElement = document.getElementById('countdown');
+
+            countdownElement.textContent = `${minutes}:${seconds.toString().padStart(2, '0')}`;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                timeLeft = 300; // Reiniciar contador
+            }
+        }
+
+        // Actualizar countdown cada segundo
+        setInterval(updateCountdown, 1000);
+
+        // Detectar parámetro URL para mostrar error específico
+        const urlParams = new URLSearchParams(window.location.search);
+        const errorParam = urlParams.get('error');
+
+        if (errorParam === '504') {
+            currentError = 1;
+            switchError();
+        }
+    </script>
+</body>
+
+</html>

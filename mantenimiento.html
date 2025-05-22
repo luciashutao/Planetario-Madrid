@@ -1,0 +1,555 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mantenimiento - Planetario de Madrid</title>
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Bootstrap Icons -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+    <!-- Estilos personalizados -->
+    <link rel="stylesheet" href="css/styles.css">
+    <style>
+        .maintenance-container {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #0b3d91 0%, #1e3a8a 50%, #1e40af 100%);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .maintenance-satellite {
+            position: absolute;
+            top: 15%;
+            right: 10%;
+            animation: maintenance-orbit 10s linear infinite;
+        }
+
+        .satellite-body {
+            width: 60px;
+            height: 40px;
+            background: linear-gradient(45deg, #6b7280, #9ca3af);
+            border-radius: 8px;
+            position: relative;
+            box-shadow: 0 0 20px rgba(156, 163, 175, 0.5);
+        }
+
+        .solar-panel {
+            width: 25px;
+            height: 15px;
+            background: linear-gradient(45deg, #1e40af, #3b82f6);
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+        }
+
+        .solar-panel.left {
+            left: -30px;
+            border-radius: 3px 0 0 3px;
+        }
+
+        .solar-panel.right {
+            right: -30px;
+            border-radius: 0 3px 3px 0;
+        }
+
+        .signal-beam {
+            position: absolute;
+            bottom: -40px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 0;
+            height: 0;
+            border-left: 20px solid transparent;
+            border-right: 20px solid transparent;
+            border-top: 40px solid rgba(34, 197, 94, 0.3);
+            animation: signal-pulse 2s ease-in-out infinite;
+        }
+
+        .progress-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+        }
+
+        .maintenance-icon {
+            font-size: 4rem;
+            color: #22c55e;
+            animation: tool-rotation 3s ease-in-out infinite;
+            filter: drop-shadow(0 0 20px rgba(34, 197, 94, 0.6));
+        }
+
+        .countdown-display {
+            background: rgba(0, 0, 0, 0.3);
+            border-radius: 10px;
+            border: 1px solid rgba(34, 197, 94, 0.3);
+        }
+
+        .countdown-unit {
+            text-align: center;
+            padding: 1rem;
+        }
+
+        .countdown-number {
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: #22c55e;
+            text-shadow: 0 0 10px rgba(34, 197, 94, 0.5);
+        }
+
+        .countdown-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.8;
+        }
+
+        .status-indicator {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #22c55e;
+            animation: pulse-green 2s infinite;
+            margin-right: 8px;
+        }
+
+        .floating-tools {
+            position: absolute;
+            animation: float-tools 6s ease-in-out infinite;
+        }
+
+        .tool-1 {
+            top: 25%;
+            left: 10%;
+            animation-delay: 0s;
+        }
+
+        .tool-2 {
+            top: 70%;
+            right: 25%;
+            animation-delay: 2s;
+        }
+
+        .tool-3 {
+            bottom: 20%;
+            left: 20%;
+            animation-delay: 4s;
+        }
+
+        .btn-subscribe {
+            background: linear-gradient(45deg, #22c55e, #16a34a);
+            border: none;
+            box-shadow: 0 4px 15px rgba(34, 197, 94, 0.4);
+            transition: all 0.3s ease;
+        }
+
+        .btn-subscribe:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(34, 197, 94, 0.6);
+        }
+
+        .stars-maintenance {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(2px 2px at 20% 30%, #22c55e, transparent),
+                radial-gradient(1px 1px at 40% 70%, #fff, transparent),
+                radial-gradient(1px 1px at 90% 40%, #3b82f6, transparent),
+                radial-gradient(2px 2px at 60% 20%, #fbbf24, transparent);
+            background-size: 550px 550px, 350px 350px, 250px 250px, 450px 450px;
+            animation: sparkle-maintenance 4s linear infinite;
+            opacity: 0.7;
+        }
+
+        @keyframes maintenance-orbit {
+            0% {
+                transform: rotate(0deg) translateX(100px) rotate(0deg);
+            }
+
+            100% {
+                transform: rotate(360deg) translateX(100px) rotate(-360deg);
+            }
+        }
+
+        @keyframes signal-pulse {
+
+            0%,
+            100% {
+                opacity: 0.3;
+            }
+
+            50% {
+                opacity: 0.8;
+            }
+        }
+
+        @keyframes tool-rotation {
+
+            0%,
+            100% {
+                transform: rotate(0deg);
+            }
+
+            50% {
+                transform: rotate(15deg);
+            }
+        }
+
+        @keyframes pulse-green {
+
+            0%,
+            100% {
+                opacity: 1;
+                transform: scale(1);
+            }
+
+            50% {
+                opacity: 0.5;
+                transform: scale(1.2);
+            }
+        }
+
+        @keyframes float-tools {
+
+            0%,
+            100% {
+                transform: translateY(0) rotate(0deg);
+            }
+
+            50% {
+                transform: translateY(-15px) rotate(10deg);
+            }
+        }
+
+        @keyframes sparkle-maintenance {
+
+            0%,
+            100% {
+                opacity: 0.7;
+            }
+
+            50% {
+                opacity: 1;
+            }
+        }
+
+        .maintenance-progress {
+            height: 8px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 10px;
+            overflow: hidden;
+        }
+
+        .maintenance-progress-bar {
+            height: 100%;
+            background: linear-gradient(90deg, #22c55e, #16a34a);
+            border-radius: 10px;
+            animation: progress-glow 2s ease-in-out infinite;
+            box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+        }
+
+        @keyframes progress-glow {
+
+            0%,
+            100% {
+                box-shadow: 0 0 15px rgba(34, 197, 94, 0.5);
+            }
+
+            50% {
+                box-shadow: 0 0 25px rgba(34, 197, 94, 0.8);
+            }
+        }
+
+        @media (max-width: 768px) {
+            .maintenance-icon {
+                font-size: 2.5rem;
+            }
+
+            .countdown-number {
+                font-size: 1.8rem;
+            }
+
+            .maintenance-satellite {
+                display: none;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="maintenance-container d-flex align-items-center justify-content-center">
+        <!-- Fondo de estrellas -->
+        <div class="stars-maintenance"></div>
+
+        <!-- Satélite en mantenimiento -->
+        <div class="maintenance-satellite">
+            <div class="satellite-body">
+                <div class="solar-panel left"></div>
+                <div class="solar-panel right"></div>
+                <div class="signal-beam"></div>
+            </div>
+        </div>
+
+        <!-- Herramientas flotantes -->
+        <div class="floating-tools tool-1">
+            <i class="bi bi-gear-fill text-warning fs-3"></i>
+        </div>
+        <div class="floating-tools tool-2">
+            <i class="bi bi-wrench text-info fs-3"></i>
+        </div>
+        <div class="floating-tools tool-3">
+            <i class="bi bi-tools text-success fs-3"></i>
+        </div>
+
+        <div class="container text-center position-relative">
+            <div class="row justify-content-center">
+                <div class="col-lg-10">
+                    <div class="progress-container p-5">
+                        <!-- Icono principal -->
+                        <div class="mb-4">
+                            <i class="bi bi-gear-wide-connected maintenance-icon"></i>
+                        </div>
+
+                        <!-- Título -->
+                        <h1 class="text-white mb-4">
+                            <span class="status-indicator"></span>
+                            Sistema en Mantenimiento
+                        </h1>
+
+                        <!-- Descripción -->
+                        <p class="text-white-50 mb-4 fs-5">
+                            Estamos actualizando nuestros sistemas para ofrecerte una mejor experiencia.
+                            El Planetario volverá a estar operativo muy pronto.
+                        </p>
+
+                        <!-- Barra de progreso -->
+                        <div class="maintenance-progress mb-4">
+                            <div class="maintenance-progress-bar" id="progressBar" style="width: 0%"></div>
+                        </div>
+                        <div class="text-white-50 mb-4">
+                            <span id="progressText">Iniciando mantenimiento...</span>
+                            <span class="float-end" id="progressPercent">0%</span>
+                        </div>
+
+                        <!-- Contador regresivo -->
+                        <div class="countdown-display mx-auto mb-5" style="max-width: 500px;">
+                            <div class="p-4">
+                                <h3 class="text-white mb-3">Tiempo estimado restante:</h3>
+                                <div class="row g-0">
+                                    <div class="col-3">
+                                        <div class="countdown-unit">
+                                            <div class="countdown-number" id="hours">02</div>
+                                            <div class="countdown-label text-white-50">Horas</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="countdown-unit">
+                                            <div class="countdown-number" id="minutes">30</div>
+                                            <div class="countdown-label text-white-50">Minutos</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="countdown-unit">
+                                            <div class="countdown-number" id="seconds">00</div>
+                                            <div class="countdown-label text-white-50">Segundos</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-3">
+                                        <div class="countdown-unit">
+                                            <div class="countdown-number" id="progress">0</div>
+                                            <div class="countdown-label text-white-50">% Completado</div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Estado de los sistemas -->
+                        <div class="row mb-4">
+                            <div class="col-md-6 mb-3">
+                                <div class="text-start">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-server text-success me-2"></i>
+                                        <span class="text-white">Base de datos</span>
+                                        <span class="badge bg-success ms-auto">Actualizada</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-shield-check text-warning me-2"></i>
+                                        <span class="text-white">Seguridad</span>
+                                        <span class="badge bg-warning ms-auto">En proceso</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-speedometer2 text-danger me-2"></i>
+                                        <span class="text-white">Rendimiento</span>
+                                        <span class="badge bg-danger ms-auto">Pendiente</span>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="text-start">
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-cloud-arrow-up text-success me-2"></i>
+                                        <span class="text-white">Respaldos</span>
+                                        <span class="badge bg-success ms-auto">Completado</span>
+                                    </div>
+                                    <div class="d-flex align-items-center mb-2">
+                                        <i class="bi bi-palette text-warning me-2"></i>
+                                        <span class="text-white">Interfaz</span>
+                                        <span class="badge bg-warning ms-auto">Actualizando</span>
+                                    </div>
+                                    <div class="d-flex align-items-center">
+                                        <i class="bi bi-bug text-danger me-2"></i>
+                                        <span class="text-white">Correcciones</span>
+                                        <span class="badge bg-danger ms-auto">En cola</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Suscripción a notificaciones -->
+                        <div class="alert alert-info bg-transparent border-info text-white mb-4">
+                            <h5 class="alert-heading">
+                                <i class="bi bi-bell-fill me-2"></i>
+                                ¿Quieres recibir una notificación cuando esté listo?
+                            </h5>
+                            <div class="row mt-3">
+                                <div class="col-md-8">
+                                    <input type="email" class="form-control" placeholder="Tu dirección de email"
+                                        id="notificationEmail">
+                                </div>
+                                <div class="col-md-4 mt-2 mt-md-0">
+                                    <button class="btn btn-subscribe w-100 text-white"
+                                        onclick="subscribeNotification()">
+                                        <i class="bi bi-envelope-plus me-2"></i>
+                                        Notificarme
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Información de contacto -->
+                        <div class="row">
+                            <div class="col-md-6 mb-3">
+                                <div class="text-white-50">
+                                    <i class="bi bi-telephone-fill fs-4 d-block mb-2 text-info"></i>
+                                    <span>¿Necesitas ayuda?</span><br>
+                                    <a href="tel:+34914673461" class="text-info">91 467 34 61</a>
+                                </div>
+                            </div>
+                            <div class="col-md-6 mb-3">
+                                <div class="text-white-50">
+                                    <i class="bi bi-envelope-fill fs-4 d-block mb-2 text-success"></i>
+                                    <span>Contacta con nosotros</span><br>
+                                    <a href="mailto:info@planetmad.es" class="text-success">info@planetmad.es</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Redes sociales -->
+                        <div class="mt-4">
+                            <p class="text-white-50 mb-3">Síguenos para actualizaciones en tiempo real:</p>
+                            <div class="d-flex justify-content-center gap-3">
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-facebook fs-4 text-primary"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-twitter fs-4 text-info"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-instagram fs-4 text-danger"></i>
+                                </a>
+                                <a href="#" class="text-decoration-none">
+                                    <i class="bi bi-youtube fs-4 text-warning"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Scripts de Bootstrap -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script>
+        // Configurar tiempo inicial (2.5 horas)
+        let timeLeft = 9000; // 2.5 horas en segundos
+        let totalTime = timeLeft;
+
+        // Mensajes de progreso
+        const progressMessages = [
+            "Iniciando mantenimiento...",
+            "Actualizando base de datos...",
+            "Optimizando rendimiento...",
+            "Aplicando correcciones de seguridad...",
+            "Restaurando servicios...",
+            "Verificando sistemas...",
+            "Finalizando mantenimiento..."
+        ];
+
+        function updateCountdown() {
+            const hours = Math.floor(timeLeft / 3600);
+            const minutes = Math.floor((timeLeft % 3600) / 60);
+            const seconds = timeLeft % 60;
+            const progressPercent = Math.round(((totalTime - timeLeft) / totalTime) * 100);
+
+            // Actualizar display del countdown
+            document.getElementById('hours').textContent = hours.toString().padStart(2, '0');
+            document.getElementById('minutes').textContent = minutes.toString().padStart(2, '0');
+            document.getElementById('seconds').textContent = seconds.toString().padStart(2, '0');
+            document.getElementById('progress').textContent = progressPercent;
+
+            // Actualizar barra de progreso
+            document.getElementById('progressBar').style.width = progressPercent + '%';
+            document.getElementById('progressPercent').textContent = progressPercent + '%';
+
+            // Actualizar mensaje de progreso
+            const messageIndex = Math.floor((progressPercent / 100) * progressMessages.length);
+            const currentMessage = progressMessages[Math.min(messageIndex, progressMessages.length - 1)];
+            document.getElementById('progressText').textContent = currentMessage;
+
+            if (timeLeft > 0) {
+                timeLeft--;
+            } else {
+                // Reiniciar cuando llegue a 0
+                timeLeft = totalTime;
+            }
+        }
+
+        // Actualizar cada segundo
+        setInterval(updateCountdown, 1000);
+
+        // Función para suscribirse a notificaciones
+        function subscribeNotification() {
+            const email = document.getElementById('notificationEmail').value;
+            if (email && email.includes('@')) {
+                // Simular suscripción
+                const button = event.target;
+                button.innerHTML = '<i class="bi bi-check-circle me-2"></i>¡Suscrito!';
+                button.classList.remove('btn-subscribe');
+                button.classList.add('btn-success');
+                button.disabled = true;
+
+                // Mostrar mensaje de confirmación
+                setTimeout(() => {
+                    alert('¡Gracias! Te notificaremos cuando el sistema esté disponible.');
+                }, 500);
+            } else {
+                alert('Por favor, introduce una dirección de email válida.');
+            }
+        }
+
+        // Inicializar countdown inmediatamente
+        updateCountdown();
+    </script>
+</body>
+
+</html>
