@@ -12,60 +12,77 @@
     <link rel="stylesheet" href="css/styles.css">
 
     <style>
-        /* Estilos específicos para tarjetas uniformes */
-        .dome-show-card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        /* Solución para evitar solapamientos con sticky navigation */
+        .sticky-nav {
+            position: sticky;
+            top: 76px;
+            z-index: 10;
+            background-color: rgba(5, 20, 51, 0.95);
+            backdrop-filter: blur(10px);
         }
 
-        .dome-show-card .card-img-top {
+        /* Grid mejorado sin conflictos con sticky */
+        .activity-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2rem;
+            align-items: start;
+            /* Clave para evitar solapamientos */
+        }
+
+        /* Tarjetas uniformes */
+        .dome-show-card,
+        .event-card {
+            height: auto;
+            display: flex;
+            flex-direction: column;
+            position: relative;
+            background: rgba(255, 255, 255, 0.05);
+            border: none;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .dome-show-card:hover,
+        .event-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+        }
+
+        /* Imágenes uniformes */
+        .card-img-top,
+        .event-image {
             aspect-ratio: 16 / 9;
             object-fit: cover;
             object-position: center;
             width: 100%;
             height: auto;
+            border-radius: 15px 15px 0 0;
         }
 
-        .dome-show-card .card-body {
-            flex: 1;
+        /* Cuerpo de tarjetas flexibles */
+        .card-body {
+            flex-grow: 1;
+            min-height: 0;
             display: flex;
             flex-direction: column;
+            padding: 1.5rem;
+            background: rgba(11, 61, 145, 0.8);
         }
 
-        .dome-show-card .card-body .mt-auto {
-            margin-top: auto !important;
+        .card-body>.alert {
+            margin-bottom: 1rem;
         }
 
-        /* Estilos específicos para eventos */
-        .event-card {
-            height: 100%;
-            display: flex;
-            flex-direction: column;
+        .activity-grid>.dome-show-card {
+            min-height: 100%;
         }
 
-        .event-image {
-            aspect-ratio: 4 / 3;
-            object-fit: cover;
-            object-position: center;
-            width: 100%;
-            border-radius: 10px 10px 0 0;
-        }
 
-        /* Asegurar altura uniforme en grids */
-        .activity-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 2rem;
-            align-items: stretch;
-        }
-
-        .activity-grid .dome-show-card,
-        .activity-grid .event-card {
-            height: 100%;
-        }
-
-        /* Mejoras para badges */
+        /* Badges posicionados */
         .badge-container {
             position: absolute;
             top: 15px;
@@ -76,8 +93,52 @@
             flex-wrap: wrap;
         }
 
-        .dome-show-card {
-            position: relative;
+        /* Espaciado entre secciones */
+        section[id] {
+            scroll-margin-top: 150px;
+            /* Para compensar el sticky nav */
+        }
+
+        #eventos,
+        #talleres,
+        #proyecciones,
+        #informacion-practica {
+            padding-top: 5rem;
+        }
+
+        h2.display-5 {
+            margin-top: 10rem;
+        }
+
+
+
+        /* Mejoras responsive */
+        @media (max-width: 768px) {
+            .activity-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+
+            .sticky-nav {
+                top: 70px;
+                /* Ajuste para móviles */
+            }
+
+            section[id] {
+                scroll-margin-top: 120px;
+            }
+        }
+
+        @media (max-width: 576px) {
+
+            .card-img-top,
+            .event-image {
+                aspect-ratio: 4 / 3;
+            }
+
+            .card-body {
+                padding: 1rem;
+            }
         }
 
         /* Loading skeleton para imágenes */
@@ -94,20 +155,6 @@
 
             100% {
                 background-position: -200% 0;
-            }
-        }
-
-        /* Mejoras responsivas */
-        @media (max-width: 768px) {
-            .activity-grid {
-                grid-template-columns: 1fr;
-                gap: 1.5rem;
-            }
-        }
-
-        @media (max-width: 576px) {
-            .dome-show-card .card-img-top {
-                aspect-ratio: 3 / 2;
             }
         }
     </style>
@@ -175,7 +222,7 @@
     </section>
 
     <!-- Submenú de navegación interna -->
-    <div class="py-3 sticky-top shadow" style="top: 76px; z-index: 10; background-color: rgba(5, 20, 51, 0.95);">
+    <div class="py-3 sticky-nav shadow">
         <div class="container">
             <div class="row justify-content-center">
                 <div class="col-lg-10">
@@ -184,7 +231,7 @@
                             <a class="nav-link active" href="#proyecciones">Proyecciones</a>
                         </li>
                         <li class="nav-item">
-                            <a class="nav-link" href="#observaciones">Observaciones</a>
+                            <a class="nav-link" href="#audiovisuales">Audiovisuales</a>
                         </li>
                         <li class="nav-item">
                             <a class="nav-link" href="#talleres">Talleres</a>
@@ -208,8 +255,8 @@
                         <div class="text-center mb-5">
                             <h2 class="display-5 fw-bold mb-4">Descubre todas nuestras actividades</h2>
                             <p class="lead">El Planetario de Madrid ofrece proyecciones inmersivas en nuestra cúpula de
-                                15 metros, talleres prácticos en colaboración con AIRBUS, observaciones astronómicas con
-                                telescopios y eventos especiales durante todo el año.</p>
+                                15 metros, audiovisuales gratuitos en la planta calle, talleres especiales de verano en
+                                colaboración con AIRBUS y eventos especiales durante todo el año.</p>
                             <p class="text-white-50">Durante el curso escolar, las mañanas están reservadas a las
                                 visitas escolares, mientras que las tardes, días de fiesta y fines de semana se dirigen
                                 al público en general.</p>
@@ -232,15 +279,15 @@
 
                 <div class="activity-grid">
                     <!-- El Cielo de Cloe -->
-                    <div class="dome-show-card card bg-dark-transparent border-0 shadow-lg">
+                    <div class="dome-show-card">
                         <div class="badge-container">
                             <span class="badge bg-primary">Proyección</span>
                             <span class="badge bg-success">Infantil</span>
                         </div>
                         <img src="img/Proyecciones/cloe.jpg" class="card-img-top image-skeleton" alt="El Cielo de Cloe">
-                        <div class="card-body p-4">
-                            <h3 class="card-title h4 text-white mb-3">El Cielo de Cloe</h3>
-                            <p class="card-text text-white-50 mb-3">¡Hola niños! Me llamo Cloe, soy una "profe" muy
+                        <div class="card-body">
+                            <h3 class="h4 text-white mb-3">El Cielo de Cloe</h3>
+                            <p class="text-white-50 mb-3">¡Hola niños! Me llamo Cloe, soy una "profe" muy
                                 especial del
                                 Planetario. Una clase muy divertida en la que aprenderéis cosas asombrosas del
                                 cielo, con canciones pegajosas y personajes inolvidables.</p>
@@ -258,16 +305,16 @@
                     </div>
 
                     <!-- Agujeros Negros -->
-                    <div class="dome-show-card card bg-dark-transparent border-0 shadow-lg">
+                    <div class="dome-show-card">
                         <div class="badge-container">
                             <span class="badge bg-primary">Proyección</span>
                             <span class="badge bg-warning text-dark">Premiada</span>
                         </div>
                         <img src="img/Proyecciones/agujero.jpg" class="card-img-top image-skeleton"
                             alt="Agujeros Negros">
-                        <div class="card-body p-4">
-                            <h3 class="card-title h4 text-white mb-3">Agujeros Negros: Al límite de lo conocido</h3>
-                            <p class="card-text text-white-50 mb-3">Los agujeros negros son probablemente los objetos
+                        <div class="card-body">
+                            <h3 class="h4 text-white mb-3">Agujeros Negros: Al límite de lo conocido</h3>
+                            <p class="text-white-50 mb-3">Los agujeros negros son probablemente los objetos
                                 más
                                 extraordinarios del cosmos. Premiada como Mejor Película Científica 2024 en el Dome
                                 Fest West de Estados Unidos.</p>
@@ -285,16 +332,16 @@
                     </div>
 
                     <!-- Biosfera Oscura -->
-                    <div class="dome-show-card card bg-dark-transparent border-0 shadow-lg">
+                    <div class="dome-show-card">
                         <div class="badge-container">
                             <span class="badge bg-primary">Proyección</span>
                             <span class="badge bg-warning text-dark">Premiada</span>
                         </div>
                         <img src="img/Proyecciones/biosfera.png" class="card-img-top image-skeleton"
                             alt="Biosfera Oscura">
-                        <div class="card-body p-4">
-                            <h3 class="card-title h4 text-white mb-3">Biosfera Oscura</h3>
-                            <p class="card-text text-white-50 mb-3">Nos lleva a las fronteras del conocimiento de la
+                        <div class="card-body">
+                            <h3 class="h4 text-white mb-3">Biosfera Oscura</h3>
+                            <p class="text-white-50 mb-3">Nos lleva a las fronteras del conocimiento de la
                                 vida. Bajo las
                                 profundidades de la corteza terrestre, los científicos han encontrado vida en
                                 condiciones extremas. Premiada en múltiples festivales internacionales.</p>
@@ -311,44 +358,17 @@
                         </div>
                     </div>
 
-                    <!-- Del Sistema Solar al Mundo Anillo -->
-                    <div class="dome-show-card card bg-dark-transparent border-0 shadow-lg">
-                        <div class="badge-container">
-                            <span class="badge bg-primary">Proyección</span>
-                            <span class="badge bg-info">Familiar</span>
-                        </div>
-                        <img src="img/Proyecciones/explorando.jpg" class="card-img-top image-skeleton"
-                            alt="Del Sistema Solar al Mundo Anillo">
-                        <div class="card-body p-4">
-                            <h3 class="card-title h4 text-white mb-3">Del Sistema Solar al Mundo Anillo</h3>
-                            <p class="card-text text-white-50 mb-3">Reposición de dos producciones clásicas. Un viaje
-                                desde nuestro
-                                Sistema Solar hasta conceptos más avanzados del cosmos. Formato fulldome
-                                espectacular.</p>
-                            <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 35 minutos
-                                    (15+20 min)</li>
-                                <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Para todos los
-                                    públicos</li>
-                            </ul>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0 text-accent">3,60€</span>
-                                <a href="entradas.html" class="btn btn-primary">Reservar</a>
-                            </div>
-                        </div>
-                    </div>
-
                     <!-- Polaris -->
-                    <div class="dome-show-card card bg-dark-transparent border-0 shadow-lg">
+                    <div class="dome-show-card">
                         <div class="badge-container">
                             <span class="badge bg-primary">Proyección</span>
                             <span class="badge bg-success">Infantil</span>
                         </div>
                         <img src="img/Proyecciones/polaris.jpg" class="card-img-top image-skeleton"
                             alt="Polaris, el submarino espacial">
-                        <div class="card-body p-4">
-                            <h3 class="card-title h4 text-white mb-3">Polaris, el submarino espacial</h3>
-                            <p class="card-text text-white-50 mb-3">James, un pingüino turista, emprende un viaje
+                        <div class="card-body">
+                            <h3 class="h4 text-white mb-3">Polaris, el submarino espacial</h3>
+                            <p class="text-white-50 mb-3">James, un pingüino turista, emprende un viaje
                                 extraordinario junto
                                 a Vladimir, un oso divertido y sabio, y Lucia, una pájaro colorido y valiente.</p>
                             <ul class="list-unstyled mb-4 text-white-50">
@@ -365,16 +385,16 @@
                     </div>
 
                     <!-- En Órbita con López -->
-                    <div class="dome-show-card card bg-dark-transparent border-0 shadow-lg">
+                    <div class="dome-show-card">
                         <div class="badge-container">
                             <span class="badge bg-primary">Proyección</span>
                             <span class="badge bg-success">Infantil</span>
                         </div>
                         <img src="img/Proyecciones/despegamos.jpg" class="card-img-top image-skeleton"
                             alt="En Órbita con López">
-                        <div class="card-body p-4">
-                            <h3 class="card-title h4 text-white mb-3">En Órbita con López</h3>
-                            <p class="card-text text-white-50 mb-3">La mayoría de las proyecciones hablan del espacio,
+                        <div class="card-body">
+                            <h3 class="h4 text-white mb-3">En Órbita con López</h3>
+                            <p class="text-white-50 mb-3">La mayoría de las proyecciones hablan del espacio,
                                 pero pocas veces
                                 del espacio que hay en casa. Una divertida aventura espacial para los más pequeños.
                             </p>
@@ -401,71 +421,142 @@
             </div>
         </section>
 
-        <!-- Observaciones Astronómicas -->
-        <section id="observaciones" class="py-5 bg-stars">
+        <!-- Audiovisuales -->
+        <section id="audiovisuales" class="py-5 bg-stars">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
-                        <h2 class="display-5 fw-bold mb-3">Observaciones Astronómicas</h2>
-                        <p class="lead">Jornadas especiales de observación con telescopios profesionales</p>
+                        <h2 class="display-5 fw-bold mb-3">Audiovisuales Gratuitos</h2>
+                        <p class="lead">Contenido astronómico gratuito en la pantalla de retroproyección de la planta
+                            calle</p>
                     </div>
                 </div>
 
                 <div class="activity-grid">
-                    <!-- Jornada Pública de Observación -->
-                    <div class="event-card bg-dark-transparent rounded-3 shadow-lg p-0">
-                        <img src="img/observacion-telescopios.jpg" class="event-image"
-                            alt="Jornada de Observación con Telescopios">
-                        <div class="p-4">
+                    <!-- Audiovisuales ESA -->
+                    <div class="event-card">
+                        <img src="img/audiovisuales-esa.jpg" class="event-image" alt="Audiovisuales ESA">
+                        <div class="card-body">
                             <div class="d-flex justify-content-between mb-3">
-                                <span class="badge bg-primary">Observación</span>
+                                <span class="badge bg-primary">Audiovisual</span>
                                 <span class="badge bg-success">Gratuito</span>
                             </div>
-                            <h3 class="h4 text-white mb-3">Jornada Pública de Observación con Telescopios</h3>
-                            <p class="text-white-50 mb-3">Observación astronómica gratuita con una veintena de grandes
-                                telescopios y asesoramiento de expertos. En colaboración con AIRBUS y la Agrupación
-                                Astronómica de Madrid (AAM).</p>
+                            <h3 class="h4 text-white mb-3">Paxi - Agencia Espacial Europea</h3>
+                            <p class="text-white-50 mb-3">Serie de audiovisuales producidos por la Agencia Espacial
+                                Europea (ESA) destinados a los más pequeños. Paxi, el protagonista, explora diferentes
+                                aspectos del espacio y la astronomía de forma didáctica y divertida.</p>
                             <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 21:00h -
-                                    00:00h</li>
-                                <li class="mb-2"><i class="fas fa-telescope text-accent me-2"></i> 20 telescopios de
-                                    grandes dimensiones</li>
-                                <li class="mb-2"><i class="fas fa-map-marker-alt text-accent me-2"></i> Explanada
-                                    del Parque Tierno Galván</li>
+                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 5-10 minutos
+                                    por episodio</li>
+                                <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Para toda la familia</li>
+                                <li class="mb-2"><i class="fas fa-play text-accent me-2"></i> Proyección continua</li>
+                                <li class="mb-2"><i class="fas fa-map-marker-alt text-accent me-2"></i> Planta calle -
+                                    Pantalla de retroproyección</li>
                             </ul>
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="text-accent fw-bold">Entrada gratuita</span>
-                                <a href="#eventos" class="btn btn-primary">Ver próximas fechas</a>
+                                <span class="text-accent fw-bold">Acceso gratuito</span>
+                                <span class="text-white-50">Disponible durante horario de apertura</span>
                             </div>
                         </div>
                     </div>
 
-                    <!-- Observación del Sol -->
-                    <div class="event-card bg-dark-transparent rounded-3 shadow-lg p-0">
-                        <img src="img/observacion-solar.jpg" class="event-image" alt="Observación Solar">
-                        <div class="p-4">
+                    <!-- Sistema Solar -->
+                    <div class="event-card">
+                        <img src="img/audiovisual-sistema-solar.jpg" class="event-image"
+                            alt="Sistema Solar Audiovisual">
+                        <div class="card-body">
                             <div class="d-flex justify-content-between mb-3">
-                                <span class="badge bg-primary">Observación</span>
-                                <span class="badge bg-warning text-dark">Especial</span>
+                                <span class="badge bg-primary">Audiovisual</span>
+                                <span class="badge bg-info">Didáctico</span>
                             </div>
-                            <h3 class="h4 text-white mb-3">Observación Solar con Telescopios</h3>
-                            <p class="text-white-50 mb-3">Observación segura del Sol utilizando telescopios
-                                especializados.
-                                Contempla las manchas solares, protuberancias y detalles de la cromosfera con total
-                                seguridad.</p>
+                            <h3 class="h4 text-white mb-3">Curiosidades del Sistema Solar</h3>
+                            <p class="text-white-50 mb-3">Apuntes sobre detalles curiosos que hoy conocemos del Sistema
+                                Solar. Un recorrido fascinante por los planetas, lunas y otros cuerpos celestes que
+                                componen nuestro vecindario espacial.</p>
                             <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-sun text-accent me-2"></i> Telescopios con filtros
-                                    especializados</li>
-                                <li class="mb-2"><i class="fas fa-shield-alt text-accent me-2"></i> Observación 100%
-                                    segura</li>
-                                <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Incluido en talleres
-                                    de verano</li>
+                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 11 minutos</li>
+                                <li class="mb-2"><i class="fas fa-music text-accent me-2"></i> Con música y subtítulos
+                                    (sin locución)</li>
+                                <li class="mb-2"><i class="fas fa-planet-ringed text-accent me-2"></i> Explora planetas
+                                    y lunas</li>
+                                <li class="mb-2"><i class="fas fa-eye text-accent me-2"></i> Visualización educativa
+                                </li>
                             </ul>
                             <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="text-accent fw-bold">Actividad especial</span>
-                                <a href="#talleres" class="btn btn-primary">Ver talleres</a>
+                                <span class="text-accent fw-bold">Acceso gratuito</span>
+                                <span class="text-white-50">Proyección continua</span>
                             </div>
                         </div>
+                    </div>
+
+                    <!-- Astrofotografía -->
+                    <div class="event-card">
+                        <img src="img/audiovisual-astrofotografia.jpg" class="event-image" alt="Astrofotografía">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-primary">Audiovisual</span>
+                                <span class="badge bg-warning text-dark">Artístico</span>
+                            </div>
+                            <h3 class="h4 text-white mb-3">Astrofotografía</h3>
+                            <p class="text-white-50 mb-3">Una cámara réflex digital, un teleobjetivo y unos cielos
+                                nocturnos reconocidos mundialmente por su calidad y oscuridad. Los ingredientes
+                                perfectos para capturar la belleza del cosmos.</p>
+                            <ul class="list-unstyled mb-4 text-white-50">
+                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 6 minutos</li>
+                                <li class="mb-2"><i class="fas fa-camera text-accent me-2"></i> Técnicas de
+                                    astrofotografía</li>
+                                <li class="mb-2"><i class="fas fa-music text-accent me-2"></i> Solo música y subtítulos
+                                </li>
+                                <li class="mb-2"><i class="fas fa-stars text-accent me-2"></i> Cielos de calidad
+                                    excepcional</li>
+                            </ul>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="text-accent fw-bold">Acceso gratuito</span>
+                                <span class="text-white-50">Contenido visual impresionante</span>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Orígenes del Sistema Solar -->
+                    <div class="event-card">
+                        <img src="img/audiovisual-origenes.jpg" class="event-image" alt="Orígenes del Sistema Solar">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between mb-3">
+                                <span class="badge bg-primary">Audiovisual</span>
+                                <span class="badge bg-info">Científico</span>
+                            </div>
+                            <h3 class="h4 text-white mb-3">Los Orígenes del Sistema Solar</h3>
+                            <p class="text-white-50 mb-3">Un viaje al pasado para descubrir cómo se formó nuestro
+                                Sistema Solar hace miles de millones de años. Una exploración científica de los procesos
+                                que dieron origen a nuestro hogar cósmico.</p>
+                            <ul class="list-unstyled mb-4 text-white-50">
+                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 6 minutos</li>
+                                <li class="mb-2"><i class="fas fa-history text-accent me-2"></i> Formación del Sistema
+                                    Solar</li>
+                                <li class="mb-2"><i class="fas fa-music text-accent me-2"></i> Solo música y subtítulos
+                                </li>
+                                <li class="mb-2"><i class="fas fa-microscope text-accent me-2"></i> Base científica
+                                    rigurosa</li>
+                            </ul>
+                            <div class="mt-auto d-flex justify-content-between align-items-center">
+                                <span class="text-accent fw-bold">Acceso gratuito</span>
+                                <span class="text-white-50">Contenido educativo</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Información adicional -->
+                <div class="text-center mt-5">
+                    <div class="bg-dark-transparent rounded-3 p-4 mx-auto" style="max-width: 800px;">
+                        <h4 class="text-accent mb-3">
+                            <i class="fas fa-info-circle me-2"></i>Información sobre Audiovisuales
+                        </h4>
+                        <p class="text-white-50 mb-2">Los audiovisuales se proyectan de forma continuada durante el
+                            horario de apertura del Planetario en la pantalla de retroproyección de la planta calle.</p>
+                        <p class="text-white-50 mb-0">
+                            <strong>Acceso completamente gratuito</strong> - No requiere entrada ni reserva previa
+                        </p>
                     </div>
                 </div>
             </div>
@@ -476,256 +567,165 @@
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
-                        <h2 class="display-5 fw-bold mb-3">Talleres Prácticos</h2>
-                        <p class="lead">Talleres en colaboración con AIRBUS para todas las edades</p>
+                        <h2 class="display-5 fw-bold mb-3">Talleres de Verano</h2>
+                        <p class="lead">Taller especial en colaboración con AIRBUS para el verano 2025</p>
                     </div>
                 </div>
 
-                <div class="activity-grid">
-                    <!-- Pequeños Astrónomos 2.0 -->
-                    <div class="event-card bg-dark-transparent rounded-3 shadow-lg p-0">
-                        <img src="img/pequenos-astronomos.jpg" class="event-image" alt="Pequeños Astrónomos 2.0">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <span class="badge bg-primary">Taller</span>
-                                <span class="badge bg-success">6-9 años</span>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Un Día Planetario - Único taller disponible -->
+                        <div class="event-card">
+                            <img src="img/taller.jpg" class="event-image" alt="Un Día Planetario">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="badge bg-primary">Taller</span>
+                                    <span class="badge bg-danger">Julio 2025</span>
+                                </div>
+                                <h3 class="h4 text-white mb-3">"Un Día Planetario"</h3>
+                                <p class="text-white-50 mb-3">Taller intensivo de mañana completa en colaboración con
+                                    AIRBUS. Incluye observación solar con telescopio, taller temático de astronomía y
+                                    proyección en la cúpula del Planetario.</p>
+                                <ul class="list-unstyled mb-4 text-white-50">
+                                    <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i>
+                                        <strong>Horario:</strong> 9:00h a 13:45h
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> <strong>Dirigido
+                                            a:</strong> Niños nacidos entre 2013-2016</li>
+                                    <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i>
+                                        <strong>Fechas:</strong> 1, 2, 3, 4, 8, 9, 10, 11, 15, 16, 17, 18, 22, 23 y 24
+                                        de julio
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-user-friends text-accent me-2"></i>
+                                        <strong>Plazas:</strong> 22 niños/as por día
+                                    </li>
+                                    <li class="mb-2"><i class="fas fa-sun text-accent me-2"></i>
+                                        <strong>Incluye:</strong> Observación solar, taller astronómico y proyección
+                                    </li>
+                                </ul>
+                                <div class="alert alert-info mb-2">
+                                    <i class="fas fa-info-circle me-2"></i>
+                                    <strong>Inscripciones:</strong> A partir del lunes 2 de junio a las 9:00h hasta
+                                    completar aforos
+                                </div>
+                                <div class="mt-auto d-flex justify-content-between align-items-center">
+                                    <span class="h5 mb-0 text-accent">3,30€</span>
+                                    <a href="https://www.eventbrite.es/e/entradas-verano-2025-un-dia-planetario-nacidos-2013-al-2016-1372161695569"
+                                        target="_blank" class="btn btn-primary">Reservar online</a>
+                                </div>
                             </div>
-                            <h3 class="h4 text-white mb-3">Pequeños Astrónomos 2.0</h3>
-                            <p class="text-white-50 mb-3">Talleres destinados a niños y niñas de 6 a 9 años.
-                                Modalidades:
-                                "Planeta misterioso", "Detective de constelaciones", "Universo lejano", "Academia
-                                espacial".</p>
-                            <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 1 hora</li>
-                                <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Fines de semana y
-                                    días sin cole</li>
-                                <li class="mb-2"><i class="fas fa-map-marker-alt text-accent me-2"></i> Sala de
-                                    Vídeo</li>
-                            </ul>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="text-accent fw-bold">Entrada gratuita</span>
-                                <a href="#" class="btn btn-primary">Reservar online</a>
+                        </div>
+
+                        <!-- Información adicional -->
+                        <div class="mt-5 text-center">
+                            <div class="bg-dark-transparent rounded-3 p-4">
+                                <h4 class="text-accent mb-3">Información Importante</h4>
+                                <ul class="list-unstyled text-white-50">
+                                    <li class="mb-2"><i class="fas fa-backpack text-accent me-2"></i> Traer: mochila con
+                                        comida, botella de agua, gorra, crema solar y cuaderno pequeño</li>
+                                    <li class="mb-2"><i class="fas fa-tshirt text-accent me-2"></i> Recomendable ropa
+                                        cómoda</li>
+                                    <li class="mb-2"><i class="fas fa-exclamation-triangle text-accent me-2"></i>
+                                        Indicar alergias o intolerancias en la reserva</li>
+                                    <li class="mb-2"><i class="fas fa-credit-card text-accent me-2"></i> Pago antes del
+                                        16 de junio (online o en taquilla)</li>
+                                </ul>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Generación Planetario -->
-                    <div class="event-card bg-dark-transparent rounded-3 shadow-lg p-0">
-                        <img src="img/generacion-planetario.jpg" class="event-image" alt="Generación Planetario">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <span class="badge bg-primary">Taller</span>
-                                <span class="badge bg-warning text-dark">10-12 años</span>
-                            </div>
-                            <h3 class="h4 text-white mb-3">Generación Planetario</h3>
-                            <p class="text-white-50 mb-3">Talleres para niños y niñas de 10 a 12 años. Modalidad actual:
-                                "El
-                                camino del Sol" - ¿Sabes que el Sol no sale siempre exactamente por el este?</p>
-                            <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 1 hora</li>
-                                <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Fines de semana y
-                                    días sin cole</li>
-                                <li class="mb-2"><i class="fas fa-graduation-cap text-accent me-2"></i>
-                                    Experimentación y juego</li>
-                            </ul>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="text-accent fw-bold">Entrada gratuita</span>
-                                <a href="#" class="btn btn-primary">Reservar online</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Astroabuel@s y pequeastrónom@s -->
-                    <div class="event-card bg-dark-transparent rounded-3 shadow-lg p-0">
-                        <img src="img/astroabuelos.jpg" class="event-image" alt="Astroabuel@s y pequeastrónom@s">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <span class="badge bg-primary">Taller</span>
-                                <span class="badge bg-info">Intergeneracional</span>
-                            </div>
-                            <h3 class="h4 text-white mb-3">Astroabuel@s y pequeastrónom@s</h3>
-                            <p class="text-white-50 mb-3">Talleres intergeneracionales destinados a niños y niñas de 6 a
-                                9
-                                años acompañados de sus abuelos/as. Una experiencia única para compartir en familia.
-                            </p>
-                            <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 1 hora</li>
-                                <li class="mb-2"><i class="fas fa-heart text-accent me-2"></i> Niños + Abuelos</li>
-                                <li class="mb-2"><i class="fas fa-calendar text-accent me-2"></i> Fines de semana
-                                    especiales</li>
-                            </ul>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="text-accent fw-bold">Entrada gratuita</span>
-                                <a href="#" class="btn btn-primary">Reservar online</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Talleres de Verano -->
-                    <div class="event-card bg-dark-transparent rounded-3 shadow-lg p-0">
-                        <img src="img/dia-planetario.jpg" class="event-image" alt="Un Día Planetario">
-                        <div class="p-4">
-                            <div class="d-flex justify-content-between mb-3">
-                                <span class="badge bg-primary">Taller</span>
-                                <span class="badge bg-danger">Verano</span>
-                            </div>
-                            <h3 class="h4 text-white mb-3">"Un Día Planetario"</h3>
-                            <p class="text-white-50 mb-3">Taller intensivo de mañana completa. Incluye observación solar
-                                con
-                                telescopio, taller temático de astronomía, misión espacial y proyección en la
-                                cúpula.</p>
-                            <ul class="list-unstyled mb-4 text-white-50">
-                                <li class="mb-2"><i class="fas fa-clock text-accent me-2"></i> Duración: 9:00 a
-                                    13:45h</li>
-                                <li class="mb-2"><i class="fas fa-users text-accent me-2"></i> Niños nacidos
-                                    2014-2017</li>
-                                <li class="mb-2"><i class="fas fa-sun text-accent me-2"></i> Incluye observación
-                                    solar</li>
-                            </ul>
-                            <div class="mt-auto d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0 text-accent">Consultar precio</span>
-                                <a href="#" class="btn btn-primary">Más información</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ver todos los talleres -->
-                <div class="text-center mt-5">
-                    <a href="#" class="btn btn-outline-light btn-lg px-4 py-2">
-                        <i class="fas fa-hands me-2"></i> Reservar talleres online
-                    </a>
                 </div>
             </div>
         </section>
 
         <!-- Eventos Especiales -->
-        <section id="eventos" class="py-5 bg-stars">
+        <section id="eventos" class="py-5 bg-stars" style="margin-top: 3rem;">
             <div class="container">
                 <div class="row justify-content-center mb-5">
                     <div class="col-lg-8 text-center">
-                        <h2 class="display-5 fw-bold mb-3">Eventos Especiales</h2>
-                        <p class="lead">Celebraciones y eventos únicos durante todo el año</p>
+                        <h2 class="display-5 fw-bold mb-3">Evento Especial</h2>
+                        <p class="lead">Una experiencia única que combina música clásica y exploración espacial</p>
                     </div>
                 </div>
 
-                <div class="row g-4">
-                    <!-- Día Internacional de los Museos -->
-                    <div class="col-md-6">
-                        <div class="event-card p-4 rounded-3 h-100">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-circle bg-accent me-3">
-                                    <i class="fas fa-calendar-day"></i>
+                <div class="row justify-content-center">
+                    <div class="col-lg-8">
+                        <!-- Concierto Waltz into Space -->
+                        <div class="event-card">
+                            <img src="img/evento.jpg" class="event-image" alt="Concierto Waltz into Space">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between mb-3">
+                                    <span class="badge bg-danger">Evento Único</span>
+                                    <span class="badge bg-success">Gratuito</span>
                                 </div>
-                                <div>
-                                    <h3 class="h5 mb-0 text-white">18 de mayo, 2025</h3>
-                                    <p class="mb-0 opacity-75">Domingo</p>
+                                <div class="d-flex align-items-center mb-3">
+                                    <div class="icon-circle bg-accent me-3">
+                                        <i class="fas fa-music"></i>
+                                    </div>
+                                    <div>
+                                        <h3 class="h4 mb-0 text-white">Sábado 31 de mayo, 2025</h3>
+                                        <p class="mb-0 text-white-50">20:00 horas</p>
+                                    </div>
+                                </div>
+                                <h4 class="h3 mb-3 text-white">Concierto "Waltz into Space"</h4>
+                                <p class="text-white-50 mb-3">Con motivo del bicentenario de Johann Strauss II y el 50º
+                                    aniversario de la Agencia Espacial Europea, Viena se embarca en una misión cósmica:
+                                    enviar el vals "El Danubio azul" hasta las estrellas interpretado por la Wiener
+                                    Symphoniker.</p>
+
+                                <div class="row g-3 mb-4">
+                                    <div class="col-md-6">
+                                        <h5 class="text-accent mb-2">
+                                            <i class="fas fa-satellite me-2"></i>Misión Espacial
+                                        </h5>
+                                        <ul class="list-unstyled text-white-50 small">
+                                            <li>• Transmisión hacia la Voyager 1</li>
+                                            <li>• Antena de espacio profundo ESA - Cebreros</li>
+                                            <li>• El vals resonará en el espacio durante siglos</li>
+                                        </ul>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <h5 class="text-accent mb-2">
+                                            <i class="fas fa-music me-2"></i>Programa Musical
+                                        </h5>
+                                        <ul class="list-unstyled text-white-50 small">
+                                            <li>• Sinfonía "Júpiter" de Mozart</li>
+                                            <li>• Sinfonía "Del Nuevo Mundo" de Dvořák</li>
+                                            <li>• "El Danubio azul" de J. Strauss II</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="alert alert-info mb-2">
+
+                                    <i class="fas fa-ticket-alt me-2"></i>
+                                    <strong>Acceso gratuito con invitación</strong><br>
+                                    <small>Invitaciones disponibles a partir del viernes 23 de mayo a las 09:00h</small>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    <div class="text-accent">
+                                        <strong>Evento simultáneo:</strong><br>
+                                        <small class="text-white-50">Madrid • Nueva York • Viena</small>
+                                    </div>
+                                    <a href="https://planetmad.es/concierto-waltz-into-space-sabado-31-de-mayo-20-horas/"
+                                        target="_blank" class="btn btn-primary">Más información</a>
                                 </div>
                             </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-primary">Evento Especial</span>
-                                <span class="badge bg-success">Gratuito</span>
-                            </div>
-                            <h4 class="h4 mb-2 text-white">Día Internacional de los Museos</h4>
-                            <p class="mb-3 text-white-50">Acceso gratuito a las proyecciones fulldome previa reserva de
-                                invitación.
-                                Programas especiales: "El cielo de Cloe", "3-2-1 ¡Despegamos!", "Polaris", "Agujeros
-                                negros" y "Biosfera oscura".</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-accent">Entrada gratuita con invitación</span>
-                                <a href="#" class="btn btn-primary">Reservar invitación</a>
+                        </div>
+
+                        <!-- Información adicional del evento -->
+                        <div class="mt-4 text-center">
+                            <div class="bg-dark-transparent rounded-3 p-4">
+                                <h4 class="text-accent mb-3">
+                                    <i class="fas fa-info-circle me-2"></i>Sobre el Evento
+                                </h4>
+                                <p class="text-white-50 mb-0">Este evento único celebra el bicentenario de Johann
+                                    Strauss II y el 50º aniversario de la ESA. La música será digitalizada y transmitida
+                                    hacia la Voyager 1 usando las ondas de radio que normalmente se utilizan para
+                                    comunicarse con las misiones europeas de exploración espacial.</p>
                             </div>
                         </div>
                     </div>
-
-                    <!-- Noche de los Museos -->
-                    <div class="col-md-6">
-                        <div class="event-card p-4 rounded-3 h-100">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-circle bg-accent me-3">
-                                    <i class="fas fa-moon"></i>
-                                </div>
-                                <div>
-                                    <h3 class="h5 mb-0 text-white">17 de mayo, 2025</h3>
-                                    <p class="mb-0 opacity-75">Sábado - Hasta las 22:45h</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-primary">Maratón Planetario</span>
-                                <span class="badge bg-success">Gratuito</span>
-                            </div>
-                            <h4 class="h4 mb-2 text-white">Noche de los Museos - Maratón Planetario</h4>
-                            <p class="mb-3 text-white-50">Horario ampliado hasta las 22:45h con tres sesiones gratuitas
-                                especiales:
-                                "Cielo profundo" (20:00h), "Spherium" (21:00h) y "Origins" (22:00h).</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-accent">Entrada gratuita con invitación</span>
-                                <a href="#" class="btn btn-primary">Reservar invitación</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Jornadas de Observación -->
-                    <div class="col-md-6">
-                        <div class="event-card p-4 rounded-3 h-100">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-circle bg-accent me-3">
-                                    <i class="fas fa-telescope"></i>
-                                </div>
-                                <div>
-                                    <h3 class="h5 mb-0 text-white">Fechas especiales</h3>
-                                    <p class="mb-0 opacity-75">Según condiciones meteorológicas</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-primary">Observación</span>
-                                <span class="badge bg-success">Gratuito</span>
-                            </div>
-                            <h4 class="h4 mb-2 text-white">Jornadas Públicas de Observación</h4>
-                            <p class="mb-3 text-white-50">Observación astronómica gratuita con 20 telescopios
-                                profesionales, pantalla
-                                LED de 5x3 metros y asesoramiento de expertos. De 21:00h a 00:00h en la explanada del
-                                Parque Tierno Galván.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="text-accent">Entrada libre</span>
-                                <a href="#" class="btn btn-primary">Próximas fechas</a>
-                            </div>
-                        </div>
-                    </div>
-
-                    <!-- Curso Del Planetario al Cosmos -->
-                    <div class="col-md-6">
-                        <div class="event-card p-4 rounded-3 h-100">
-                            <div class="d-flex align-items-center mb-3">
-                                <div class="icon-circle bg-accent me-3">
-                                    <i class="fas fa-graduation-cap"></i>
-                                </div>
-                                <div>
-                                    <h3 class="h5 mb-0 text-white">Edición 2025</h3>
-                                    <p class="mb-0 opacity-75">Curso de astronomía y astrofísica</p>
-                                </div>
-                            </div>
-                            <div class="d-flex justify-content-between mb-2">
-                                <span class="badge bg-primary">Curso</span>
-                                <span class="badge bg-warning text-dark">Inscripciones abiertas</span>
-                            </div>
-                            <h4 class="h4 mb-2 text-white">Del Planetario al Cosmos</h4>
-                            <p class="mb-3 text-white-50">Curso de astronomía y astrofísica dirigido a público adulto
-                                interesado en
-                                profundizar en el conocimiento del universo. Incluye sesiones teóricas y prácticas.</p>
-                            <div class="d-flex justify-content-between align-items-center">
-                                <span class="h5 mb-0 text-accent">Consultar precio</span>
-                                <a href="#" class="btn btn-primary">Más información</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Ver calendario completo -->
-                <div class="text-center mt-5">
-                    <a href="calendario.html" class="btn btn-outline-light btn-lg px-4 py-2">
-                        <i class="fas fa-calendar-alt me-2"></i> Ver calendario completo
-                    </a>
                 </div>
             </div>
         </section>
@@ -748,7 +748,7 @@
                                 <li class="mb-2"><strong>Niños (2-14 años) y +65:</strong> 1,65€</li>
                                 <li class="mb-2"><strong>Menores de 2 años:</strong> Gratis (sin butaca)</li>
                                 <li class="mb-2"><strong>Grupos (+15 personas):</strong> 2,80€</li>
-                                <li class="mb-2"><strong>Talleres:</strong> Gratuitos con reserva</li>
+                                <li class="mb-2"><strong>Talleres:</strong> 3,30€ (taller de verano)</li>
                             </ul>
                         </div>
                     </div>
@@ -807,7 +807,7 @@
                     <div class="col-lg-8 mb-4 mb-lg-0">
                         <h2 class="h3 fw-bold mb-2">¿Quieres estar al día de todas nuestras actividades?</h2>
                         <p class="mb-0">Suscríbete para recibir información sobre eventos especiales, nuevas actividades
-                            y reservas de talleres gratuitos.</p>
+                            y reservas de talleres.</p>
                     </div>
                     <div class="col-lg-4 text-lg-end">
                         <a href="#suscripcion" class="btn btn-light btn-lg" data-bs-toggle="modal"
@@ -890,9 +890,8 @@
                         <li><a href="contacto.html">Cómo llegar</a></li>
                         <li><a href="visitas.html">Planifica tu visita</a></li>
                         <li><a href="horarios.html">Reservas online</a></li>
-                        <li><a href="#" onclick="window.open('https://planetmad.es', '_blank')">Web oficial</a></li>
-                        <li><a href="#" onclick="window.open('https://planetmad.es/agenda/', '_blank')">Agenda
-                                oficial</a></li>
+                        <li><a href="https://planetmad.es" target="_blank">Web oficial</a></li>
+                        <li><a href="https://planetmad.es/agenda/" target="_blank">Agenda oficial</a></li>
                     </ul>
                 </div>
 
@@ -905,7 +904,7 @@
                         </li>
                         <li class="d-flex mb-2">
                             <i class="fas fa-phone-alt mt-1 me-2 text-accent"></i>
-                            <span>91 467 34 62</span>
+                            <span>91 467 34 61</span>
                         </li>
                         <li class="d-flex">
                             <i class="fas fa-envelope mt-1 me-2 text-accent"></i>
@@ -947,7 +946,7 @@
                 }
             });
 
-            // Navegación suave para anclas
+            // Navegación suave para anclas con compensación para sticky nav
             document.querySelectorAll('a[href^="#"]').forEach(anchor => {
                 anchor.addEventListener('click', function (e) {
                     if (this.getAttribute('href').length > 1) {
@@ -955,8 +954,9 @@
                         const targetId = this.getAttribute('href');
                         const targetElement = document.querySelector(targetId);
                         if (targetElement) {
+                            const offsetTop = targetElement.offsetTop - 150; // Compensación para sticky nav
                             window.scrollTo({
-                                top: targetElement.offsetTop - 180,
+                                top: offsetTop,
                                 behavior: 'smooth'
                             });
                         }
@@ -968,12 +968,15 @@
             const sections = document.querySelectorAll('section[id]');
             const navItems = document.querySelectorAll('.nav-pills .nav-link');
 
-            window.addEventListener('scroll', () => {
+            function updateActiveNav() {
                 let current = '';
+                const scrollPos = window.pageYOffset + 200; // Compensación para sticky nav
 
                 sections.forEach(section => {
                     const sectionTop = section.offsetTop;
-                    if (pageYOffset >= (sectionTop - 200)) {
+                    const sectionHeight = section.offsetHeight;
+
+                    if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
                         current = section.getAttribute('id');
                     }
                 });
@@ -984,7 +987,22 @@
                         navItem.classList.add('active');
                     }
                 });
-            });
+            }
+
+            // Actualizar navegación al hacer scroll (throttled)
+            let ticking = false;
+            function handleScroll() {
+                if (!ticking) {
+                    requestAnimationFrame(function () {
+                        updateActiveNav();
+                        ticking = false;
+                    });
+                    ticking = true;
+                }
+            }
+
+            window.addEventListener('scroll', handleScroll);
+            updateActiveNav(); // Llamar una vez al cargar
 
             // Efecto de loading para imágenes
             const images = document.querySelectorAll('.card-img-top, .event-image');

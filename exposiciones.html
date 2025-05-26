@@ -10,6 +10,217 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <!-- Estilos personalizados -->
     <link rel="stylesheet" href="css/styles.css">
+    <style>
+        :root {
+            --color-bg: #0b3d91;
+            --color-brand: #005f73;
+            --color-white: #ffffff;
+            --color-accent: #ee9b00;
+            --color-neutral: #f5f5f5;
+            --color-link: #00b4d8;
+            --color-detail: #7c3aed;
+            --transition-standard: all 0.3s ease;
+        }
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+            color: var(--color-white);
+            background: linear-gradient(180deg, var(--color-bg) 0%, #061942 100%);
+            overflow-x: hidden;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 4px),
+                radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 2px);
+            background-size: 550px 550px, 350px 350px;
+            background-position: 0 0, 40px 60px;
+            z-index: -1;
+            opacity: 0.2;
+        }
+
+
+        header {
+            background-color: rgba(11, 61, 145, 0.95);
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            backdrop-filter: blur(5px);
+        }
+
+        .logo-img {
+            width: 50px;
+            height: 50px;
+            background-color: var(--color-white);
+        }
+
+        .navbar-dark .navbar-nav .nav-link {
+            color: rgba(255, 255, 255, 0.85);
+            position: relative;
+            padding: 0.5rem 0;
+            margin: 0 1rem;
+        }
+
+        .navbar-dark .navbar-nav .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: var(--color-accent);
+            transition: width 0.3s;
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover,
+        .navbar-dark .navbar-nav .nav-link:focus,
+        .navbar-dark .navbar-nav .nav-link.active {
+            color: var(--color-accent);
+        }
+
+        .navbar-dark .navbar-nav .nav-link:hover::after,
+        .navbar-dark .navbar-nav .nav-link:focus::after,
+        .navbar-dark .navbar-nav .nav-link.active::after {
+            width: 100%;
+        }
+
+        .btn-tickets {
+            background-color: var(--color-accent);
+            border-color: var(--color-accent);
+            color: var(--color-bg);
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            padding: 0.5rem 1rem;
+            font-weight: 600;
+        }
+
+        .btn-tickets:hover,
+        .btn-tickets:focus {
+            background-color: var(--color-white);
+            border-color: var(--color-white);
+            color: var(--color-bg);
+            transform: translateY(-2px);
+            box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+        }
+
+
+        .page-banner {
+            position: relative;
+            overflow: hidden;
+            height: 40vh;
+            max-height: 400px;
+            min-height: 250px;
+        }
+
+        .banner-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            background-image: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 300"><defs><radialGradient id="star" cx="50%" cy="50%"><stop offset="0%" stop-color="white" stop-opacity="1"/><stop offset="100%" stop-color="white" stop-opacity="0"/></radialGradient></defs><rect width="1000" height="300" fill="%23001122"/><circle cx="100" cy="50" r="1" fill="url(%23star)"/><circle cx="300" cy="80" r="0.8" fill="url(%23star)"/><circle cx="500" cy="40" r="1.2" fill="url(%23star)"/></svg>');
+            opacity: 0.5;
+            z-index: -1;
+        }
+
+        .z-index-1 {
+            z-index: 1;
+        }
+
+        .breadcrumb-item a {
+            text-decoration: none;
+        }
+
+        .breadcrumb-item+.breadcrumb-item::before {
+            color: rgba(255, 255, 255, 0.5);
+        }
+
+        /* Exposiciones */
+        .exhibition-image {
+            height: 350px;
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease;
+        }
+
+        .exhibition-image:hover {
+            transform: translateY(-5px);
+        }
+
+        .exhibition-content {
+            padding: 2rem 0;
+        }
+
+        .icon-circle {
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 14px;
+            flex-shrink: 0;
+        }
+
+        .text-accent {
+            color: var(--color-accent) !important;
+        }
+
+        .text-white-50 {
+            color: rgba(255, 255, 255, 0.7) !important;
+        }
+
+        /* Sección histórica  */
+        .bg-stars {
+            background-color: rgba(6, 25, 66, 0.5);
+            position: relative;
+        }
+
+        .bg-stars::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image:
+                radial-gradient(white, rgba(255, 255, 255, .2) 2px, transparent 4px),
+                radial-gradient(white, rgba(255, 255, 255, .15) 1px, transparent 2px);
+            background-size: 350px 350px, 200px 200px;
+            background-position: 0 0, 40px 60px;
+            z-index: -1;
+            opacity: 0.1;
+        }
+
+        .historical-card {
+            background: rgba(255, 255, 255, 0.05);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            border-radius: 16px;
+            backdrop-filter: blur(10px);
+            transition: all 0.3s ease;
+            position: relative;
+            z-index: 1;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .historical-card:hover {
+            background: rgba(255, 255, 255, 0.08);
+            border-color: var(--color-accent);
+            transform: translateY(-5px);
+        }
+
+  
+        
+    </style>
 </head>
 
 <body>
@@ -59,7 +270,6 @@
     <!-- Banner de página -->
     <section
         class="page-banner position-relative d-flex align-items-center justify-content-center text-center text-white">
-        <div class="banner-image position-absolute"></div>
         <div class="container py-5 position-relative z-index-1">
             <h1 class="display-4 fw-bold mb-3">Nuestras Exposiciones</h1>
             <nav aria-label="breadcrumb">
@@ -98,12 +308,11 @@
                 <!-- Ecos del Cosmos -->
                 <div class="row mb-5" id="ecos-cosmos">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img src="img/Exposiciones/ecos-del-cosmo.jpg"
-                                alt="Exposición Ecos del Cosmos: Galaxias Ancestrales Reveladas" class="img-fluid">
+                        <div class="exhibition-image"
+                            style="background-image: url('img/Exposiciones/ecos-del-cosmo.jpg');">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 exhibition-content">
                         <h3 class="h2 text-white mb-3">Ecos del Cosmos: Galaxias Ancestrales Reveladas</h3>
                         <p class="text-white-50 mb-3">Una fascinante exposición de paneles donde diversos artistas
                             presentan su visión personal sobre el mundo de la astronomía y la astrofísica contemporánea.
@@ -138,13 +347,10 @@
                 <!-- Los Colores del Cielo Profundo -->
                 <div class="row mb-5 flex-lg-row-reverse" id="cielo-profundo">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img src="img/Exposiciones/colores.jpg"
-                                alt="Exposición Los Colores del Cielo Profundo por Rogelio Bernal Andreo"
-                                class="img-fluid">
+                        <div class="exhibition-image" style="background-image: url('img/Exposiciones/colores.jpg');">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 exhibition-content">
                         <h3 class="h2 text-white mb-3">Los Colores del Cielo Profundo</h3>
                         <p class="text-white-50 mb-3">Espectacular exposición de imágenes astronómicas en gran formato
                             realizadas por el reconocido astrofotógrafo Rogelio Bernal Andreo. Una breve anécdota en
@@ -178,12 +384,10 @@
                 <!-- Europa en el Espacio - ESA -->
                 <div class="row" id="europa-espacio">
                     <div class="col-lg-6 mb-4 mb-lg-0">
-                        <div class="rounded overflow-hidden shadow-lg">
-                            <img src="img/Exposiciones/espacio.jpg" alt="Exposición Europa en el Espacio ESA"
-                                class="img-fluid">
+                        <div class="exhibition-image" style="background-image: url('img/Exposiciones/espacio.jpg');">
                         </div>
                     </div>
-                    <div class="col-lg-6">
+                    <div class="col-lg-6 exhibition-content">
                         <h3 class="h2 text-white mb-3">Europa en el Espacio - ESA</h3>
                         <p class="text-white-50 mb-3">Un acercamiento al ciudadano de la contribución reciente de la
                             Agencia Espacial Europea al progreso humano. Desde 1975, la ESA y sus 22 Estados miembros
@@ -225,17 +429,33 @@
 
                 <div class="row justify-content-center">
                     <div class="col-lg-8">
-                        <div class="exhibition-card">
-                            <div class="card-body text-center">
-                                <h3 class="text-white mb-3">Imitadores del Cielo: Los Planetarios Óptico-Mecánicos</h3>
-                                <p class="text-white-50">En el vestíbulo del Planetario se exhibe el Spacemaster, la
+                        <div class="historical-card p-5">
+                            <div class="text-center">
+                                <i class="fas fa-cog fa-4x text-accent mb-4"></i>
+                                <h3 class="text-white mb-4">Imitadores del Cielo: Los Planetarios Óptico-Mecánicos</h3>
+                                <p class="text-white-50 mb-4">En el vestíbulo del Planetario se exhibe el Spacemaster,
+                                    la
                                     maquinaria óptico-mecánica que durante treinta años (1986-2016) se utilizó para las
                                     proyecciones en la Sala de Proyección. Este aparato de ingeniería y tecnología
                                     alemana simulaba los movimientos de estrellas y planetas, representando una época
                                     dorada en la historia de los planetarios.</p>
-                                <div class="my-3">
-                                    <p class="text-white-50 mb-1"><strong>Ubicación:</strong> Vestíbulo principal</p>
-                                    <p class="text-white-50 mb-0"><strong>Entrada Gratuita</strong></p>
+                                <div class="row justify-content-center">
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-center justify-content-center mb-2">
+                                            <div class="icon-circle bg-primary text-white me-2">
+                                                <i class="fas fa-map-marker-alt"></i>
+                                            </div>
+                                            <span class="text-white">Vestíbulo principal</span>
+                                        </div>
+                                    </div>
+                                    <div class="col-md-6">
+                                        <div class="d-flex align-items-center justify-content-center">
+                                            <div class="icon-circle bg-success text-white me-2">
+                                                <i class="fas fa-gift"></i>
+                                            </div>
+                                            <span class="text-white">Entrada Gratuita</span>
+                                        </div>
+                                    </div>
                                 </div>
                             </div>
                         </div>
@@ -429,7 +649,44 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
 
     <!-- Script personalizado para navegación y animaciones -->
-    <script src="js/scripts.js"></script>
+    <script>
+        // Smooth scrolling para enlaces internos
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({
+                        behavior: 'smooth',
+                        block: 'start'
+                    });
+                }
+            });
+        });
+
+        // Animación de aparición al hacer scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.style.opacity = '1';
+                    entry.target.style.transform = 'translateY(0)';
+                }
+            });
+        }, observerOptions);
+
+        // Aplicar animación a elementos
+        document.querySelectorAll('.exhibition-image, .info-card, .historical-card').forEach(el => {
+            el.style.opacity = '0';
+            el.style.transform = 'translateY(30px)';
+            el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+            observer.observe(el);
+        });
+    </script>
 </body>
 
 </html>
