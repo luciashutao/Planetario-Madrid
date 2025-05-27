@@ -1,0 +1,385 @@
+/* Solución completa para responsive móvil - Reemplazar todo el CSS de estilos inline */
+
+/* Solución para sticky navigation */
+.sticky-nav {
+    position: sticky;
+    top: 76px;
+    z-index: 10;
+    background-color: rgba(5, 20, 51, 0.95);
+    backdrop-filter: blur(10px);
+}
+
+/* Grid principal */
+.activity-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    align-items: start;
+}
+
+/* Tarjetas uniformes */
+.dome-show-card,
+.event-card {
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    background: rgba(255, 255, 255, 0.05);
+    border: none;
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    backdrop-filter: blur(5px);
+}
+
+.dome-show-card:hover,
+.event-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* Imágenes uniformes */
+.card-img-top,
+.event-image {
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: auto;
+    border-radius: 15px 15px 0 0;
+}
+
+/* Cuerpo de tarjetas flexibles */
+.card-body {
+    flex-grow: 1;
+    min-height: 0;
+    display: flex;
+    flex-direction: column;
+    padding: 1.5rem;
+    background: rgba(11, 61, 145, 0.8);
+}
+
+.card-body>.alert {
+    margin-bottom: 1rem;
+}
+
+.activity-grid>.dome-show-card,
+.activity-grid>.event-card {
+    min-height: 100%;
+}
+
+/* Badges posicionados */
+.badge-container {
+    position: absolute;
+    top: 15px;
+    left: 15px;
+    z-index: 2;
+    display: flex;
+    gap: 8px;
+    flex-wrap: wrap;
+}
+
+/* Espaciado entre secciones */
+section[id] {
+    scroll-margin-top: 150px;
+}
+
+#eventos,
+#talleres,
+#proyecciones,
+#informacion-practica {
+    padding-top: 5rem;
+}
+
+/* Responsive para tablets */
+@media (max-width: 768px) {
+    .sticky-nav {
+        top: 70px;
+        /* Permitir scroll horizontal en el submenú */
+        overflow-x: visible;
+    }
+
+    .sticky-nav .container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+    }
+
+    .sticky-nav .container::-webkit-scrollbar {
+        display: none;
+    }
+
+    /* Pills en una línea */
+    .nav-pills {
+        flex-wrap: nowrap !important;
+        min-width: max-content;
+        gap: 0.5rem;
+    }
+
+    .nav-pills .nav-item {
+        flex-shrink: 0;
+    }
+
+    .nav-pills .nav-link {
+        white-space: nowrap;
+        min-width: 120px;
+        text-align: center;
+        padding: 0.6rem 0.8rem;
+        font-size: 1rem;
+    }
+
+    .activity-grid {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    section[id] {
+        scroll-margin-top: 130px;
+    }
+
+    h2.display-5 {
+        font-size: 2rem;
+        margin-top: 2rem;
+    }
+}
+
+/* Responsive específico para móviles pequeños */
+@media (max-width: 576px) {
+    .sticky-nav {
+        top: 60px;
+        padding: 0.5rem 0;
+    }
+
+    .sticky-nav .container {
+        padding-left: 0.5rem;
+        padding-right: 0.5rem;
+    }
+
+    /* Pills más compactas pero con texto legible */
+    .nav-pills .nav-link {
+        min-width: 100px;
+        padding: 0.6rem 0.8rem;
+        font-size: 0.9rem;
+    }
+
+    /* Ajustar contenedores principales */
+    .container {
+        padding-left: 0.75rem !important;
+        padding-right: 0.75rem !important;
+    }
+
+    /* Grid de una sola columna con menos gap */
+    .activity-grid {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+    }
+
+    /* Tarjetas más compactas */
+    .card-body {
+        padding: 1rem;
+    }
+
+    /* Badges centrados en móvil */
+    .badge-container {
+        left: 50%;
+        transform: translateX(-50%);
+        top: 10px;
+        justify-content: center;
+        max-width: calc(100% - 20px);
+    }
+
+    .badge {
+        font-size: 0.7rem;
+        padding: 0.3em 0.5em;
+    }
+
+    /* Imágenes con aspect ratio más cuadrado en móvil */
+    .card-img-top,
+    .event-image {
+        aspect-ratio: 4 / 3;
+    }
+
+    /* Tipografía más pequeña */
+    h1,
+    .display-4 {
+        font-size: 1.8rem !important;
+    }
+
+    h2.display-5 {
+        font-size: 1.5rem !important;
+        margin-top: 1.5rem;
+    }
+
+    .h4 {
+        font-size: 1.1rem;
+    }
+
+    .lead {
+        font-size: 1rem;
+    }
+
+    /* Botones de ancho completo en móvil */
+    .btn {
+        font-size: 0.9rem;
+        padding: 0.6rem 1rem;
+    }
+
+    .dome-show-card .btn,
+    .event-card .btn {
+        width: 100%;
+        margin-top: 0.5rem;
+    }
+
+    /* Ajustar elementos flex en tarjetas */
+    .mt-auto.d-flex {
+        flex-direction: column;
+        gap: 0.5rem;
+        align-items: stretch !important;
+    }
+
+    .mt-auto.d-flex .h5 {
+        text-align: center;
+        margin-bottom: 0.5rem !important;
+    }
+
+    /* Ocultar planetas decorativos */
+    .planet-1,
+    .planet-2 {
+        display: none;
+    }
+
+    /* Ajustar secciones */
+    section[id] {
+        scroll-margin-top: 110px;
+    }
+
+    .py-5 {
+        padding-top: 2rem !important;
+        padding-bottom: 2rem !important;
+    }
+
+    /* Mejorar listas */
+    .list-unstyled li {
+        margin-bottom: 0.4rem;
+    }
+
+    /* Iconos más pequeños */
+    .list-unstyled i {
+        font-size: 0.8rem;
+    }
+
+    /* Banner más compacto */
+    .page-banner {
+        min-height: 200px;
+        padding: 2rem 0;
+    }
+
+    .page-banner h1 {
+        font-size: 1.6rem !important;
+        margin-bottom: 1rem;
+    }
+
+    .page-banner .lead {
+        font-size: 0.95rem;
+    }
+
+    /* Alertas más compactas */
+    .alert {
+        padding: 0.5rem;
+        font-size: 0.85rem;
+    }
+
+    /* Mejorar modales en móvil */
+    .modal-body {
+        padding: 1rem;
+    }
+
+    .modal-body .form-control {
+        font-size: 1rem;
+        /* Evitar zoom en iOS */
+    }
+}
+
+/* Extra small devices (menos de 400px) */
+@media (max-width: 400px) {
+    .container {
+        padding-left: 0.5rem !important;
+        padding-right: 0.5rem !important;
+    }
+
+    .nav-pills .nav-link {
+        min-width: 90px;
+        font-size: 0.85rem;
+        padding: 0.5rem 0.7rem;
+    }
+
+    .card-body {
+        padding: 0.75rem;
+    }
+
+    h1,
+    .display-4 {
+        font-size: 1.5rem !important;
+    }
+
+    h2.display-5 {
+        font-size: 1.3rem !important;
+    }
+
+    .badge {
+        font-size: 0.65rem;
+        padding: 0.2em 0.4em;
+    }
+
+    .page-banner {
+        min-height: 180px;
+    }
+}
+
+/* Loading skeleton para imágenes */
+.image-skeleton {
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.1) 0%, rgba(255, 255, 255, 0.2) 50%, rgba(255, 255, 255, 0.1) 100%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
+}
+
+/* Mejoras de accesibilidad en móvil */
+@media (max-width: 576px) {
+
+    /* Mejorar área táctil */
+    .nav-pills .nav-link {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .btn {
+        min-height: 44px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /* Mejor espaciado entre elementos interactivos */
+    .badge-container {
+        gap: 0.25rem;
+    }
+
+    /* Texto más legible */
+    .text-white-50 {
+        color: rgba(255, 255, 255, 0.8) !important;
+    }
+}

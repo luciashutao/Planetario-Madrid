@@ -138,6 +138,7 @@
 
 /* Responsive */
 @media (max-width: 992px) {
+
     #heroCarousel,
     .hero-slide {
         height: 70vh;
@@ -150,6 +151,7 @@
 }
 
 @media (max-width: 768px) {
+
     #heroCarousel,
     .hero-slide {
         height: 60vh;
@@ -184,5 +186,29 @@
     .carousel-indicators [data-bs-target] {
         width: 10px;
         height: 10px;
+    }
+}
+
+@media (max-width: 576px) {
+
+    .row,
+    .navbar-nav,
+    .hero-content,
+    .carousel-caption,
+    .footer-links,
+    .social-links {
+        flex-direction: column !important;
+        align-items: center;
+        text-align: center;
+    }
+
+    .navbar-nav .nav-link {
+        padding: 0.5rem 0;
+        margin: 0;
+        width: 100%;
+    }
+
+    .carousel-indicators {
+        bottom: 2px;
     }
 }

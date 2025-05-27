@@ -88,7 +88,8 @@ header {
 }
 
 .logo-img {
-    width: 60px; /* o ajusta a gusto */
+    width: 60px;
+    /* o ajusta a gusto */
     height: auto;
     border-radius: 0;
 }
@@ -554,6 +555,8 @@ footer {
     .section {
         padding: 3rem 1rem;
     }
+
+
 }
 
 
