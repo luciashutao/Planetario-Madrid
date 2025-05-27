@@ -21,10 +21,10 @@
             backdrop-filter: blur(10px);
         }
 
-        /* Grid mejorado sin conflictos con sticky */
+        /* Grid*/
         .activity-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
             gap: 2rem;
             align-items: start;
             /* Clave para evitar solapamientos */
@@ -140,6 +140,13 @@
             .card-body {
                 padding: 1rem;
             }
+
+            .nav-pills {
+                flex-wrap: nowrap;
+                overflow-x: auto;
+                -webkit-overflow-scrolling: touch;
+            }
+
         }
 
         /* Loading skeleton para imágenes */
